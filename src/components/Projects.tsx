@@ -3,6 +3,8 @@ import { projects } from '@/lib/data';
 import { OptimizedImage } from './OptimizedImage';
 import { hoverTextColor } from '@/lib/colorMap';
 
+// Alternate between tall (with image) and compact (no image) for masonry variety
+const cardVariants: ('full' | 'compact')[] = ['full', 'full', 'compact', 'full', 'full', 'compact', 'full', 'full'];
 
 const MobileProjectCard = memo(({ project }: { project: typeof projects[0] }) => (
   <article className="flex-shrink-0 w-[75vw] max-w-[280px] bg-white border-4 border-black p-2 shadow-hard snap-center">
@@ -47,10 +49,9 @@ const MobileProjectCard = memo(({ project }: { project: typeof projects[0] }) =>
 
 MobileProjectCard.displayName = 'MobileProjectCard';
 
-const DesktopProjectCard = memo(({ project }: { project: typeof projects[0] }) => (
+const FullProjectCard = memo(({ project }: { project: typeof projects[0] }) => (
   <article
-    className="reveal group bg-white border-4 border-black p-4 shadow-hard h-full flex flex-col"
-    style={{ pageBreakInside: 'avoid' }}
+    className="reveal break-inside-avoid mb-6 group bg-white border-4 border-black p-4 shadow-hard"
   >
     <div className="bg-black border-2 border-black aspect-video relative overflow-hidden mb-4 group-hover:shadow-none transition-all">
       <OptimizedImage
@@ -61,7 +62,7 @@ const DesktopProjectCard = memo(({ project }: { project: typeof projects[0] }) =
         className="w-full h-full object-cover opacity-80 group-hover:opacity-100 transition-opacity"
       />
     </div>
-    <div className="space-y-3 flex-1 flex flex-col">
+    <div className="space-y-3">
       <div className="flex justify-between items-start gap-2">
         <h3
           className={`text-base lg:text-lg font-black uppercase ${hoverTextColor[project.color] || ''} transition-colors glitch-hover leading-tight`}
@@ -78,7 +79,7 @@ const DesktopProjectCard = memo(({ project }: { project: typeof projects[0] }) =
           <i className="ri-arrow-right-up-line text-lg" aria-hidden="true"></i>
         </a>
       </div>
-      <p className="font-mono text-sm leading-relaxed flex-1">{project.description}</p>
+      <p className="font-mono text-sm leading-relaxed">{project.description}</p>
       <div className="flex gap-2 font-mono text-xs font-bold flex-wrap">
         {project.technologies.map((tech, idx) => (
           <span key={idx} className="bg-neo-black text-white px-2">
@@ -90,7 +91,42 @@ const DesktopProjectCard = memo(({ project }: { project: typeof projects[0] }) =
   </article>
 ));
 
-DesktopProjectCard.displayName = 'DesktopProjectCard';
+FullProjectCard.displayName = 'FullProjectCard';
+
+const CompactProjectCard = memo(({ project }: { project: typeof projects[0] }) => (
+  <article
+    className="reveal break-inside-avoid mb-6 group bg-neo-black border-4 border-black p-4 shadow-hard text-white"
+  >
+    <div className="space-y-3">
+      <div className="flex justify-between items-start gap-2">
+        <h3
+          className={`text-base lg:text-lg font-black uppercase ${hoverTextColor[project.color] || ''} transition-colors glitch-hover leading-tight`}
+        >
+          {project.title}
+        </h3>
+        <a
+          href={project.link}
+          target="_blank"
+          rel="noopener noreferrer"
+          aria-label={`View ${project.title} project`}
+          className="flex-shrink-0 w-9 h-9 border-2 border-white bg-neo-green text-black flex items-center justify-center hover:bg-white hover:text-black transition-all cursor-hover shadow-hard-sm"
+        >
+          <i className="ri-arrow-right-up-line text-lg" aria-hidden="true"></i>
+        </a>
+      </div>
+      <p className="font-mono text-sm leading-relaxed text-gray-300">{project.description}</p>
+      <div className="flex gap-2 font-mono text-xs font-bold flex-wrap">
+        {project.technologies.map((tech, idx) => (
+          <span key={idx} className="bg-white text-black px-2">
+            {tech}
+          </span>
+        ))}
+      </div>
+    </div>
+  </article>
+));
+
+CompactProjectCard.displayName = 'CompactProjectCard';
 
 export const Projects = memo(function Projects() {
   return (
@@ -108,12 +144,17 @@ export const Projects = memo(function Projects() {
         ))}
       </div>
 
-      {/* Desktop: grid */}
+      {/* Desktop: masonry with varied card styles */}
       <div className="hidden md:block max-w-7xl mx-auto px-4">
-        <div className="grid grid-cols-2 lg:grid-cols-3 gap-6">
-          {projects.map((project, index) => (
-            <DesktopProjectCard key={project.id} project={project} />
-          ))}
+        <div className="columns-2 lg:columns-3 gap-6">
+          {projects.map((project, index) => {
+            const variant = cardVariants[index % cardVariants.length];
+            return variant === 'compact' ? (
+              <CompactProjectCard key={project.id} project={project} />
+            ) : (
+              <FullProjectCard key={project.id} project={project} />
+            );
+          })}
         </div>
       </div>
     </section>
