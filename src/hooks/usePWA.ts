@@ -1,10 +1,5 @@
 import { useEffect } from 'react';
 
-const LOVABLE_PREVIEW_HOSTS = ['lovable.app', 'lovableproject.com'];
-
-const isLovablePreviewHost = (hostname: string) =>
-  LOVABLE_PREVIEW_HOSTS.some((host) => hostname.endsWith(host));
-
 const clearServiceWorkersAndCaches = async () => {
   if (!('serviceWorker' in navigator)) return;
 
@@ -21,10 +16,8 @@ export function usePWA() {
   useEffect(() => {
     if (typeof window === 'undefined' || !('serviceWorker' in navigator)) return;
 
-    const hostname = window.location.hostname;
-
-    // Never run SW on Lovable preview/staging domains to avoid stale bundle caches.
-    if (isLovablePreviewHost(hostname) || !import.meta.env.PROD) {
+    // Don't run Service Worker in development
+    if (!import.meta.env.PROD) {
       clearServiceWorkersAndCaches().catch((error) => {
         console.warn('[PWA] Cleanup failed:', error);
       });

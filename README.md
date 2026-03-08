@@ -103,7 +103,7 @@ colors: {
 ## 🌐 Deploy
 
 Works on any static hosting:
-- **Lovable** — One-click publish
+- **Firebase** — `firebase deploy`
 - **Vercel / Netlify** — Connect GitHub repo
 - **GitHub Pages** — Use `dist/` output
 
