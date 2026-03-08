@@ -39,8 +39,8 @@ export const Contact = memo(function Contact() {
   const [isSubmitting, setIsSubmitting] = useState(false);
   const [toasts, setToasts] = useState<Toast[]>([]);
   const [emailjsReady, setEmailjsReady] = useState(false);
-  const [retryCount, setRetryCount] = useState(0);
   const formRef = useRef<HTMLFormElement>(null);
+  const retryCountRef = useRef(0);
 
   const addToast = useCallback((toast: Omit<Toast, 'id'>) => {
     const id = Math.random().toString(36).substr(2, 9);
@@ -88,6 +88,35 @@ export const Contact = memo(function Contact() {
     setFormErrors(prev => prev[name] ? { ...prev, [name]: '' } : prev);
   }, []);
 
+  const sendEmail = useCallback(async (data: FormData, attempt: number): Promise<void> => {
+    try {
+      const emailjsModule = await import('@emailjs/browser');
+      await emailjsModule.default.send(EMAILJS_CONFIG.serviceId, EMAILJS_CONFIG.templateId, {
+        from_name: `${data.firstName} ${data.lastName}`,
+        from_email: data.email,
+        subject: 'New Project Inquiry',
+        message: data.message,
+        phone: data.phone || 'Not provided',
+        timestamp: new Date().toLocaleString(),
+        to_name: 'Akhil',
+      }, EMAILJS_CONFIG.publicKey);
+
+      addToast({ title: 'Message Sent!', description: "Thank you! I'll get back to you within 24 hours.", type: 'success' });
+      setFormData({ firstName: '', lastName: '', email: '', phone: '', message: '' });
+      retryCountRef.current = 0;
+      formRef.current?.reset();
+    } catch {
+      if (attempt < 2) {
+        addToast({ title: 'Send Failed - Retrying', description: `Attempt ${attempt + 1} failed. Retrying...`, type: 'info' });
+        await new Promise(resolve => setTimeout(resolve, 3000));
+        return sendEmail(data, attempt + 1);
+      } else {
+        addToast({ title: 'Failed to Send', description: 'Please try again later or contact me directly via email.', type: 'error' });
+        retryCountRef.current = 0;
+      }
+    }
+  }, [addToast]);
+
   const handleSubmit = useCallback(async (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
     if (!validateForm()) {
@@ -98,35 +127,16 @@ export const Contact = memo(function Contact() {
       addToast({ title: 'Service Unavailable', description: 'Email service not ready. Please try again.', type: 'error' });
       return;
     }
+    if (isSubmitting) return;
     setIsSubmitting(true);
+    // Snapshot form data to avoid stale references during retries
+    const snapshot = { ...formData };
     try {
-      const emailjsModule = await import('@emailjs/browser');
-      await emailjsModule.default.send(EMAILJS_CONFIG.serviceId, EMAILJS_CONFIG.templateId, {
-        from_name: `${formData.firstName} ${formData.lastName}`,
-        from_email: formData.email,
-        subject: 'New Project Inquiry',
-        message: formData.message,
-        phone: formData.phone || 'Not provided',
-        timestamp: new Date().toLocaleString(),
-        to_name: 'Akhil',
-      }, EMAILJS_CONFIG.publicKey);
-      addToast({ title: 'Message Sent!', description: "Thank you! I'll get back to you within 24 hours.", type: 'success' });
-      setFormData({ firstName: '', lastName: '', email: '', phone: '', message: '' });
-      setRetryCount(0);
-      formRef.current?.reset();
-    } catch {
-      if (retryCount < 2) {
-        addToast({ title: 'Send Failed - Retrying', description: `Attempt ${retryCount + 1} failed. Retrying...`, type: 'info' });
-        setRetryCount(prev => prev + 1);
-        setTimeout(() => handleSubmit(e), 3000);
-      } else {
-        addToast({ title: 'Failed to Send', description: 'Please try again later or contact me directly via email.', type: 'error' });
-        setRetryCount(0);
-      }
+      await sendEmail(snapshot, 0);
     } finally {
       setIsSubmitting(false);
     }
-  }, [validateForm, emailjsReady, formData, retryCount, addToast]);
+  }, [validateForm, emailjsReady, isSubmitting, formData, sendEmail, addToast]);
 
   const inputClass = (field: string) =>
     `w-full bg-neo-white border-2 ${formErrors[field] ? 'border-neo-red' : 'border-black/20'} rounded-lg p-2.5 sm:p-3.5 font-mono text-xs sm:text-sm font-semibold text-black focus:outline-none focus:border-neo-green focus:-translate-y-0.5 focus:shadow-[3px_3px_0px_#33FF57] transition-all`;

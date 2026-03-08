@@ -17,13 +17,20 @@ body {
   font-family: 'Space Grotesk', sans-serif;
 }
 
-/* Hide Scrollbar */
-* {
+/* Hide cursor only on devices with fine pointer (desktop with mouse) */
+@media (hover: hover) and (pointer: fine) {
+  body {
+    cursor: none;
+  }
+}
+
+/* Hide Scrollbar on main page only, not modals */
+body {
   scrollbar-width: none;
   -ms-overflow-style: none;
 }
 
-*::-webkit-scrollbar {
+body::-webkit-scrollbar {
   display: none;
 }
 
