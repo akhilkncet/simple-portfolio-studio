@@ -73,9 +73,9 @@ export const Achievements = memo(function Achievements() {
   }, [activeTab, internships, hackathons, certifications]);
 
   const tabs = useMemo(() => [
-    { id: 'internship' as Category, label: 'INTERNSHIPS', icon: '🎓', color: 'neo-green', count: internships.length },
-    { id: 'hackathon' as Category, label: 'HACKATHONS', icon: '🏆', color: 'neo-orange', count: hackathons.length },
-    { id: 'certification' as Category, label: 'CERTIFICATIONS', icon: '📜', color: 'neo-blue', count: certifications.length },
+    { id: 'internship' as Category, label: 'INTERNSHIPS', icon: '//', color: 'neo-green', count: internships.length },
+    { id: 'hackathon' as Category, label: 'HACKATHONS', icon: '//', color: 'neo-orange', count: hackathons.length },
+    { id: 'certification' as Category, label: 'CERTIFICATIONS', icon: '//', color: 'neo-blue', count: certifications.length },
   ], [internships.length, hackathons.length, certifications.length]);
 
   const handleCardClick = useCallback((achievement: typeof achievements[0]) => {
