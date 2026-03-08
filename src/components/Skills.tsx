@@ -15,7 +15,7 @@ const skillCategories = [
   },
   {
     title: 'Frontend (Working Knowledge)',
-    skills: ['React', 'Next.js', 'JavaScript', 'HTML', 'CSS'],
+    skills: ['React', 'JavaScript', 'HTML', 'CSS'],
   },
   {
     title: 'Additional Exposure',
