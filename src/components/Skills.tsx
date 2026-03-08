@@ -54,7 +54,7 @@ export const Skills = memo(function Skills() {
               <h3 className="text-lg sm:text-xl md:text-2xl font-bold mb-3 sm:mb-4 md:mb-5 text-white border-l-4 border-neo-green pl-3 sm:pl-4">
                 {category.title}
               </h3>
-              <div className="flex flex-wrap gap-2 sm:gap-2.5 md:gap-3" role="list">
+              <div className="flex flex-wrap gap-1.5 sm:gap-2.5 md:gap-3" role="list">
                 {category.skills.map((skill, skillIdx) => (
                   <span
                     key={skillIdx}
