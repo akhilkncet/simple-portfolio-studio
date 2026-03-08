@@ -6,6 +6,9 @@ module.exports = {
   ],
   theme: {
     extend: {
+      screens: {
+        '3xl': '1920px',
+      },
       colors: {
         'neo-yellow': '#FBFF48',
         'neo-pink': '#FF70A6',
@@ -27,7 +30,11 @@ module.exports = {
         'hard-sm': '2px 2px 0px 0px #000',
         'hard-lg': '8px 8px 0px 0px #000',
         'hard-xl': '12px 12px 0px 0px #000',
-      }
+      },
+      maxWidth: {
+        '8xl': '88rem',
+        '9xl': '96rem',
+      },
     },
   },
   plugins: [],

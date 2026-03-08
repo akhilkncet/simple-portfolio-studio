@@ -2,55 +2,55 @@ import { memo } from 'react';
 
 export const Footer = memo(function Footer() {
   return (
-    <footer className="relative w-full p-4 sm:p-8 flex items-center justify-center overflow-hidden" role="contentinfo">
-      <div className="relative w-full h-full bg-black rounded-3xl p-6 sm:p-8 md:p-12 flex flex-col justify-between overflow-hidden">
+    <footer className="relative w-full p-4 sm:p-8 2xl:p-10 flex items-center justify-center overflow-hidden" role="contentinfo">
+      <div className="relative w-full h-full bg-black rounded-3xl p-6 sm:p-8 md:p-12 2xl:p-16 3xl:p-20 flex flex-col justify-between overflow-hidden">
         {/* Corner Symbols */}
         <div className="absolute top-4 left-4 right-4 sm:top-8 sm:left-8 sm:right-8 flex justify-between pointer-events-none opacity-50" aria-hidden="true">
-          <span className="text-white text-xl sm:text-2xl">✦</span>
-          <span className="text-white text-xl sm:text-2xl">✦</span>
+          <span className="text-white text-xl sm:text-2xl 2xl:text-3xl">✦</span>
+          <span className="text-white text-xl sm:text-2xl 2xl:text-3xl">✦</span>
         </div>
         <div className="absolute bottom-4 left-4 right-4 sm:bottom-8 sm:left-8 sm:right-8 flex justify-between pointer-events-none opacity-50" aria-hidden="true">
-          <span className="text-white text-xl sm:text-2xl">✦</span>
-          <span className="text-white text-xl sm:text-2xl">✦</span>
+          <span className="text-white text-xl sm:text-2xl 2xl:text-3xl">✦</span>
+          <span className="text-white text-xl sm:text-2xl 2xl:text-3xl">✦</span>
         </div>
 
         {/* Header */}
-        <div className="text-center mb-6 sm:mb-10">
-          <h2 className="text-3xl sm:text-5xl md:text-6xl font-black uppercase text-white leading-none">
+        <div className="text-center mb-6 sm:mb-10 2xl:mb-14">
+          <h2 className="text-3xl sm:text-5xl md:text-6xl 2xl:text-7xl 3xl:text-8xl font-black uppercase text-white leading-none">
             Akhil R
           </h2>
         </div>
 
         {/* Footer Columns */}
-        <nav className="grid grid-cols-2 md:grid-cols-4 gap-6 sm:gap-8 md:gap-12 mb-8 sm:mb-10 md:mb-14" aria-label="Footer navigation">
+        <nav className="grid grid-cols-2 md:grid-cols-4 gap-6 sm:gap-8 md:gap-12 2xl:gap-16 mb-8 sm:mb-10 md:mb-14 2xl:mb-18" aria-label="Footer navigation">
           <div className="flex flex-col items-center gap-2 sm:gap-4">
-            <p className="font-mono text-white font-bold uppercase text-xs sm:text-sm">Explore</p>
-            <a href="#home" className="font-mono text-white/35 hover:text-white text-xs sm:text-sm transition-colors">Home</a>
-            <a href="#contact" className="font-mono text-white/35 hover:text-white text-xs sm:text-sm transition-colors">Contact</a>
+            <p className="font-mono text-white font-bold uppercase text-xs sm:text-sm 2xl:text-base">Explore</p>
+            <a href="#home" className="font-mono text-white/35 hover:text-white text-xs sm:text-sm 2xl:text-base transition-colors">Home</a>
+            <a href="#contact" className="font-mono text-white/35 hover:text-white text-xs sm:text-sm 2xl:text-base transition-colors">Contact</a>
           </div>
 
           <div className="flex flex-col items-center gap-2 sm:gap-4">
-            <p className="font-mono text-white font-bold uppercase text-xs sm:text-sm">Creative Hub</p>
-            <a href="https://github.com/Akhil-0911" target="_blank" rel="noopener noreferrer" className="font-mono text-white/35 hover:text-white text-xs sm:text-sm transition-colors text-center">View Portfolio</a>
+            <p className="font-mono text-white font-bold uppercase text-xs sm:text-sm 2xl:text-base">Creative Hub</p>
+            <a href="https://github.com/Akhil-0911" target="_blank" rel="noopener noreferrer" className="font-mono text-white/35 hover:text-white text-xs sm:text-sm 2xl:text-base transition-colors text-center">View Portfolio</a>
           </div>
 
           <div className="flex flex-col items-center gap-2 sm:gap-4">
-            <p className="font-mono text-white font-bold uppercase text-xs sm:text-sm">Connect</p>
-            <a href="https://www.linkedin.com/in/akhil0911" target="_blank" rel="noopener noreferrer" className="font-mono text-white/35 hover:text-white text-xs sm:text-sm transition-colors">LinkedIn</a>
-            <a href="https://github.com/Akhil-0911" target="_blank" rel="noopener noreferrer" className="font-mono text-white/35 hover:text-white text-xs sm:text-sm transition-colors">Github</a>
+            <p className="font-mono text-white font-bold uppercase text-xs sm:text-sm 2xl:text-base">Connect</p>
+            <a href="https://www.linkedin.com/in/akhil0911" target="_blank" rel="noopener noreferrer" className="font-mono text-white/35 hover:text-white text-xs sm:text-sm 2xl:text-base transition-colors">LinkedIn</a>
+            <a href="https://github.com/Akhil-0911" target="_blank" rel="noopener noreferrer" className="font-mono text-white/35 hover:text-white text-xs sm:text-sm 2xl:text-base transition-colors">Github</a>
           </div>
 
           <div className="flex flex-col items-center gap-2 sm:gap-4">
-            <p className="font-mono text-white font-bold uppercase text-xs sm:text-sm">Featured Work</p>
-            <a href="https://github.com/Akhil-0911/Ecolca_pro" target="_blank" rel="noopener noreferrer" className="font-mono text-white/35 hover:text-white text-xs sm:text-sm transition-colors text-center">EcoLCA Pro</a>
-            <a href="https://github.com/Akhil-0911/SecureVault" target="_blank" rel="noopener noreferrer" className="font-mono text-white/35 hover:text-white text-xs sm:text-sm transition-colors text-center">SecureVault</a>
-            <a href="https://github.com/Akhil-0911/PADCOM_V3" target="_blank" rel="noopener noreferrer" className="font-mono text-white/35 hover:text-white text-xs sm:text-sm transition-colors text-center">PADCOM</a>
+            <p className="font-mono text-white font-bold uppercase text-xs sm:text-sm 2xl:text-base">Featured Work</p>
+            <a href="https://github.com/Akhil-0911/Ecolca_pro" target="_blank" rel="noopener noreferrer" className="font-mono text-white/35 hover:text-white text-xs sm:text-sm 2xl:text-base transition-colors text-center">EcoLCA Pro</a>
+            <a href="https://github.com/Akhil-0911/SecureVault" target="_blank" rel="noopener noreferrer" className="font-mono text-white/35 hover:text-white text-xs sm:text-sm 2xl:text-base transition-colors text-center">SecureVault</a>
+            <a href="https://github.com/Akhil-0911/PADCOM_V3" target="_blank" rel="noopener noreferrer" className="font-mono text-white/35 hover:text-white text-xs sm:text-sm 2xl:text-base transition-colors text-center">PADCOM</a>
           </div>
         </nav>
 
         {/* Copyright */}
         <div className="text-center space-y-2">
-          <p className="font-mono text-white/70 text-xs sm:text-sm">
+          <p className="font-mono text-white/70 text-xs sm:text-sm 2xl:text-base">
             © - Akhil R // {new Date().getFullYear()}
           </p>
         </div>
