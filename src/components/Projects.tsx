@@ -63,7 +63,7 @@ export const Projects = memo(function Projects() {
   return (
     <section id="projects" className="py-12 sm:py-16 md:py-24 bg-neo-yellow border-t-4 border-black px-3 sm:px-4 overflow-hidden" aria-label="Selected Projects">
       <div className="max-w-7xl mx-auto">
-        <h2 className="text-2xl sm:text-5xl md:text-6xl lg:text-7xl font-black mb-4 sm:mb-12 uppercase tracking-tighter text-black drop-shadow-[2px_2px_0_rgba(255,255,255,0.8)] sm:text-white sm:drop-shadow-[4px_4px_0_rgba(0,0,0,1)] sm:text-stroke-black">
+        <h2 className="text-2xl sm:text-5xl md:text-6xl lg:text-7xl font-black mb-4 sm:mb-12 uppercase tracking-tighter text-black sm:text-white drop-shadow-[2px_2px_0_rgba(255,255,255,0.8)] sm:drop-shadow-[4px_4px_0_rgba(0,0,0,1)] sm:text-stroke-black">
           Selected Works
         </h2>
 
