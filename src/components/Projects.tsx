@@ -78,7 +78,7 @@ const DesktopProjectCard = memo(({ project }: { project: typeof projects[0] }) =
           <i className="ri-arrow-right-up-line text-lg" aria-hidden="true"></i>
         </a>
       </div>
-      <p className="font-mono text-sm leading-relaxed">{project.description}</p>
+      <p className="font-mono text-sm leading-relaxed flex-1">{project.description}</p>
       <div className="flex gap-2 font-mono text-xs font-bold flex-wrap">
         {project.technologies.map((tech, idx) => (
           <span key={idx} className="bg-neo-black text-white px-2">
