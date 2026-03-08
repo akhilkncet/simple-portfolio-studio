@@ -63,9 +63,9 @@ const HeroMarquee = memo(function HeroMarquee() {
   return (
     <div className="absolute bottom-0 left-0 w-full bg-neo-red border-t-4 border-black py-2.5 sm:py-3.5 overflow-hidden" aria-hidden="true">
       <div className="flex whitespace-nowrap animate-marquee">
-        <span className="font-mono font-bold text-white text-sm sm:text-base md:text-lg mx-2 sm:mx-4">{skills}</span>
-        <span className="font-mono font-bold text-white text-sm sm:text-base md:text-lg mx-2 sm:mx-4">{skills}</span>
-        <span className="font-mono font-bold text-white text-sm sm:text-base md:text-lg mx-2 sm:mx-4">{skills}</span>
+        <span className="font-mono font-bold text-white text-sm sm:text-base md:text-lg">{skills}</span>
+        <span className="font-mono font-bold text-white text-sm sm:text-base md:text-lg">{skills}</span>
+        <span className="font-mono font-bold text-white text-sm sm:text-base md:text-lg">{skills}</span>
       </div>
     </div>
   );
