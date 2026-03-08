@@ -175,7 +175,7 @@ export const Achievements = memo(function Achievements() {
 
       {/* Certificate Detail Modal */}
       {selectedCertificate && (
-        <CertificateModal certificate={selectedCertificate} onClose={closeCertModal} />
+        <CertificateModal certificate={selectedCertificate} onClose={closeCertModal} onPrev={handlePrev} onNext={handleNext} />
       )}
 
       {/* All Certificates Modal */}
