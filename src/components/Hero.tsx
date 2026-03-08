@@ -58,7 +58,7 @@ export const Hero = memo(function Hero() {
 });
 
 const HeroMarquee = memo(function HeroMarquee() {
-  const skills = 'PYTHON • DJANGO • FLASK • PYTORCH • REACT • MACHINE LEARNING • DOCKER • GIT • LINUX • REST API • PENETRATION TESTING • ';
+  const skills = 'PYTHON • DJANGO • FLASK • PYTORCH • REACT • MACHINE LEARNING • DOCKER • GIT • LINUX • REST API • ';
 
   return (
     <div className="absolute bottom-0 left-0 w-full bg-neo-red border-t-4 border-black py-2.5 sm:py-3.5 overflow-hidden" aria-hidden="true">
