@@ -16,9 +16,11 @@ export const Footer = memo(function Footer() {
 
         {/* Header */}
         <div className="text-center mb-6 sm:mb-10">
+          <p className="font-mono text-white/50 text-xs sm:text-sm uppercase tracking-widest mb-2">AI & Backend Developer</p>
           <h2 className="text-3xl sm:text-5xl md:text-6xl font-black uppercase text-white leading-none">
             Akhil R
           </h2>
+          <p className="font-mono text-white/40 text-xs sm:text-sm mt-3">Building intelligent systems with Python, Django & Machine Learning</p>
         </div>
 
         {/* Footer Columns */}
@@ -26,18 +28,17 @@ export const Footer = memo(function Footer() {
           <div className="flex flex-col items-center gap-2 sm:gap-4">
             <p className="font-mono text-white font-bold uppercase text-xs sm:text-sm">Explore</p>
             <a href="#home" className="font-mono text-white/35 hover:text-white text-xs sm:text-sm transition-colors">Home</a>
+            <a href="#about" className="font-mono text-white/35 hover:text-white text-xs sm:text-sm transition-colors">About</a>
+            <a href="#skills" className="font-mono text-white/35 hover:text-white text-xs sm:text-sm transition-colors">Skills</a>
+            <a href="#projects" className="font-mono text-white/35 hover:text-white text-xs sm:text-sm transition-colors">Projects</a>
             <a href="#contact" className="font-mono text-white/35 hover:text-white text-xs sm:text-sm transition-colors">Contact</a>
-          </div>
-
-          <div className="flex flex-col items-center gap-2 sm:gap-4">
-            <p className="font-mono text-white font-bold uppercase text-xs sm:text-sm">Creative Hub</p>
-            <a href="https://github.com/Akhil-0911" target="_blank" rel="noopener noreferrer" className="font-mono text-white/35 hover:text-white text-xs sm:text-sm transition-colors text-center">View Portfolio</a>
           </div>
 
           <div className="flex flex-col items-center gap-2 sm:gap-4">
             <p className="font-mono text-white font-bold uppercase text-xs sm:text-sm">Connect</p>
             <a href="https://www.linkedin.com/in/akhil0911" target="_blank" rel="noopener noreferrer" className="font-mono text-white/35 hover:text-white text-xs sm:text-sm transition-colors">LinkedIn</a>
             <a href="https://github.com/Akhil-0911" target="_blank" rel="noopener noreferrer" className="font-mono text-white/35 hover:text-white text-xs sm:text-sm transition-colors">Github</a>
+            <a href="mailto:akhilr09112004@gmail.com" className="font-mono text-white/35 hover:text-white text-xs sm:text-sm transition-colors">Email</a>
           </div>
 
           <div className="flex flex-col items-center gap-2 sm:gap-4">
@@ -46,18 +47,31 @@ export const Footer = memo(function Footer() {
             <a href="https://github.com/akhilkncet/Emotion-bot" target="_blank" rel="noopener noreferrer" className="font-mono text-white/35 hover:text-white text-xs sm:text-sm transition-colors text-center">Emotion Chatbot</a>
             <a href="https://github.com/Akhil-0911/Ecolca_pro" target="_blank" rel="noopener noreferrer" className="font-mono text-white/35 hover:text-white text-xs sm:text-sm transition-colors text-center">EcoLCA Pro</a>
           </div>
+
+          <div className="flex flex-col items-center gap-2 sm:gap-4">
+            <p className="font-mono text-white font-bold uppercase text-xs sm:text-sm">Resources</p>
+            <a href="/Resume/resume (1).pdf" target="_blank" rel="noopener noreferrer" className="font-mono text-white/35 hover:text-white text-xs sm:text-sm transition-colors text-center">Resume</a>
+            <a href="#achievements" className="font-mono text-white/35 hover:text-white text-xs sm:text-sm transition-colors text-center">Certifications</a>
+            <a href="#experience" className="font-mono text-white/35 hover:text-white text-xs sm:text-sm transition-colors text-center">Experience</a>
+          </div>
         </nav>
+
+        {/* Divider */}
+        <div className="w-full h-px bg-white/10 mb-6" />
 
         {/* Copyright */}
         <div className="text-center space-y-2">
           <p className="font-mono text-white/70 text-xs sm:text-sm">
-            © - Akhil R // {new Date().getFullYear()}
+            © {new Date().getFullYear()} Akhil R. All rights reserved.
+          </p>
+          <p className="font-mono text-white/30 text-[10px] sm:text-xs">
+            Designed & Built with ❤️
           </p>
         </div>
 
         {/* Background Text */}
         <div className="absolute bottom-0 left-0 w-full text-center text-[25vw] sm:text-[20vw] font-black text-white/5 leading-none select-none pointer-events-none" aria-hidden="true">
-          BRUTAL
+          AKHIL
         </div>
       </div>
     </footer>
