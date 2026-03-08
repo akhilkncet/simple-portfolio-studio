@@ -6,7 +6,7 @@ export const Hero = memo(function Hero() {
   const closeModal = useCallback(() => setShowResumeModal(false), []);
 
   return (
-    <section id="home" className="min-h-[600px] h-screen max-h-[1200px] flex flex-col justify-center items-center px-4 pt-20 pb-16 sm:pb-20 relative overflow-hidden border-b-4 border-black" aria-label="Introduction">
+    <section id="home" className="min-h-[500px] sm:min-h-[600px] h-screen max-h-[1200px] flex flex-col justify-center items-center px-3 sm:px-4 pt-16 sm:pt-20 pb-14 sm:pb-20 relative overflow-hidden border-b-4 border-black" aria-label="Introduction">
       <div className="absolute top-1/3 left-[10%] w-16 h-16 bg-neo-blue border-4 border-black shadow-hard animate-bounce hidden lg:block rotate-12" aria-hidden="true" />
       <div className="absolute bottom-1/3 right-[10%] w-24 h-24 bg-neo-pink rounded-full border-4 border-black shadow-hard hidden lg:block animate-pulse" aria-hidden="true" />
       <div className="absolute top-20 right-20 text-9xl opacity-5 font-black select-none pointer-events-none hidden md:block" aria-hidden="true">
