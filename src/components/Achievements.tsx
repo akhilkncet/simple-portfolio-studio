@@ -206,7 +206,7 @@ function bgColor(color: string): string {
   return map[color] || 'bg-neo-green';
 }
 
-const CertificateModal = memo(({ certificate, onClose }: { certificate: typeof achievements[0]; onClose: () => void }) => {
+const CertificateModal = memo(({ certificate, onClose, onPrev, onNext }: { certificate: typeof achievements[0]; onClose: () => void; onPrev: () => void; onNext: () => void }) => {
   const hasDescription = (certificate.category === 'internship' || certificate.category === 'hackathon') && certificate.description;
 
   return (
@@ -217,8 +217,26 @@ const CertificateModal = memo(({ certificate, onClose }: { certificate: typeof a
       aria-modal="true"
       aria-label={certificate.title}
     >
+      {/* Prev Button */}
+      <button
+        onClick={(e) => { e.stopPropagation(); onPrev(); }}
+        className="absolute left-1 sm:left-3 top-1/2 -translate-y-1/2 z-[110] w-10 h-10 sm:w-12 sm:h-12 bg-neo-yellow text-black border-3 border-black flex items-center justify-center hover:bg-neo-green transition-all shadow-hard font-black text-xl sm:text-2xl"
+        aria-label="Previous certificate"
+      >
+        &lt;
+      </button>
+
+      {/* Next Button */}
+      <button
+        onClick={(e) => { e.stopPropagation(); onNext(); }}
+        className="absolute right-1 sm:right-3 top-1/2 -translate-y-1/2 z-[110] w-10 h-10 sm:w-12 sm:h-12 bg-neo-yellow text-black border-3 border-black flex items-center justify-center hover:bg-neo-green transition-all shadow-hard font-black text-xl sm:text-2xl"
+        aria-label="Next certificate"
+      >
+        &gt;
+      </button>
+
       <div
-        className="relative max-w-6xl w-full max-h-[95vh] bg-[#1a1a1a] border-4 border-cyan-400 shadow-hard p-3 sm:p-5 overflow-y-auto neo-scrollbar"
+        className="relative max-w-6xl w-full max-h-[95vh] bg-[#1a1a1a] border-4 border-cyan-400 shadow-hard p-3 sm:p-5 overflow-y-auto mx-12 sm:mx-16"
         onClick={e => e.stopPropagation()}
       >
         <button
@@ -246,7 +264,7 @@ const CertificateModal = memo(({ certificate, onClose }: { certificate: typeof a
               <div className="bg-[#1a1a1a] border-2 border-gray-700 p-2 sm:p-3 flex items-center">
                 <OptimizedImage src={certificate.image} alt={certificate.title} width={800} height={600} className="w-full max-h-[40vh] lg:max-h-[60vh] object-contain" />
               </div>
-              <div className="bg-[#0a0a0a] border-2 border-gray-700 p-3 sm:p-4 max-h-[40vh] lg:max-h-[60vh] overflow-y-auto neo-scrollbar">
+              <div className="bg-[#0a0a0a] border-2 border-gray-700 p-3 sm:p-4 max-h-[40vh] lg:max-h-[60vh] overflow-y-auto">
                 <h4 className="text-base sm:text-lg font-black uppercase text-neo-green mb-2 sm:mb-3">/// DETAILS</h4>
                 <ul className="font-mono text-xs sm:text-sm text-gray-300 leading-relaxed space-y-1.5 sm:space-y-2 list-none">
                   {(certificate.description ?? '').split(/(?<=\.)\s+/).filter(item => item.trim()).map((point, idx) => (
