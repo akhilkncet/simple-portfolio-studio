@@ -1,0 +1,15 @@
+{
+  "projects": {
+    "default": "akhilr-portfolio"
+  },
+  "targets": {
+    "akhilr-portfolio": {
+      "hosting": {
+        "akhilr": [
+          "akhilr"
+        ]
+      }
+    }
+  },
+  "etags": {}
+}

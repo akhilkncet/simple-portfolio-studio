@@ -1,0 +1,27 @@
+{
+  "name": "Akhil R - Cybersecurity & Backend Developer Portfolio",
+  "short_name": "Akhil R",
+  "description": "Professional portfolio showcasing cybersecurity projects, backend development, and machine learning applications",
+  "start_url": "/",
+  "display": "standalone",
+  "background_color": "#FFFDF5",
+  "theme_color": "#FFFDF5",
+  "orientation": "portrait-primary",
+  "icons": [
+    {
+      "src": "/title_icon.png",
+      "sizes": "192x192",
+      "type": "image/png",
+      "purpose": "any maskable"
+    },
+    {
+      "src": "/title_icon.png",
+      "sizes": "512x512",
+      "type": "image/png",
+      "purpose": "any maskable"
+    }
+  ],
+  "categories": ["business", "portfolio", "technology"],
+  "lang": "en-US",
+  "dir": "ltr"
+}

@@ -1,73 +1,166 @@
-# Welcome to your Lovable project
+# AKHIL R - Portfolio (Next.js 15)
 
-## Project info
+**Modern Neo-Brutalist Portfolio with SSG for Perfect SEO + Performance Optimizations**
 
-**URL**: https://lovable.dev/projects/REPLACE_WITH_PROJECT_ID
+> **✨ Migration Complete!** This portfolio has been migrated from Vite to Next.js 15 with Static Site Generation for optimal SEO.
+> 🚀 **Performance Optimized!** Code-splitting, lazy loading, PWA support, and Web Vitals monitoring.
+> See [MIGRATION_SUMMARY.md](./MIGRATION_SUMMARY.md) and [PERFORMANCE_OPTIMIZATIONS.md](./PERFORMANCE_OPTIMIZATIONS.md) for full details.
 
-## How can I edit this code?
+## 🚀 Quick Start
 
-There are several ways of editing your application.
+```bash
+# Install dependencies
+npm install
 
-**Use Lovable**
-
-Simply visit the [Lovable Project](https://lovable.dev/projects/REPLACE_WITH_PROJECT_ID) and start prompting.
-
-Changes made via Lovable will be committed automatically to this repo.
-
-**Use your preferred IDE**
-
-If you want to work locally using your own IDE, you can clone this repo and push changes. Pushed changes will also be reflected in Lovable.
-
-The only requirement is having Node.js & npm installed - [install with nvm](https://github.com/nvm-sh/nvm#installing-and-updating)
-
-Follow these steps:
-
-```sh
-# Step 1: Clone the repository using the project's Git URL.
-git clone <YOUR_GIT_URL>
-
-# Step 2: Navigate to the project directory.
-cd <YOUR_PROJECT_NAME>
-
-# Step 3: Install the necessary dependencies.
-npm i
-
-# Step 4: Start the development server with auto-reloading and an instant preview.
+# Development
 npm run dev
+
+# Production Build (generates static files)
+npm run build
+
+# Preview Production
+npm run start
 ```
 
-**Edit a file directly in GitHub**
+Visit: http://localhost:3000
 
-- Navigate to the desired file(s).
-- Click the "Edit" button (pencil icon) at the top right of the file view.
-- Make your changes and commit the changes.
+## 📋 What's New (Latest Updates)
 
-**Use GitHub Codespaces**
+### ✨ Performance Optimizations (March 2026)
+✅ **Code Splitting** - GSAP and EmailJS lazy-loaded (-70KB initial bundle)
+✅ **Image Optimization** - Custom OptimizedImage component with lazy loading
+✅ **PWA Support** - Service worker with offline caching
+✅ **Web Vitals Monitoring** - Vercel Analytics + Speed Insights
+✅ **LCP Optimization** - Preloaded hero image, faster splash screen
+✅ **GitHub Stats** - Client-side fetch with loading states
 
-- Navigate to the main page of your repository.
-- Click on the "Code" button (green button) near the top right.
-- Select the "Codespaces" tab.
-- Click on "New codespace" to launch a new Codespace environment.
-- Edit files directly within the Codespace and commit and push your changes once you're done.
+### 🏗️ Architecture (Next.js Migration)
+✅ **Next.js 15** with App Router
+✅ **Static Site Generation (SSG)** - Perfect for SEO
+✅ **Multiple Routes** - Dedicated pages for each section
+✅ **Server-Side API** - GitHub stats with caching
+✅ **Full SEO Optimization** - Sitemap, robots.txt, meta tags
+✅ **100% Crawlable** - All content visible to search engines
 
-## What technologies are used for this project?
+## 🌐 Routes
 
-This project is built with:
+- `/` - Home/Hero
+- `/about` - About Me
+- `/skills` - Tech Stack
+- `/experience` - Work History
+- `/projects` - Portfolio Projects
+- `/achievements` - Certificates & Awards
+- `/contact` - Contact Form
 
-- Vite
-- TypeScript
-- React
-- shadcn-ui
-- Tailwind CSS
+## 👨‍💻 About
 
-## How can I deploy this project?
+This portfolio showcases the work of **Akhil R**, a Computer Science student specializing in:
+- 🔐 Cybersecurity & Penetration Testing
+- 🚀 Backend Development (Python, Django, Flask)
+- 🤖 Machine Learning & AI
+- 💻 Full Stack Development
 
-Simply open [Lovable](https://lovable.dev/projects/REPLACE_WITH_PROJECT_ID) and click on Share -> Publish.
+## 🎯 SEO Features
 
-## Can I connect a custom domain to my Lovable project?
+- ✅ Static HTML generation (not client-side rendering)
+- ✅ Proper meta tags on every page
+- ✅ XML sitemap at `/sitemap.xml`
+- ✅ robots.txt at `/robots.txt`
+- ✅ Open Graph tags for social media
+- ✅ Server-side GitHub API with caching
+- ✅ Google & social media crawlable
 
-Yes, you can!
+## 🌐 Deploy
 
-To connect a domain, navigate to Project > Settings > Domains and click Connect Domain.
+### Vercel (Recommended)
+```bash
+npx vercel
+```
 
-Read more here: [Setting up a custom domain](https://docs.lovable.dev/features/custom-domain#custom-domain)
+### Other Platforms (Netlify, GitHub Pages, etc.)
+- Build command: `npm run build`
+- Output directory: `out/`
+
+## 📁 Project Structure
+
+```
+src/app/
+├── layout.tsx              # Root layout with metadata
+├── ClientLayout.tsx        # Client-side hooks wrapper
+├── page.tsx               # Home page (/)
+├── about/page.tsx         # About route
+├── skills/page.tsx        # Skills route
+├── experience/page.tsx    # Experience route
+├── projects/page.tsx      # Projects route
+├── achievements/page.tsx  # Achievements route
+├── contact/page.tsx       # Contact route
+├── api/
+│   └── github-stats/      # Server-side GitHub API
+│       └── route.ts
+├── components/            # Shared components
+│   ├── Navbar.tsx
+│   ├── Footer.tsx
+│   ├── Marquee.tsx
+│   └── SplashScreen.tsx
+├── hooks/                 # Client-side hooks
+│   ├── useCursor.ts
+│   ├── useScrollReveal.ts
+│   └── useScrollProgress.ts
+├── data/                  # Static data
+│   └── index.ts
+├── types/                 # TypeScript interfaces
+│   └── index.ts
+├── sitemap.ts            # XML sitemap generator
+├── robots.ts             # robots.txt generator
+└── globals.css           # Global styles
+```
+
+## 🎨 Tech Stack
+
+- **Next.js 15** - React framework with App Router
+- **React 18** - UI library
+- **TypeScript** - Type safety
+- **Tailwind CSS** - Utility-first CSS
+- **GSAP** - Animation library
+- **Remix Icons** - Icon library
+
+## 🌟 Customization
+
+### Update Personal Info
+
+Edit the data in [src/app/data/index.ts](src/app/data/index.ts):
+- Skills
+- Experience
+- Projects
+- Achievements
+- Testimonials
+
+### Change Colors
+
+Modify Tailwind config in [tailwind.config.js](tailwind.config.js):
+```js
+colors: {
+  'neo-yellow': '#FBFF48',
+  'neo-pink': '#FF70A6',
+  // ... add your colors
+}
+```
+
+### GitHub Username
+
+Update the `.env.local` file:
+```
+GITHUB_USERNAME=your-username
+```
+
+## 📝 License
+
+MIT License - feel free to use this project for your own portfolio!
+
+## 🤝 Contributing
+
+Contributions, issues, and feature requests are welcome!
+
+---
+
+Portfolio of Akhil R - Cybersecurity Enthusiast & Backend Developer
