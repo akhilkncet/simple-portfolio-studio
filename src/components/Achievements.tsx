@@ -90,6 +90,7 @@ export const Achievements = memo(function Achievements() {
     <section id="achievements" className="py-12 sm:py-16 md:py-20 bg-[#0a0a0a] border-b-4 border-[#333] relative overflow-hidden" aria-label="Achievements & Certifications">
       <div
         className="absolute inset-0 opacity-20"
+        aria-hidden="true"
         style={{
           backgroundImage: 'linear-gradient(#333 1px, transparent 1px), linear-gradient(90deg, #333 1px, transparent 1px)',
           backgroundSize: '40px 40px',
