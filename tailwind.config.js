@@ -1,9 +1,8 @@
 /** @type {import('tailwindcss').Config} */
 module.exports = {
   content: [
-    "./src/app/**/*.{js,ts,jsx,tsx,mdx}",
-    "./src/components/**/*.{js,ts,jsx,tsx,mdx}",
-    "./src/hooks/**/*.{js,ts,jsx,tsx,mdx}",
+    "./index.html",
+    "./src/**/*.{js,ts,jsx,tsx}",
   ],
   theme: {
     extend: {
@@ -19,9 +18,9 @@ module.exports = {
         'neo-black': '#121212',
       },
       fontFamily: {
-        'sans': ['var(--font-space-grotesk)', 'sans-serif'],
-        'display': ['var(--font-space-grotesk)', 'sans-serif'],
-        'mono': ['var(--font-jetbrains-mono)', 'monospace'],
+        'sans': ['Space Grotesk', 'sans-serif'],
+        'display': ['Space Grotesk', 'sans-serif'],
+        'mono': ['JetBrains Mono', 'monospace'],
       },
       boxShadow: {
         'hard': '4px 4px 0px 0px #000',

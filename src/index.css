@@ -8,23 +8,24 @@ html {
 }
 
 body {
-  cursor: none; /* We use a custom cursor */
+  cursor: none;
   background-color: #FFFDF5;
   background-image:
     radial-gradient(#000 1px, transparent 1px),
     linear-gradient(to right, #e5e5e5 1px, transparent 1px),
     linear-gradient(to bottom, #e5e5e5 1px, transparent 1px);
   background-size: 40px 40px, 100px 100px, 100px 100px;
+  font-family: 'Space Grotesk', sans-serif;
 }
 
 /* Hide Scrollbar */
 * {
-  scrollbar-width: none; /* Firefox */
-  -ms-overflow-style: none; /* IE and Edge */
+  scrollbar-width: none;
+  -ms-overflow-style: none;
 }
 
 *::-webkit-scrollbar {
-  display: none; /* Chrome, Safari, Opera */
+  display: none;
 }
 
 /* Custom Cursor */
@@ -57,57 +58,33 @@ body {
 }
 
 @keyframes scroll {
-  0% {
-    transform: translateX(0);
-  }
-  100% {
-    transform: translateX(-50%);
-  }
+  0% { transform: translateX(0); }
+  100% { transform: translateX(-50%); }
 }
 
 @keyframes scroll-reverse {
-  0% {
-    transform: translateX(-50%);
-  }
-  100% {
-    transform: translateX(0);
-  }
+  0% { transform: translateX(-50%); }
+  100% { transform: translateX(0); }
 }
 
 @keyframes scroll-left {
-  0% {
-    transform: translateX(0);
-  }
-  100% {
-    transform: translateX(-33.333%);
-  }
+  0% { transform: translateX(0); }
+  100% { transform: translateX(-33.333%); }
 }
 
 @keyframes scroll-right {
-  0% {
-    transform: translateX(-33.333%);
-  }
-  100% {
-    transform: translateX(0);
-  }
+  0% { transform: translateX(-33.333%); }
+  100% { transform: translateX(0); }
 }
 
 @keyframes scroll-smooth-left {
-  0% {
-    transform: translateX(0);
-  }
-  100% {
-    transform: translateX(-50%);
-  }
+  0% { transform: translateX(0); }
+  100% { transform: translateX(-50%); }
 }
 
 @keyframes scroll-smooth-right {
-  0% {
-    transform: translateX(-50%);
-  }
-  100% {
-    transform: translateX(0);
-  }
+  0% { transform: translateX(-50%); }
+  100% { transform: translateX(0); }
 }
 
 .animate-scroll-left {
@@ -126,16 +103,16 @@ body {
   animation: scroll-smooth-right 60s linear infinite;
 }
 
-/* Scrollable sections with manual scroll enabled */
+/* Scrollable sections */
 .scrollable-section {
   cursor: grab;
-  scrollbar-width: none; /* Firefox - hide scrollbar */
-  -ms-overflow-style: none; /* IE and Edge - hide scrollbar */
+  scrollbar-width: none;
+  -ms-overflow-style: none;
   scroll-behavior: smooth;
 }
 
 .scrollable-section::-webkit-scrollbar {
-  display: none; /* Chrome, Safari, Opera - hide scrollbar */
+  display: none;
   width: 0;
   height: 0;
 }
@@ -163,31 +140,19 @@ body {
   transform: translateY(0);
 }
 
-/* Glitch Effect on Hover */
+/* Glitch Effect */
 .glitch-hover:hover {
   animation: glitch-anim 0.3s cubic-bezier(.25, .46, .45, .94) both infinite;
   color: #FF2A2A;
 }
 
 @keyframes glitch-anim {
-  0% {
-    transform: translate(0)
-  }
-  20% {
-    transform: translate(-2px, 2px)
-  }
-  40% {
-    transform: translate(-2px, -2px)
-  }
-  60% {
-    transform: translate(2px, 2px)
-  }
-  80% {
-    transform: translate(2px, -2px)
-  }
-  100% {
-    transform: translate(0)
-  }
+  0% { transform: translate(0) }
+  20% { transform: translate(-2px, 2px) }
+  40% { transform: translate(-2px, -2px) }
+  60% { transform: translate(2px, 2px) }
+  80% { transform: translate(2px, -2px) }
+  100% { transform: translate(0) }
 }
 
 /* Text Stroke */
@@ -195,7 +160,7 @@ body {
   -webkit-text-stroke: 3px black;
 }
 
-/* Splash Screen / Page Transition */
+/* Splash Screen */
 .transition {
   position: fixed;
   top: 0;
@@ -217,37 +182,17 @@ body {
   will-change: transform;
 }
 
-.transition-overlay.overlay-1 {
-  background-color: #121212;
-}
+.transition-overlay.overlay-1 { background-color: #121212; }
+.transition-overlay.overlay-2 { background-color: #FBFF48; }
+.transition-overlay.overlay-3 { background-color: #FF70A6; }
+.transition-overlay.overlay-4 { background-color: #33FF57; }
+.transition-overlay.overlay-5 { background-color: #3B82F6; }
 
-.transition-overlay.overlay-2 {
-  background-color: #FBFF48;
-}
-
-.transition-overlay.overlay-3 {
-  background-color: #FF70A6;
-}
-
-.transition-overlay.overlay-4 {
-  background-color: #33FF57;
-}
-
-.transition-overlay.overlay-5 {
-  background-color: #3B82F6;
-}
-
-/* Gradient Animation for Button */
+/* Gradient Animation */
 @keyframes gradientMove {
-  0% {
-    background-position: 0% 50%;
-  }
-  50% {
-    background-position: 100% 50%;
-  }
-  100% {
-    background-position: 0% 50%;
-  }
+  0% { background-position: 0% 50%; }
+  50% { background-position: 100% 50%; }
+  100% { background-position: 0% 50%; }
 }
 
 .animate-gradient {
@@ -256,22 +201,14 @@ body {
 
 /* Stripe Animation */
 @keyframes stripeMove {
-  0% {
-    transform: translateX(0);
-  }
-  100% {
-    transform: translateX(-50%);
-  }
+  0% { transform: translateX(0); }
+  100% { transform: translateX(-50%); }
 }
 
 /* Marquee Animation */
 @keyframes marquee {
-  0% {
-    transform: translateX(0);
-  }
-  100% {
-    transform: translateX(-33.33%);
-  }
+  0% { transform: translateX(0); }
+  100% { transform: translateX(-33.33%); }
 }
 
 .animate-marquee {

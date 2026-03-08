@@ -1,5 +1,3 @@
-'use client';
-
 import { useState, useEffect } from 'react';
 import { achievements } from '@/lib/data';
 import { OptimizedImage } from './OptimizedImage';
