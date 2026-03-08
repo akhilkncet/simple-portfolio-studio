@@ -181,12 +181,12 @@ export const Contact = memo(function Contact() {
             <div className="inline-block bg-neo-pink border-4 border-black px-3 py-1 shadow-hard rotate-[-2deg]">
               <span className="font-mono font-bold text-xs sm:text-sm uppercase">/// GET IN TOUCH</span>
             </div>
-            <h2 className="text-2xl sm:text-4xl md:text-5xl lg:text-6xl font-black uppercase leading-[0.95] text-black">
+             <h2 className="text-2xl sm:text-4xl md:text-5xl lg:text-6xl font-black uppercase leading-[0.95] text-black">
               Let's<br />Connect<span className="text-neo-red">.</span>
             </h2>
-            <p className="font-mono text-xs sm:text-sm md:text-base font-semibold max-w-md text-black/80">
-              Got a project idea? Need a scalable backend or an ML-powered solution? Drop me a line, and let's build something extraordinary together.
-            </p>
+             <p className="font-mono text-xs sm:text-sm md:text-base font-semibold max-w-md text-black/80">
+               Looking for internship opportunities, collaborations, or freelance work. Feel free to reach out — I'd love to connect and discuss how I can contribute to your team or project.
+             </p>
           </div>
           <div className="grid grid-cols-2 gap-2.5 sm:gap-4 mt-4 sm:mt-8">
             <div className="bg-white border-3 sm:border-4 border-black p-2.5 sm:p-4 shadow-hard">
