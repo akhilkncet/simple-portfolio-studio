@@ -27,7 +27,7 @@ function App() {
   return (
     <>
       <StructuredData />
-      {showSplash && <SplashScreen onComplete={() => setShowSplash(false)} />}
+      {showSplash && <SplashScreen onComplete={hideSplash} />}
 
       {/* Custom Cursor */}
       <div
