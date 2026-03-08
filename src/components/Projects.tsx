@@ -61,7 +61,7 @@ ProjectCard.displayName = 'ProjectCard';
 
 export const Projects = memo(function Projects() {
   return (
-    <section id="projects" className="py-16 sm:py-24 bg-neo-yellow border-t-4 border-black px-4 overflow-hidden" aria-label="Selected Projects">
+    <section id="projects" className="py-10 sm:py-24 bg-neo-yellow border-t-4 border-black px-3 sm:px-4 overflow-hidden" aria-label="Selected Projects">
       <div className="max-w-7xl mx-auto">
         <h2 className="text-3xl sm:text-5xl md:text-6xl lg:text-7xl font-black mb-6 sm:mb-12 uppercase tracking-tighter text-white drop-shadow-[4px_4px_0_rgba(0,0,0,1)] text-stroke-black">
           Selected Works
