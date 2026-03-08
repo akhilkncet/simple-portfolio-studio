@@ -1,15 +1,3 @@
-export interface GitHubStats {
-  public_repos: number;
-  followers: number;
-  created_at: string;
-}
-
-export interface TechSkill {
-  name: string;
-  category: string;
-  color: string;
-}
-
 export interface Experience {
   id: number;
   title: string;
