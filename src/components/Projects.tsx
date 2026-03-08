@@ -65,7 +65,10 @@ export const Projects = memo(function Projects() {
         </h2>
       </div>
 
-      <div className="flex gap-4 sm:gap-6 overflow-x-auto px-4 pb-6 snap-x snap-mandatory scrollbar-hide" style={{ scrollbarWidth: 'none', msOverflowStyle: 'none' }}>
+      <div
+        className="flex gap-4 sm:gap-6 overflow-x-auto pb-6 snap-x snap-mandatory"
+        style={{ scrollbarWidth: 'none', msOverflowStyle: 'none', paddingLeft: 'max(1rem, calc((100vw - 80rem) / 2 + 1rem))', paddingRight: 'max(1rem, calc((100vw - 80rem) / 2 + 1rem))' }}
+      >
         {columns.map((col, colIdx) => (
           <div
             key={colIdx}
