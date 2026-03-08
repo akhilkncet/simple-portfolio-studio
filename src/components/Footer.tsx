@@ -32,14 +32,12 @@ export const Footer = memo(function Footer() {
           <div className="flex flex-col items-center gap-2 sm:gap-4">
             <p className="font-mono text-white font-bold uppercase text-xs sm:text-sm">Creative Hub</p>
             <a href="https://github.com/Akhil-0911" target="_blank" rel="noopener noreferrer" className="font-mono text-white/35 hover:text-white text-xs sm:text-sm transition-colors text-center">View Portfolio</a>
-            <a href="https://leetcode.com/Akhil_0911/" target="_blank" rel="noopener noreferrer" className="font-mono text-white/35 hover:text-white text-xs sm:text-sm transition-colors text-center">LeetCode Profile</a>
           </div>
 
           <div className="flex flex-col items-center gap-2 sm:gap-4">
             <p className="font-mono text-white font-bold uppercase text-xs sm:text-sm">Connect</p>
             <a href="https://www.linkedin.com/in/akhil0911" target="_blank" rel="noopener noreferrer" className="font-mono text-white/35 hover:text-white text-xs sm:text-sm transition-colors">LinkedIn</a>
             <a href="https://github.com/Akhil-0911" target="_blank" rel="noopener noreferrer" className="font-mono text-white/35 hover:text-white text-xs sm:text-sm transition-colors">Github</a>
-            <a href="https://leetcode.com/Akhil_0911/" target="_blank" rel="noopener noreferrer" className="font-mono text-white/35 hover:text-white text-xs sm:text-sm transition-colors">LeetCode</a>
           </div>
 
           <div className="flex flex-col items-center gap-2 sm:gap-4">

@@ -24,7 +24,6 @@ export function StructuredData() {
     sameAs: [
       'https://github.com/Akhil-0911',
       'https://linkedin.com/in/akhil0911',
-      'https://leetcode.com/Akhil_0911/',
     ],
   };
 

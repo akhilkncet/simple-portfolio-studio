@@ -129,7 +129,7 @@ export const Contact = memo(function Contact() {
   }, [validateForm, emailjsReady, formData, retryCount, addToast]);
 
   const inputClass = (field: string) =>
-    `w-full bg-neo-white border-4 ${formErrors[field] ? 'border-neo-red' : 'border-black'} p-2.5 sm:p-3.5 font-mono text-xs sm:text-sm font-semibold text-black focus:outline-none focus:border-neo-green focus:-translate-y-0.5 focus:shadow-[3px_3px_0px_#33FF57] transition-all`;
+    `w-full bg-neo-white border-2 ${formErrors[field] ? 'border-neo-red' : 'border-black/20'} rounded-lg p-2.5 sm:p-3.5 font-mono text-xs sm:text-sm font-semibold text-black focus:outline-none focus:border-neo-green focus:-translate-y-0.5 focus:shadow-[3px_3px_0px_#33FF57] transition-all`;
 
   return (
     <section id="contact" className="py-16 sm:py-24 px-4 sm:px-8 relative overflow-hidden border-t-4 border-black" aria-label="Contact">
@@ -190,9 +190,9 @@ export const Contact = memo(function Contact() {
         </div>
 
         {/* Right Side - Form */}
-        <div className="bg-white border-4 border-black p-4 sm:p-6 md:p-8 shadow-hard-lg relative overflow-hidden">
+        <div className="bg-white border-2 border-black/20 rounded-2xl p-4 sm:p-6 md:p-8 shadow-xl relative overflow-hidden">
           <div className="relative z-10">
-            <div className="mb-4 sm:mb-6 border-b-4 border-black pb-3 sm:pb-4">
+            <div className="mb-4 sm:mb-6 border-b-2 border-black/10 pb-3 sm:pb-4">
               <h3 className="text-2xl sm:text-3xl md:text-4xl font-black uppercase leading-[0.95] mb-1.5 sm:mb-2.5 text-black">Start a Project</h3>
               <p className="font-mono text-[10px] sm:text-xs font-semibold text-black/70">Tell me about your vision and let's make it reality</p>
             </div>
@@ -230,7 +230,7 @@ export const Contact = memo(function Contact() {
               <button
                 type="submit"
                 disabled={isSubmitting}
-                className="w-full bg-neo-green text-black border-4 border-black py-3 sm:py-4 px-6 font-mono text-sm sm:text-base font-black uppercase shadow-hard hover:translate-x-1 hover:translate-y-1 hover:shadow-none active:translate-x-2 active:translate-y-2 transition-all disabled:opacity-50 disabled:cursor-not-allowed"
+                className="w-full bg-neo-green text-black border-2 border-black/20 rounded-xl py-3 sm:py-4 px-6 font-mono text-sm sm:text-base font-black uppercase shadow-lg hover:translate-y-0.5 hover:shadow-md active:translate-y-1 transition-all disabled:opacity-50 disabled:cursor-not-allowed"
               >
                 {isSubmitting ? '⏳ SENDING...' : '🚀 SEND MESSAGE'}
               </button>
