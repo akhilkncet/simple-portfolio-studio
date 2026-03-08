@@ -30,7 +30,7 @@ ExperienceCard.displayName = 'ExperienceCard';
 
 export const Experience = memo(function Experience() {
   return (
-    <section id="experience" className="py-12 sm:py-20 px-4 max-w-7xl mx-auto min-h-screen" aria-label="Work Experience">
+    <section id="experience" className="py-12 sm:py-20 px-4 max-w-7xl mx-auto" aria-label="Work Experience">
       <h2 className="text-2xl sm:text-4xl md:text-5xl lg:text-6xl font-black uppercase mb-6 sm:mb-10 tracking-tighter text-center">
         Experience<span className="text-neo-red">_Log</span>
       </h2>

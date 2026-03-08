@@ -2,7 +2,7 @@ import { memo } from 'react';
 
 export const Footer = memo(function Footer() {
   return (
-    <footer className="relative w-full min-h-[70vh] sm:min-h-[85vh] p-4 sm:p-8 flex items-center justify-center overflow-hidden" role="contentinfo">
+    <footer className="relative w-full p-4 sm:p-8 flex items-center justify-center overflow-hidden" role="contentinfo">
       <div className="relative w-full h-full bg-black rounded-3xl p-6 sm:p-8 md:p-12 flex flex-col justify-between overflow-hidden">
         {/* Corner Symbols */}
         <div className="absolute top-4 left-4 right-4 sm:top-8 sm:left-8 sm:right-8 flex justify-between pointer-events-none opacity-50" aria-hidden="true">
