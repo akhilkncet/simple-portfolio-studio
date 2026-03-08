@@ -73,9 +73,9 @@ export const Achievements = memo(function Achievements() {
   }, [activeTab, internships, hackathons, certifications]);
 
   const tabs = useMemo(() => [
-    { id: 'internship' as Category, label: 'INTERNSHIPS', icon: '🎓', color: 'neo-green', count: internships.length },
-    { id: 'hackathon' as Category, label: 'HACKATHONS', icon: '🏆', color: 'neo-orange', count: hackathons.length },
-    { id: 'certification' as Category, label: 'CERTIFICATIONS', icon: '📜', color: 'neo-blue', count: certifications.length },
+    { id: 'internship' as Category, label: 'INTERNSHIPS', icon: '//', color: 'neo-green', count: internships.length },
+    { id: 'hackathon' as Category, label: 'HACKATHONS', icon: '//', color: 'neo-orange', count: hackathons.length },
+    { id: 'certification' as Category, label: 'CERTIFICATIONS', icon: '//', color: 'neo-blue', count: certifications.length },
   ], [internships.length, hackathons.length, certifications.length]);
 
   const handleCardClick = useCallback((achievement: typeof achievements[0]) => {
@@ -146,7 +146,7 @@ export const Achievements = memo(function Achievements() {
               onClick={() => setShowAllModal(true)}
               className="px-6 py-3 sm:px-8 sm:py-4 bg-neo-blue border-4 border-white shadow-hard font-black uppercase text-sm sm:text-base hover:translate-x-2 hover:translate-y-2 hover:shadow-none transition-all"
             >
-              📜 VIEW ALL {activeItems.length} CERTIFICATES
+              VIEW ALL {activeItems.length} CERTIFICATES
             </button>
           </div>
         )}
@@ -217,8 +217,8 @@ const CertificateModal = memo(({ certificate, onClose }: { certificate: typeof a
           <div className="border-b-2 border-cyan-400 pb-2 sm:pb-3 pr-12">
             <h3 className="text-lg sm:text-xl md:text-2xl font-black uppercase text-cyan-100 mb-1">{certificate.title}</h3>
             <div className="flex flex-wrap gap-2 sm:gap-3 font-mono text-[10px] sm:text-xs">
-              <span className="text-neo-green">📍 {certificate.organization}</span>
-              <span className="text-neo-yellow">📅 {certificate.date}</span>
+              <span className="text-neo-green">{certificate.organization}</span>
+              <span className="text-neo-yellow">{certificate.date}</span>
               <span className={`${textColor[certificate.color] || 'text-neo-green'} uppercase font-bold`}>
                 {certificate.category}
               </span>
@@ -282,7 +282,7 @@ const AllCertificatesModal = memo(({ items, tabs, activeTab, onClose, onCardClic
           <div className="flex justify-between items-center">
             <div>
               <h3 className="text-xl sm:text-2xl md:text-3xl font-black uppercase text-white mb-1">
-                {activeTabInfo?.icon} ALL {activeTabInfo?.label}
+                ALL {activeTabInfo?.label}
               </h3>
               <p className="font-mono text-xs sm:text-sm text-gray-400">
                 Total: {items.length} certificates
