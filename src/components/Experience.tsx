@@ -30,16 +30,27 @@ const ExperienceCard = memo(({ exp, isOpen, onToggle }: { exp: typeof experience
           </button>
         </div>
       </div>
-      <p className={`font-mono text-sm sm:text-base md:text-lg mb-2 ${textColor[exp.color] || 'text-neo-green'} font-bold`}>
-        @ {exp.company}
-      </p>
-      {/* Always visible on md+, accordion on mobile */}
+      {/* Always visible on md+ */}
+      <div className="hidden md:block">
+        <p className={`font-mono text-sm sm:text-base md:text-lg mb-2 ${textColor[exp.color] || 'text-neo-green'} font-bold`}>
+          @ {exp.company}
+        </p>
+        <ul className="list-disc list-inside font-mono text-xs sm:text-sm text-gray-700 space-y-1 pt-1">
+          {exp.responsibilities.map((resp, idx) => (
+            <li key={idx}>{resp}</li>
+          ))}
+        </ul>
+      </div>
+      {/* Accordion on mobile */}
       <div
-        className={`md:!max-h-[1000px] md:!opacity-100 overflow-hidden transition-all duration-300 ease-in-out ${
+        className={`md:hidden overflow-hidden transition-all duration-300 ease-in-out ${
           isOpen ? 'max-h-96 opacity-100' : 'max-h-0 opacity-0'
         }`}
       >
-        <ul className="list-disc list-inside font-mono text-xs sm:text-sm text-gray-700 space-y-1 pt-1">
+        <p className={`font-mono text-sm mb-2 ${textColor[exp.color] || 'text-neo-green'} font-bold`}>
+          @ {exp.company}
+        </p>
+        <ul className="list-disc list-inside font-mono text-xs text-gray-700 space-y-1 pt-1">
           {exp.responsibilities.map((resp, idx) => (
             <li key={idx}>{resp}</li>
           ))}
