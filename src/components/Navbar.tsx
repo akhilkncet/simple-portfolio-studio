@@ -34,13 +34,13 @@ export const Navbar = memo(function Navbar() {
         </a>
 
         {/* Desktop Menu */}
-        <div className="hidden md:flex gap-4 bg-white border-2 border-black p-2 shadow-hard">
+        <div className="hidden md:flex gap-2 lg:gap-4 bg-white border-2 border-black p-1.5 lg:p-2 shadow-hard">
           {navLinks.map(link => (
-            <a key={link.href} href={link.href} className="px-3 py-1 font-mono font-bold text-sm hover:bg-black hover:text-white transition-colors cursor-hover">
+            <a key={link.href} href={link.href} className="px-2 lg:px-3 py-1 font-mono font-bold text-xs lg:text-sm hover:bg-black hover:text-white transition-colors cursor-hover whitespace-nowrap">
               {link.label}
             </a>
           ))}
-          <a href="#contact" className="px-3 py-1 font-mono font-bold text-sm bg-neo-yellow border border-black hover:bg-neo-pink transition-colors cursor-hover">
+          <a href="#contact" className="px-2 lg:px-3 py-1 font-mono font-bold text-xs lg:text-sm bg-neo-yellow border border-black hover:bg-neo-pink transition-colors cursor-hover whitespace-nowrap">
             HIRE ME
           </a>
         </div>
