@@ -28,7 +28,7 @@ export function OptimizedImage({
       width={width}
       height={height}
       loading={loading}
-      decoding="async"
+      decoding="sync"
       className={className}
       {...props}
     />
