@@ -25,7 +25,7 @@ export const Hero = memo(function Hero() {
           <span className="text-white text-stroke-black text-[5.5vw] sm:text-[4.5vw] md:text-[4vw] lg:text-[3.5vw] xl:text-[2.8rem] tracking-wider font-normal">SOFTWARE ENGINEER</span>
         </h1>
 
-        <div className="font-mono text-sm sm:text-base md:text-lg max-w-2xl mx-auto mb-5 sm:mb-8 bg-neo-yellow border-4 border-black p-4 sm:p-5 md:p-6 shadow-hard reveal">
+        <div className="font-mono text-xs sm:text-base md:text-lg max-w-2xl mx-auto mb-4 sm:mb-8 bg-neo-yellow border-3 sm:border-4 border-black p-3 sm:p-5 md:p-6 shadow-hard reveal">
           <p className="mb-3 sm:mb-4 leading-relaxed">
             Building scalable backend systems and ML-powered applications.
           </p>
