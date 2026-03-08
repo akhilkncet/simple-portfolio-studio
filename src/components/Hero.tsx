@@ -6,7 +6,7 @@ export const Hero = memo(function Hero() {
   const closeModal = useCallback(() => setShowResumeModal(false), []);
 
   return (
-    <section id="home" className="min-h-screen flex flex-col justify-center items-center px-4 pt-20 pb-16 sm:pb-20 relative overflow-hidden border-b-4 border-black" aria-label="Introduction">
+    <section id="home" className="min-h-[600px] h-screen max-h-[1200px] flex flex-col justify-center items-center px-4 pt-20 pb-16 sm:pb-20 relative overflow-hidden border-b-4 border-black" aria-label="Introduction">
       <div className="absolute top-1/3 left-[10%] w-16 h-16 bg-neo-blue border-4 border-black shadow-hard animate-bounce hidden lg:block rotate-12" aria-hidden="true" />
       <div className="absolute bottom-1/3 right-[10%] w-24 h-24 bg-neo-pink rounded-full border-4 border-black shadow-hard hidden lg:block animate-pulse" aria-hidden="true" />
       <div className="absolute top-20 right-20 text-9xl opacity-5 font-black select-none pointer-events-none hidden md:block" aria-hidden="true">
@@ -19,10 +19,10 @@ export const Hero = memo(function Hero() {
           <span className="font-mono font-bold text-xs sm:text-base">SYSTEM STATUS: ONLINE</span>
         </div>
 
-        <h1 className="text-[13vw] sm:text-[11vw] md:text-[10vw] lg:text-[9vw] leading-[0.7] sm:leading-[0.65] font-black uppercase tracking-wide mb-3 sm:mb-5 reveal mix-blend-darken">
+        <h1 className="text-6xl sm:text-7xl md:text-8xl lg:text-9xl leading-[0.7] sm:leading-[0.65] font-black uppercase tracking-wide mb-3 sm:mb-5 reveal mix-blend-darken">
           AKHIL
           <br />
-          <span className="text-white text-stroke-black text-[5.5vw] sm:text-[4.5vw] md:text-[4vw] lg:text-[3.5vw] tracking-wider font-normal">SOFTWARE ENGINEER</span>
+          <span className="text-white text-stroke-black text-2xl sm:text-3xl md:text-4xl lg:text-5xl tracking-wider font-normal">SOFTWARE ENGINEER</span>
         </h1>
 
         <div className="font-mono text-sm sm:text-base md:text-lg max-w-2xl mx-auto mb-5 sm:mb-8 bg-neo-yellow border-4 border-black p-4 sm:p-5 md:p-6 shadow-hard reveal">

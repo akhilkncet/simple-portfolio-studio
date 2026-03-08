@@ -87,7 +87,7 @@ export const Achievements = memo(function Achievements() {
   const closeAllModal = useCallback(() => setShowAllModal(false), []);
 
   return (
-    <section id="achievements" className="py-12 sm:py-16 md:py-20 bg-[#0a0a0a] border-b-4 border-[#333] relative overflow-hidden min-h-screen" aria-label="Achievements & Certifications">
+    <section id="achievements" className="py-12 sm:py-16 md:py-20 bg-[#0a0a0a] border-b-4 border-[#333] relative overflow-hidden" aria-label="Achievements & Certifications">
       <div
         className="absolute inset-0 opacity-20"
         style={{
