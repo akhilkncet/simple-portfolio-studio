@@ -141,6 +141,7 @@ export const Contact = memo(function Contact() {
     setIsSubmitting(true);
     // Snapshot form data to avoid stale references during retries
     const snapshot = { ...formData };
+    lastSubmitTime = Date.now();
     try {
       await sendEmail(snapshot, 0);
     } finally {
