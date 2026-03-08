@@ -59,7 +59,7 @@ MobileProjectCard.displayName = 'MobileProjectCard';
 
 const DesktopProjectCard = memo(({ project, index }: { project: typeof projects[0]; index: number }) => (
   <article
-    className={`reveal break-inside-avoid mb-6 group bg-white border-4 border-black p-4 shadow-hard ${cardHeights[index % cardHeights.length]}`}
+    className={`reveal group bg-white border-4 border-black p-4 shadow-hard ${cardHeights[index % cardHeights.length]}`}
     style={{ pageBreakInside: 'avoid' }}
   >
     <div className="bg-black border-2 border-black aspect-video relative overflow-hidden mb-4 group-hover:shadow-none transition-all">
@@ -118,9 +118,9 @@ export const Projects = memo(function Projects() {
         ))}
       </div>
 
-      {/* Desktop: masonry grid */}
+      {/* Desktop: grid */}
       <div className="hidden md:block max-w-7xl mx-auto px-4">
-        <div className="columns-2 lg:columns-3 gap-6 space-y-6">
+        <div className="grid grid-cols-2 lg:grid-cols-3 gap-6">
           {projects.map((project, index) => (
             <DesktopProjectCard key={project.id} project={project} index={index} />
           ))}
