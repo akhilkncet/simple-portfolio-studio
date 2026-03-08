@@ -47,9 +47,9 @@ const MobileProjectCard = memo(({ project }: { project: typeof projects[0] }) =>
 
 MobileProjectCard.displayName = 'MobileProjectCard';
 
-const DesktopProjectCard = memo(({ project, index }: { project: typeof projects[0]; index: number }) => (
+const DesktopProjectCard = memo(({ project }: { project: typeof projects[0] }) => (
   <article
-    className={`reveal group bg-white border-4 border-black p-4 shadow-hard ${cardHeights[index % cardHeights.length]}`}
+    className="reveal group bg-white border-4 border-black p-4 shadow-hard h-full flex flex-col"
     style={{ pageBreakInside: 'avoid' }}
   >
     <div className="bg-black border-2 border-black aspect-video relative overflow-hidden mb-4 group-hover:shadow-none transition-all">
