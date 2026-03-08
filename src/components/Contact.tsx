@@ -190,7 +190,7 @@ export const Contact = memo(function Contact() {
         </div>
 
         {/* Right Side - Form */}
-        <div className="bg-white border-4 border-black p-4 sm:p-6 md:p-8 shadow-hard-lg relative overflow-hidden">
+        <div className="bg-white border-2 border-black/20 rounded-2xl p-4 sm:p-6 md:p-8 shadow-xl relative overflow-hidden">
           <div className="relative z-10">
             <div className="mb-4 sm:mb-6 border-b-4 border-black pb-3 sm:pb-4">
               <h3 className="text-2xl sm:text-3xl md:text-4xl font-black uppercase leading-[0.95] mb-1.5 sm:mb-2.5 text-black">Start a Project</h3>
