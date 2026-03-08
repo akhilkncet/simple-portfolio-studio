@@ -38,7 +38,7 @@ export const About = memo(function About() {
 
               <div className="flex gap-2 sm:gap-4 flex-wrap">
                 <div className="bg-neo-black text-white px-3 py-2 sm:px-4 font-mono text-xs sm:text-sm border-2 border-transparent">
-                  India
+                  Tiruchirappalli, Tamil Nadu, India
                 </div>
                 <div className="bg-neo-green text-black px-3 py-2 sm:px-4 font-mono text-xs sm:text-sm border-2 border-black">
                   🟢 Open to Full-Time Roles &amp; Research Opportunities
