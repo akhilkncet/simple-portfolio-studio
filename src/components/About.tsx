@@ -1,8 +1,9 @@
+import { memo } from 'react';
 import { OptimizedImage } from './OptimizedImage';
 
-export function About() {
+export const About = memo(function About() {
   return (
-    <section id="about" className="py-16 sm:py-24 px-4">
+    <section id="about" className="py-16 sm:py-24 px-4" aria-label="About Me">
       <div className="max-w-7xl mx-auto">
         <div className="bg-white border-4 border-black p-4 sm:p-8 md:p-12 shadow-hard-lg">
           <div className="grid grid-cols-1 md:grid-cols-12 gap-6 sm:gap-12">
@@ -10,13 +11,13 @@ export function About() {
               <div className="aspect-square max-w-xs mx-auto md:max-w-none bg-gray-200 border-4 border-black relative shadow-hard overflow-hidden group">
                 <OptimizedImage
                   src="/images/akhil.jpg"
-                  alt="Akhil R"
+                  alt="Akhil R - Software Engineer"
                   width={400}
                   height={400}
                   priority={true}
                   className="w-full h-full object-cover grayscale group-hover:grayscale-0 transition-all duration-500"
                 />
-                <span className="absolute top-2 left-2 bg-neo-red text-white px-2 font-mono text-xs border border-black z-10">
+                <span className="absolute top-2 left-2 bg-neo-red text-white px-2 font-mono text-xs border border-black z-10" aria-hidden="true">
                   PROFILE.JPG
                 </span>
               </div>
@@ -49,4 +50,4 @@ export function About() {
       </div>
     </section>
   );
-}
+});

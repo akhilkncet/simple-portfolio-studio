@@ -1,4 +1,4 @@
-import { useState } from 'react';
+import { useState, useCallback } from 'react';
 import { useCursor } from '@/hooks/useCursor';
 import { useScrollProgress } from '@/hooks/useScrollProgress';
 import { useScrollReveal } from '@/hooks/useScrollReveal';
@@ -17,6 +17,7 @@ import { Footer } from '@/components/Footer';
 
 function App() {
   const [showSplash, setShowSplash] = useState(true);
+  const hideSplash = useCallback(() => setShowSplash(false), []);
 
   useCursor();
   useScrollReveal();
@@ -26,7 +27,7 @@ function App() {
   return (
     <>
       <StructuredData />
-      {showSplash && <SplashScreen onComplete={() => setShowSplash(false)} />}
+      {showSplash && <SplashScreen onComplete={hideSplash} />}
 
       {/* Custom Cursor */}
       <div
