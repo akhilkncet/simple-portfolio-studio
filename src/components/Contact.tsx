@@ -123,6 +123,12 @@ export const Contact = memo(function Contact() {
 
   const handleSubmit = useCallback(async (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
+    const now = Date.now();
+    if (now - lastSubmitTime < RATE_LIMIT_MS) {
+      const secsLeft = Math.ceil((RATE_LIMIT_MS - (now - lastSubmitTime)) / 1000);
+      addToast({ title: 'Please Wait', description: `You can send another message in ${secsLeft} seconds.`, type: 'info' });
+      return;
+    }
     if (!validateForm()) {
       addToast({ title: 'Validation Error', description: 'Please fix the errors before submitting.', type: 'error' });
       return;
