@@ -1,19 +1,21 @@
-import { useState } from 'react';
+import { useState, memo, useCallback } from 'react';
 
-export function Hero() {
+export const Hero = memo(function Hero() {
   const [showResumeModal, setShowResumeModal] = useState(false);
+  const openModal = useCallback(() => setShowResumeModal(true), []);
+  const closeModal = useCallback(() => setShowResumeModal(false), []);
 
   return (
-    <section id="home" className="min-h-screen flex flex-col justify-center items-center px-4 pt-20 pb-16 sm:pb-20 relative overflow-hidden border-b-4 border-black">
-      <div className="absolute top-1/3 left-[10%] w-16 h-16 bg-neo-blue border-4 border-black shadow-hard animate-bounce hidden lg:block rotate-12"></div>
-      <div className="absolute bottom-1/3 right-[10%] w-24 h-24 bg-neo-pink rounded-full border-4 border-black shadow-hard hidden lg:block animate-pulse"></div>
-      <div className="absolute top-20 right-20 text-9xl opacity-5 font-black select-none pointer-events-none hidden md:block">
+    <section id="home" className="min-h-screen flex flex-col justify-center items-center px-4 pt-20 pb-16 sm:pb-20 relative overflow-hidden border-b-4 border-black" aria-label="Introduction">
+      <div className="absolute top-1/3 left-[10%] w-16 h-16 bg-neo-blue border-4 border-black shadow-hard animate-bounce hidden lg:block rotate-12" aria-hidden="true" />
+      <div className="absolute bottom-1/3 right-[10%] w-24 h-24 bg-neo-pink rounded-full border-4 border-black shadow-hard hidden lg:block animate-pulse" aria-hidden="true" />
+      <div className="absolute top-20 right-20 text-9xl opacity-5 font-black select-none pointer-events-none hidden md:block" aria-hidden="true">
         CODE
       </div>
 
       <div className="relative z-10 text-center max-w-5xl">
         <div className="inline-block bg-neo-white border-2 border-black px-3 py-1 sm:px-4 mb-4 sm:mb-6 shadow-hard rotate-[-2deg] reveal">
-          <span className="font-mono font-bold text-neo-green bg-black px-1 sm:px-2 mr-1 sm:mr-2 text-xs sm:text-base">●</span>
+          <span className="font-mono font-bold text-neo-green bg-black px-1 sm:px-2 mr-1 sm:mr-2 text-xs sm:text-base" aria-hidden="true">●</span>
           <span className="font-mono font-bold text-xs sm:text-base">SYSTEM STATUS: ONLINE</span>
         </div>
 
@@ -40,28 +42,26 @@ export function Hero() {
             VIEW DATABASE
           </a>
           <button
-            onClick={() => setShowResumeModal(true)}
+            onClick={openModal}
             className="bg-neo-white text-black border-2 border-black px-6 py-3 sm:px-8 sm:py-4 text-sm sm:text-base md:text-lg font-bold shadow-hard hover:bg-neo-pink hover:text-black hover:translate-x-1 hover:translate-y-1 hover:shadow-none transition-all cursor-hover flex items-center justify-center gap-2"
           >
-            <i className="ri-download-line text-base sm:text-lg"></i> <span>DOWNLOAD CV</span>
+            <i className="ri-download-line text-base sm:text-lg" aria-hidden="true"></i> <span>DOWNLOAD CV</span>
           </button>
         </div>
       </div>
 
-      <Marquee />
+      <HeroMarquee />
 
-      {showResumeModal && (
-        <ResumeModal onClose={() => setShowResumeModal(false)} />
-      )}
+      {showResumeModal && <ResumeModal onClose={closeModal} />}
     </section>
   );
-}
+});
 
-function Marquee() {
+const HeroMarquee = memo(function HeroMarquee() {
   const skills = 'PYTHON • DJANGO • FLASK • PYTORCH • REACT • NEXTJS • CYBERSECURITY • MACHINE LEARNING • POSTGRESQL • DOCKER • GIT • LINUX • REST API • PENETRATION TESTING • ';
-  
+
   return (
-    <div className="absolute bottom-0 left-0 w-full bg-neo-red border-t-4 border-black py-2.5 sm:py-3.5 overflow-hidden">
+    <div className="absolute bottom-0 left-0 w-full bg-neo-red border-t-4 border-black py-2.5 sm:py-3.5 overflow-hidden" aria-hidden="true">
       <div className="flex whitespace-nowrap animate-marquee">
         <span className="font-mono font-bold text-white text-sm sm:text-base md:text-lg mx-2 sm:mx-4">{skills}</span>
         <span className="font-mono font-bold text-white text-sm sm:text-base md:text-lg mx-2 sm:mx-4">{skills}</span>
@@ -69,44 +69,32 @@ function Marquee() {
       </div>
     </div>
   );
-}
+});
 
-interface ResumeModalProps {
-  onClose: () => void;
-}
+const resumes = [
+  { id: 1, title: 'Resume Version 1', path: '/Resume/resume (1).pdf', description: 'Non-ATS Version' },
+  { id: 2, title: 'Resume Version 2', path: '/Resume/resume (2).pdf', description: 'ATS Version' },
+];
 
-function ResumeModal({ onClose }: ResumeModalProps) {
-  const resumes = [
-    {
-      id: 1,
-      title: 'Resume Version 1',
-      path: '/Resume/resume (1).pdf',
-      description: 'Non-ATS Version'
-    },
-    {
-      id: 2,
-      title: 'Resume Version 2',
-      path: '/Resume/resume (2).pdf',
-      description: 'ATS Version'
-    }
-  ];
-
+const ResumeModal = memo(function ResumeModal({ onClose }: { onClose: () => void }) {
   return (
-    <div 
+    <div
       className="fixed inset-0 bg-black/50 flex items-center justify-center z-[100] p-4"
       onClick={onClose}
+      role="dialog"
+      aria-modal="true"
+      aria-label="Choose Resume"
     >
-      <div 
+      <div
         className="bg-neo-yellow border-4 border-black shadow-hard-lg max-w-md w-full p-6 sm:p-8"
         onClick={(e) => e.stopPropagation()}
       >
         <div className="flex justify-between items-center mb-6">
-          <h3 className="text-2xl sm:text-3xl font-black uppercase">
-            Choose Resume
-          </h3>
+          <h3 className="text-2xl sm:text-3xl font-black uppercase">Choose Resume</h3>
           <button
             onClick={onClose}
             className="bg-neo-red text-white border-2 border-black px-3 py-1 font-bold hover:bg-red-600 transition-colors"
+            aria-label="Close resume modal"
           >
             ✕
           </button>
@@ -122,14 +110,10 @@ function ResumeModal({ onClose }: ResumeModalProps) {
             >
               <div className="flex items-center justify-between">
                 <div>
-                  <h4 className="font-black text-lg mb-1 group-hover:text-neo-green transition-colors">
-                    {resume.title}
-                  </h4>
-                  <p className="font-mono text-sm text-gray-600">
-                    {resume.description}
-                  </p>
+                  <h4 className="font-black text-lg mb-1 group-hover:text-neo-green transition-colors">{resume.title}</h4>
+                  <p className="font-mono text-sm text-gray-600">{resume.description}</p>
                 </div>
-                <i className="ri-download-2-line text-2xl group-hover:text-neo-green transition-colors"></i>
+                <i className="ri-download-2-line text-2xl group-hover:text-neo-green transition-colors" aria-hidden="true"></i>
               </div>
             </a>
           ))}
@@ -141,4 +125,4 @@ function ResumeModal({ onClose }: ResumeModalProps) {
       </div>
     </div>
   );
-}
+});
