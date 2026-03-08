@@ -250,6 +250,8 @@ const CertificateModal = memo(({ certificate, onClose }: { certificate: typeof a
             </div>
           )}
         </div>
+          </div>
+        </div>
       </div>
     </div>
   );
