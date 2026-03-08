@@ -3,8 +3,8 @@ import { useState, useCallback, memo } from 'react';
 const navLinks = [
   { href: '#about', label: '/ABOUT' },
   { href: '#skills', label: '/SKILLS' },
-  { href: '#projects', label: '/WORK' },
-  { href: '#experience', label: '/LOGS' },
+  { href: '#experience', label: '/EXPERIENCE' },
+  { href: '#projects', label: '/PROJECTS' },
   { href: '#achievements', label: '/AWARDS' },
 ];
 

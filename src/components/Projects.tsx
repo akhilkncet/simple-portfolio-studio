@@ -45,8 +45,8 @@ const ProjectCard = memo(({ project, index }: { project: typeof projects[0]; ind
           <i className="ri-arrow-right-up-line text-sm sm:text-base md:text-lg" aria-hidden="true"></i>
         </a>
       </div>
-      <p className="font-mono text-[9px] sm:text-[10px] md:text-[11px] leading-relaxed">{project.description}</p>
-      <div className="flex gap-1 sm:gap-1.5 md:gap-2 font-mono text-[8px] sm:text-[9px] md:text-[10px] font-bold flex-wrap">
+      <p className="font-mono text-[11px] sm:text-xs md:text-sm leading-relaxed">{project.description}</p>
+      <div className="flex gap-1 sm:gap-1.5 md:gap-2 font-mono text-[9px] sm:text-[10px] md:text-xs font-bold flex-wrap">
         {project.technologies.map((tech, idx) => (
           <span key={idx} className="bg-neo-black text-white px-1 py-0.5 sm:px-1.5 md:px-2">
             {tech}
