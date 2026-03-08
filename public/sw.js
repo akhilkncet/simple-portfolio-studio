@@ -49,6 +49,19 @@ self.addEventListener('fetch', (event) => {
     return;
   }
 
+  // Never cache dev/build module graph assets to avoid stale React chunks
+  const shouldBypassCache =
+    url.pathname.includes('/node_modules/.vite/deps/') ||
+    url.pathname.startsWith('/src/') ||
+    url.pathname.endsWith('.tsx') ||
+    url.pathname.endsWith('.ts') ||
+    url.search.includes('v=');
+
+  if (shouldBypassCache) {
+    event.respondWith(fetch(request));
+    return;
+  }
+
   // API requests - network first, cache fallback
   if (url.pathname.startsWith('/api/')) {
     event.respondWith(
@@ -66,7 +79,7 @@ self.addEventListener('fetch', (event) => {
   }
 
   // Static assets - cache first, network fallback
-event.respondWith(
+  event.respondWith(
     caches.match(request).then((cachedResponse) => {
       if (cachedResponse) {
         return cachedResponse;

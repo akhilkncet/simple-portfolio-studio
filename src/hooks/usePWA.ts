@@ -1,27 +1,32 @@
 import { useEffect } from 'react';
 
+const LOVABLE_PREVIEW_HOSTS = ['lovable.app', 'lovableproject.com'];
+
+const isLovablePreviewHost = (hostname: string) =>
+  LOVABLE_PREVIEW_HOSTS.some((host) => hostname.endsWith(host));
+
+const clearServiceWorkersAndCaches = async () => {
+  if (!('serviceWorker' in navigator)) return;
+
+  const registrations = await navigator.serviceWorker.getRegistrations();
+  await Promise.all(registrations.map((registration) => registration.unregister()));
+
+  if ('caches' in window) {
+    const cacheNames = await caches.keys();
+    await Promise.all(cacheNames.map((name) => caches.delete(name)));
+  }
+};
+
 export function usePWA() {
   useEffect(() => {
     if (typeof window === 'undefined' || !('serviceWorker' in navigator)) return;
 
-    // In preview/dev, avoid stale module caching that can load multiple React chunks.
-    if (!import.meta.env.PROD) {
-      const clearDevServiceWorkers = async () => {
-        const registrations = await navigator.serviceWorker.getRegistrations();
-        await Promise.all(registrations.map((registration) => registration.unregister()));
+    const hostname = window.location.hostname;
 
-        if ('caches' in window) {
-          const cacheNames = await caches.keys();
-          await Promise.all(
-            cacheNames
-              .filter((name) => name.includes('akhil-portfolio') || name.includes('static-') || name.includes('dynamic-'))
-              .map((name) => caches.delete(name))
-          );
-        }
-      };
-
-      clearDevServiceWorkers().catch((error) => {
-        console.warn('[PWA] Dev cleanup failed:', error);
+    // Never run SW on Lovable preview/staging domains to avoid stale bundle caches.
+    if (isLovablePreviewHost(hostname) || !import.meta.env.PROD) {
+      clearServiceWorkersAndCaches().catch((error) => {
+        console.warn('[PWA] Cleanup failed:', error);
       });
       return;
     }
