@@ -4,7 +4,6 @@ import { useScrollProgress } from '@/hooks/useScrollProgress';
 import { useScrollReveal } from '@/hooks/useScrollReveal';
 import { usePWA } from '@/hooks/usePWA';
 import { SplashScreen } from '@/components/SplashScreen';
-import { StructuredData } from '@/components/StructuredData';
 import { Navbar } from '@/components/Navbar';
 import { Hero } from '@/components/Hero';
 import { About } from '@/components/About';
@@ -26,7 +25,7 @@ function App() {
 
   return (
     <>
-      <StructuredData />
+      {/* Splash overlay — content always renders beneath it */}
       {showSplash && <SplashScreen onComplete={hideSplash} />}
 
       {/* Custom Cursor */}
