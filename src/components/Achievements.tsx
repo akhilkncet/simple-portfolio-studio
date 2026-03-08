@@ -83,6 +83,22 @@ export const Achievements = memo(function Achievements() {
     setShowAllModal(false);
   }, []);
 
+  const handlePrev = useCallback(() => {
+    if (!selectedCertificate) return;
+    const categoryItems = achievements.filter(a => a.category === selectedCertificate.category);
+    const idx = categoryItems.findIndex(a => a.id === selectedCertificate.id);
+    const prevIdx = (idx - 1 + categoryItems.length) % categoryItems.length;
+    setSelectedCertificate(categoryItems[prevIdx]);
+  }, [selectedCertificate]);
+
+  const handleNext = useCallback(() => {
+    if (!selectedCertificate) return;
+    const categoryItems = achievements.filter(a => a.category === selectedCertificate.category);
+    const idx = categoryItems.findIndex(a => a.id === selectedCertificate.id);
+    const nextIdx = (idx + 1) % categoryItems.length;
+    setSelectedCertificate(categoryItems[nextIdx]);
+  }, [selectedCertificate]);
+
   const closeCertModal = useCallback(() => setSelectedCertificate(null), []);
   const closeAllModal = useCallback(() => setShowAllModal(false), []);
 
