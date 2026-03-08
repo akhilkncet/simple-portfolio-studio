@@ -195,16 +195,18 @@ const CertificateModal = memo(({ certificate, onClose }: { certificate: typeof a
 
   return (
     <div
-      className="fixed inset-0 z-[100] flex items-start justify-center px-2 sm:px-4 py-8 bg-black/90 backdrop-blur-md overflow-y-auto"
+      className="fixed inset-0 z-[100] bg-black/90 backdrop-blur-md"
       onClick={onClose}
       role="dialog"
       aria-modal="true"
       aria-label={certificate.title}
     >
-      <div
-        className="relative max-w-7xl w-full bg-[#1a1a1a] border-4 border-cyan-400 shadow-hard p-4 sm:p-6 my-auto"
-        onClick={e => e.stopPropagation()}
-      >
+      <div className="absolute inset-0 overflow-y-auto">
+        <div className="min-h-full flex items-start justify-center px-2 sm:px-4 py-8">
+          <div
+            className="relative max-w-7xl w-full bg-[#1a1a1a] border-4 border-cyan-400 shadow-hard p-4 sm:p-6"
+            onClick={e => e.stopPropagation()}
+          >
         <button
           onClick={onClose}
           className="absolute top-2 right-2 sm:top-4 sm:right-4 w-10 h-10 sm:w-12 sm:h-12 bg-neo-red text-white border-2 border-cyan-400 flex items-center justify-center hover:bg-white hover:text-neo-red transition-all shadow-hard font-black text-xl sm:text-2xl z-10"
