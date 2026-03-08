@@ -204,7 +204,6 @@ export const Contact = memo(function Contact() {
               Email service: {emailjsReady ? 'Ready' : 'Connecting...'}
             </span>
           </div>
-          </div>
         </div>
 
         {/* Right Side - Form */}
