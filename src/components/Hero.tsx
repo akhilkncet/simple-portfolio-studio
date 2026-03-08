@@ -6,7 +6,7 @@ export const Hero = memo(function Hero() {
   const closeModal = useCallback(() => setShowResumeModal(false), []);
 
   return (
-    <section id="home" className="min-h-[500px] sm:min-h-[600px] h-screen max-h-[1200px] flex flex-col justify-center items-center px-3 sm:px-4 pt-16 sm:pt-20 pb-14 sm:pb-20 relative overflow-hidden border-b-4 border-black" aria-label="Introduction">
+    <section id="home" className="min-h-[600px] h-screen max-h-[1200px] flex flex-col justify-center items-center px-4 pt-20 pb-16 sm:pb-20 relative overflow-hidden border-b-4 border-black" aria-label="Introduction">
       <div className="absolute top-1/3 left-[10%] w-16 h-16 bg-neo-blue border-4 border-black shadow-hard animate-bounce hidden lg:block rotate-12" aria-hidden="true" />
       <div className="absolute bottom-1/3 right-[10%] w-24 h-24 bg-neo-pink rounded-full border-4 border-black shadow-hard hidden lg:block animate-pulse" aria-hidden="true" />
       <div className="absolute top-20 right-20 text-9xl opacity-5 font-black select-none pointer-events-none hidden md:block" aria-hidden="true">
@@ -14,9 +14,9 @@ export const Hero = memo(function Hero() {
       </div>
 
       <div className="relative z-10 text-center max-w-5xl">
-        <div className="inline-block bg-neo-white border-2 border-black px-2 py-0.5 sm:px-4 sm:py-1 mb-3 sm:mb-6 shadow-hard rotate-[-2deg] reveal">
-          <span className="font-mono font-bold text-neo-green bg-black px-1 sm:px-2 mr-1 sm:mr-2 text-[10px] sm:text-base" aria-hidden="true">●</span>
-          <span className="font-mono font-bold text-[10px] sm:text-base">SYSTEM STATUS: ONLINE</span>
+        <div className="inline-block bg-neo-white border-2 border-black px-3 py-1 sm:px-4 mb-4 sm:mb-6 shadow-hard rotate-[-2deg] reveal">
+          <span className="font-mono font-bold text-neo-green bg-black px-1 sm:px-2 mr-1 sm:mr-2 text-xs sm:text-base" aria-hidden="true">●</span>
+          <span className="font-mono font-bold text-xs sm:text-base">SYSTEM STATUS: ONLINE</span>
         </div>
 
         <h1 className="text-[13vw] sm:text-[11vw] md:text-[10vw] lg:text-[9vw] xl:text-[8rem] leading-[0.75] font-black uppercase tracking-wide mb-3 sm:mb-5 reveal mix-blend-darken">
@@ -25,7 +25,7 @@ export const Hero = memo(function Hero() {
           <span className="text-white text-stroke-black text-[5.5vw] sm:text-[4.5vw] md:text-[4vw] lg:text-[3.5vw] xl:text-[2.8rem] tracking-wider font-normal">SOFTWARE ENGINEER</span>
         </h1>
 
-        <div className="font-mono text-xs sm:text-base md:text-lg max-w-2xl mx-auto mb-4 sm:mb-8 bg-neo-yellow border-3 sm:border-4 border-black p-3 sm:p-5 md:p-6 shadow-hard reveal">
+        <div className="font-mono text-sm sm:text-base md:text-lg max-w-2xl mx-auto mb-5 sm:mb-8 bg-neo-yellow border-4 border-black p-4 sm:p-5 md:p-6 shadow-hard reveal">
           <p className="mb-3 sm:mb-4 leading-relaxed">
             Building scalable backend systems and ML-powered applications.
           </p>
@@ -34,16 +34,16 @@ export const Hero = memo(function Hero() {
           </p>
         </div>
 
-        <div className="flex flex-col sm:flex-row justify-center gap-2.5 sm:gap-5 reveal">
+        <div className="flex flex-col sm:flex-row justify-center gap-3 sm:gap-5 reveal">
           <a
             href="#projects"
-            className="bg-black text-white border-2 border-black px-5 py-2.5 sm:px-8 sm:py-4 text-xs sm:text-base md:text-lg font-bold shadow-hard hover:bg-neo-green hover:text-black hover:translate-x-1 hover:translate-y-1 hover:shadow-none transition-all cursor-hover"
+            className="bg-black text-white border-2 border-black px-6 py-3 sm:px-8 sm:py-4 text-sm sm:text-base md:text-lg font-bold shadow-hard hover:bg-neo-green hover:text-black hover:translate-x-1 hover:translate-y-1 hover:shadow-none transition-all cursor-hover"
           >
             VIEW DATABASE
           </a>
           <button
             onClick={openModal}
-            className="bg-neo-white text-black border-2 border-black px-5 py-2.5 sm:px-8 sm:py-4 text-xs sm:text-base md:text-lg font-bold shadow-hard hover:bg-neo-pink hover:text-black hover:translate-x-1 hover:translate-y-1 hover:shadow-none transition-all cursor-hover flex items-center justify-center gap-2"
+            className="bg-neo-white text-black border-2 border-black px-6 py-3 sm:px-8 sm:py-4 text-sm sm:text-base md:text-lg font-bold shadow-hard hover:bg-neo-pink hover:text-black hover:translate-x-1 hover:translate-y-1 hover:shadow-none transition-all cursor-hover flex items-center justify-center gap-2"
           >
             <i className="ri-download-line text-base sm:text-lg" aria-hidden="true"></i> <span>DOWNLOAD CV</span>
           </button>
