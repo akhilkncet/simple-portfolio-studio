@@ -282,7 +282,7 @@ const AllCertificatesModal = memo(({ items, tabs, activeTab, onClose, onCardClic
           <div className="flex justify-between items-center">
             <div>
               <h3 className="text-xl sm:text-2xl md:text-3xl font-black uppercase text-white mb-1">
-                {activeTabInfo?.icon} ALL {activeTabInfo?.label}
+                ALL {activeTabInfo?.label}
               </h3>
               <p className="font-mono text-xs sm:text-sm text-gray-400">
                 Total: {items.length} certificates
