@@ -15,7 +15,7 @@ const skillCategories = [
   },
   {
     title: 'Frontend (Working Knowledge)',
-    skills: ['React', 'Next.js', 'JavaScript', 'HTML', 'CSS'],
+    skills: ['React', 'JavaScript', 'HTML', 'CSS'],
   },
   {
     title: 'Additional Exposure',
@@ -48,18 +48,18 @@ export const Skills = memo(function Skills() {
           </div>
         </div>
 
-        <div className="grid grid-cols-1 lg:grid-cols-2 gap-6 sm:gap-8 md:gap-10 lg:gap-12">
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-2 gap-4 sm:gap-6 md:gap-10 lg:gap-12">
           {skillCategories.map((category, idx) => (
             <div key={idx} className="reveal">
               <h3 className="text-lg sm:text-xl md:text-2xl font-bold mb-3 sm:mb-4 md:mb-5 text-white border-l-4 border-neo-green pl-3 sm:pl-4">
                 {category.title}
               </h3>
-              <div className="flex flex-wrap gap-2 sm:gap-2.5 md:gap-3" role="list">
+              <div className="flex flex-wrap gap-1.5 sm:gap-2.5 md:gap-3" role="list">
                 {category.skills.map((skill, skillIdx) => (
                   <span
                     key={skillIdx}
                     role="listitem"
-                    className="bg-white/5 border border-white/20 text-white px-2.5 sm:px-3 md:px-4 py-1.5 sm:py-1.5 md:py-2 font-mono text-xs sm:text-sm hover:bg-neo-green hover:text-black hover:border-neo-green transition-all duration-300"
+                    className="bg-white/5 border border-white/20 text-white px-2 sm:px-3 md:px-4 py-1 sm:py-1.5 md:py-2 font-mono text-[11px] sm:text-xs md:text-sm hover:bg-neo-green hover:text-black hover:border-neo-green transition-all duration-300"
                   >
                     {skill}
                   </span>
