@@ -98,7 +98,7 @@ export const Contact = memo(function Contact() {
       await emailjsModule.default.send(EMAILJS_CONFIG.serviceId, EMAILJS_CONFIG.templateId, {
         from_name: `${data.firstName} ${data.lastName}`,
         from_email: data.email,
-        subject: 'New Project Inquiry',
+        subject: 'New Message from Portfolio',
         message: data.message,
         phone: data.phone || 'Not provided',
         timestamp: new Date().toLocaleString(),
