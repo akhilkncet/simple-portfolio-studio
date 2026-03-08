@@ -14,13 +14,12 @@ export const SplashScreen = memo(function SplashScreen({ onComplete }: SplashScr
         gsap.set('.transition-overlay', { scaleY: 1, transformOrigin: 'top' });
         gsap.to('.transition-overlay', {
           scaleY: 0,
-          duration: 0.4,
-          stagger: -0.08,
+          duration: 0.25,
+          stagger: -0.05,
           ease: 'power2.inOut',
           onComplete: () => { if (!cancelled) onComplete?.(); },
         });
       } catch {
-        // Fallback: just complete immediately
         if (!cancelled) onComplete?.();
       }
     };
