@@ -188,33 +188,33 @@ export const Contact = memo(function Contact() {
               Got a project idea? Need a scalable backend or an ML-powered solution? Drop me a line, and let's build something extraordinary together.
             </p>
           </div>
-          <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 mt-4 sm:mt-8">
-            <div className="bg-white border-4 border-black p-4 shadow-hard">
-              <p className="font-mono text-xs font-bold uppercase bg-black text-white px-2 py-1 w-max mb-2">Project Inquiries</p>
-              <a href="mailto:akhil.kncet@gmail.com" className="font-mono text-xs sm:text-sm font-medium uppercase text-black hover:text-neo-green hover:translate-x-2 transition-all inline-block break-all">
+          <div className="grid grid-cols-2 gap-2.5 sm:gap-4 mt-4 sm:mt-8">
+            <div className="bg-white border-3 sm:border-4 border-black p-2.5 sm:p-4 shadow-hard">
+              <p className="font-mono text-[10px] sm:text-xs font-bold uppercase bg-black text-white px-1.5 sm:px-2 py-0.5 sm:py-1 w-max mb-1.5 sm:mb-2">Email</p>
+              <a href="mailto:akhil.kncet@gmail.com" className="font-mono text-[10px] sm:text-sm font-medium text-black hover:text-neo-green transition-all inline-block break-all">
                 akhil.kncet@gmail.com
               </a>
             </div>
-            <div className="bg-white border-4 border-black p-4 shadow-hard">
-              <p className="font-mono text-xs font-bold uppercase bg-black text-white px-2 py-1 w-max mb-2">Phone</p>
-              <a href="tel:+918220002860" className="font-mono text-xs sm:text-sm font-medium uppercase text-black hover:text-neo-green hover:translate-x-2 transition-all inline-block">
+            <div className="bg-white border-3 sm:border-4 border-black p-2.5 sm:p-4 shadow-hard">
+              <p className="font-mono text-[10px] sm:text-xs font-bold uppercase bg-black text-white px-1.5 sm:px-2 py-0.5 sm:py-1 w-max mb-1.5 sm:mb-2">Phone</p>
+              <a href="tel:+918220002860" className="font-mono text-[10px] sm:text-sm font-medium text-black hover:text-neo-green transition-all inline-block">
                 +91 8220002860
               </a>
             </div>
-            <div className="bg-white border-4 border-black p-4 shadow-hard">
-              <p className="font-mono text-xs font-bold uppercase bg-black text-white px-2 py-1 w-max mb-2">GitHub</p>
-              <div className="flex flex-col gap-1.5">
-                <a href="https://github.com/Akhil-0911" target="_blank" rel="noopener noreferrer" className="font-mono text-xs sm:text-sm font-medium uppercase text-black hover:text-neo-blue hover:translate-x-2 transition-all inline-block">
+            <div className="bg-white border-3 sm:border-4 border-black p-2.5 sm:p-4 shadow-hard">
+              <p className="font-mono text-[10px] sm:text-xs font-bold uppercase bg-black text-white px-1.5 sm:px-2 py-0.5 sm:py-1 w-max mb-1.5 sm:mb-2">GitHub</p>
+              <div className="flex flex-col gap-1">
+                <a href="https://github.com/Akhil-0911" target="_blank" rel="noopener noreferrer" className="font-mono text-[10px] sm:text-sm font-medium text-black hover:text-neo-blue transition-all inline-block">
                   @Akhil-0911
                 </a>
-                <a href="https://github.com/akhilkncet" target="_blank" rel="noopener noreferrer" className="font-mono text-xs sm:text-sm font-medium uppercase text-black hover:text-neo-blue hover:translate-x-2 transition-all inline-block">
+                <a href="https://github.com/akhilkncet" target="_blank" rel="noopener noreferrer" className="font-mono text-[10px] sm:text-sm font-medium text-black hover:text-neo-blue transition-all inline-block">
                   @akhilkncet
                 </a>
               </div>
             </div>
-            <div className="bg-white border-4 border-black p-4 shadow-hard">
-              <p className="font-mono text-xs font-bold uppercase bg-black text-white px-2 py-1 w-max mb-2">Quick Chat</p>
-              <a href="https://www.linkedin.com/in/akhil0911" target="_blank" rel="noopener noreferrer" className="font-mono text-xs sm:text-sm font-medium uppercase text-black hover:text-neo-blue hover:translate-x-2 transition-all inline-block">
+            <div className="bg-white border-3 sm:border-4 border-black p-2.5 sm:p-4 shadow-hard">
+              <p className="font-mono text-[10px] sm:text-xs font-bold uppercase bg-black text-white px-1.5 sm:px-2 py-0.5 sm:py-1 w-max mb-1.5 sm:mb-2">LinkedIn</p>
+              <a href="https://www.linkedin.com/in/akhil0911" target="_blank" rel="noopener noreferrer" className="font-mono text-[10px] sm:text-sm font-medium text-black hover:text-neo-blue transition-all inline-block">
                 @akhil0911
               </a>
             </div>
