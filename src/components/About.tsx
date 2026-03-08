@@ -23,7 +23,7 @@ export const About = memo(function About() {
               </div>
             </div>
             <div className="md:col-span-8 flex flex-col justify-center reveal">
-              <h2 className="text-3xl sm:text-4xl md:text-5xl font-black uppercase mb-3 sm:mb-5">Who am I?</h2>
+              <h2 className="text-2xl sm:text-4xl md:text-5xl font-black uppercase mb-2 sm:mb-5">Who am I?</h2>
               <p className="font-mono text-sm sm:text-base md:text-lg leading-relaxed mb-3 sm:mb-5">
                 I am Akhil. A software engineer focused on building{' '}
                 <span className="bg-neo-yellow px-1 border border-black">scalable backend systems</span> and intelligent applications. I design systems that are efficient, secure, and production-ready.

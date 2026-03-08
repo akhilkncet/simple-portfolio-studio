@@ -188,7 +188,7 @@ export const Contact = memo(function Contact() {
         </div>
 
         {/* Right Side - Form */}
-        <div className="bg-gray-100 border-4 border-black rounded-3xl p-4 sm:p-6 md:p-8 shadow-hard-lg relative overflow-hidden">
+        <div className="bg-gray-100 border-3 sm:border-4 border-black rounded-2xl sm:rounded-3xl p-3 sm:p-6 md:p-8 shadow-hard-lg relative overflow-hidden">
           <div className="absolute inset-0 opacity-5" style={{ background: 'repeating-linear-gradient(45deg, transparent 0px, transparent 8px, rgba(20,20,20,0.1) 8px, rgba(20,20,20,0.1) 16px)' }} aria-hidden="true" />
           <div className="relative z-10">
             <div className="text-center mb-3 sm:mb-5">

@@ -35,7 +35,7 @@ export const Experience = memo(function Experience() {
         Experience<span className="text-neo-red">_Log</span>
       </h2>
 
-      <div className="relative border-l-4 border-black ml-2 sm:ml-4 md:ml-10 space-y-8 sm:space-y-12">
+      <div className="relative border-l-3 sm:border-l-4 border-black ml-2 sm:ml-4 md:ml-10 space-y-5 sm:space-y-12">
         {experiences.map((exp) => (
           <ExperienceCard key={exp.id} exp={exp} />
         ))}

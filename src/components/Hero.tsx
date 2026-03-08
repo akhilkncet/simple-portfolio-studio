@@ -43,7 +43,7 @@ export const Hero = memo(function Hero() {
           </a>
           <button
             onClick={openModal}
-            className="bg-neo-white text-black border-2 border-black px-6 py-3 sm:px-8 sm:py-4 text-sm sm:text-base md:text-lg font-bold shadow-hard hover:bg-neo-pink hover:text-black hover:translate-x-1 hover:translate-y-1 hover:shadow-none transition-all cursor-hover flex items-center justify-center gap-2"
+            className="bg-neo-white text-black border-2 border-black px-5 py-2.5 sm:px-8 sm:py-4 text-xs sm:text-base md:text-lg font-bold shadow-hard hover:bg-neo-pink hover:text-black hover:translate-x-1 hover:translate-y-1 hover:shadow-none transition-all cursor-hover flex items-center justify-center gap-2"
           >
             <i className="ri-download-line text-base sm:text-lg" aria-hidden="true"></i> <span>DOWNLOAD CV</span>
           </button>

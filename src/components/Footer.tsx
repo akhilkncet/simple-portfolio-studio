@@ -22,7 +22,7 @@ export const Footer = memo(function Footer() {
         </div>
 
         {/* Footer Columns */}
-        <nav className="grid grid-cols-2 md:grid-cols-4 gap-6 sm:gap-8 md:gap-12 mb-12 sm:mb-16 md:mb-32" aria-label="Footer navigation">
+        <nav className="grid grid-cols-2 md:grid-cols-4 gap-4 sm:gap-8 md:gap-12 mb-8 sm:mb-16 md:mb-32" aria-label="Footer navigation">
           <div className="flex flex-col items-center gap-2 sm:gap-4">
             <p className="font-mono text-white font-bold uppercase text-xs sm:text-sm">Explore</p>
             <a href="#home" className="font-mono text-white/35 hover:text-white text-xs sm:text-sm transition-colors">Home</a>
