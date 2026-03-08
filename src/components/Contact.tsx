@@ -167,7 +167,7 @@ export const Contact = memo(function Contact() {
               Got a project idea? Need a stunning website or a robust app? Drop me a line, and let's create something extraordinary together.
             </p>
           </div>
-          <div className="space-y-4 sm:space-y-6 mt-4 sm:mt-8">
+          <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 mt-4 sm:mt-8">
             <div className="bg-white border-4 border-black p-4 shadow-hard">
               <p className="font-mono text-xs font-bold uppercase bg-black text-white px-2 py-1 w-max mb-2">Project Inquiries</p>
               <a href="mailto:akhil.kncet@gmail.com" className="font-mono text-xs sm:text-sm font-medium uppercase text-black hover:text-neo-green hover:translate-x-2 transition-all inline-block break-all">
@@ -197,12 +197,13 @@ export const Contact = memo(function Contact() {
                 @akhil0911
               </a>
             </div>
-            <div className="flex items-center gap-2 bg-neo-black border-4 border-black p-3 shadow-hard">
-              <div className={`w-3 h-3 border-2 border-white ${emailjsReady ? 'bg-neo-green' : 'bg-neo-red'}`} aria-hidden="true" />
-              <span className="text-xs font-mono font-bold uppercase text-white">
-                Email service: {emailjsReady ? 'Ready' : 'Connecting...'}
-              </span>
-            </div>
+          </div>
+          <div className="flex items-center gap-2 bg-neo-black border-4 border-black p-3 shadow-hard mt-4">
+            <div className={`w-3 h-3 border-2 border-white ${emailjsReady ? 'bg-neo-green' : 'bg-neo-red'}`} aria-hidden="true" />
+            <span className="text-xs font-mono font-bold uppercase text-white">
+              Email service: {emailjsReady ? 'Ready' : 'Connecting...'}
+            </span>
+          </div>
           </div>
         </div>
 
