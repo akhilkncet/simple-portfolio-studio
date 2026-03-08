@@ -59,7 +59,7 @@ export const Skills = memo(function Skills() {
                   <span
                     key={skillIdx}
                     role="listitem"
-                    className="bg-white/5 border border-white/20 text-white px-2.5 sm:px-3 md:px-4 py-1.5 sm:py-1.5 md:py-2 font-mono text-xs sm:text-sm hover:bg-neo-green hover:text-black hover:border-neo-green transition-all duration-300"
+                    className="bg-white/5 border border-white/20 text-white px-2 sm:px-3 md:px-4 py-1 sm:py-1.5 md:py-2 font-mono text-[11px] sm:text-xs md:text-sm hover:bg-neo-green hover:text-black hover:border-neo-green transition-all duration-300"
                   >
                     {skill}
                   </span>
