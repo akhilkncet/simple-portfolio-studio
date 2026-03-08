@@ -81,7 +81,7 @@ export const Contact = memo(function Contact() {
     else if (!validateEmail(formData.email)) errors.email = 'Please enter a valid email address';
     if (!formData.message.trim()) errors.message = 'Message is required';
     else if (formData.message.trim().length < 10) errors.message = 'Message must be at least 10 characters';
-    if (formData.phone && !validatePhone(formData.phone)) errors.phone = 'Please enter a valid Indian mobile number';
+    if (formData.phone && !validatePhone(formData.phone)) errors.phone = 'Please enter a valid phone number';
     setFormErrors(errors);
     return Object.keys(errors).length === 0;
   }, [formData]);
