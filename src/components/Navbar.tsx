@@ -58,9 +58,18 @@ export const Navbar = memo(function Navbar() {
         </button>
       </div>
 
+      {/* Mobile Menu Overlay */}
+      {isMenuOpen && (
+        <div
+          className="md:hidden fixed inset-0 bg-black/40 backdrop-blur-sm z-40 pointer-events-auto"
+          onClick={closeMenu}
+          aria-hidden="true"
+        />
+      )}
+
       {/* Mobile Menu */}
       {isMenuOpen && (
-        <div className="md:hidden fixed top-20 right-4 bg-white border-4 border-black shadow-hard-lg pointer-events-auto w-[calc(100%-2rem)] max-w-sm" role="menu">
+        <div className="md:hidden fixed top-20 right-4 left-4 bg-white border-4 border-black shadow-hard-lg pointer-events-auto max-w-sm mx-auto z-50" role="menu">
           <div className="flex flex-col">
             {navLinks.map(link => (
               <a
@@ -79,7 +88,7 @@ export const Navbar = memo(function Navbar() {
               role="menuitem"
               className="px-5 py-3 font-mono font-bold text-sm bg-neo-yellow hover:bg-neo-pink transition-colors"
             >
-              HIRE ME ⚡
+              HIRE ME
             </a>
           </div>
         </div>
