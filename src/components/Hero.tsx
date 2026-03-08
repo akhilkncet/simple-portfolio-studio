@@ -19,10 +19,10 @@ export const Hero = memo(function Hero() {
           <span className="font-mono font-bold text-xs sm:text-base">SYSTEM STATUS: ONLINE</span>
         </div>
 
-        <h1 className="text-6xl sm:text-7xl md:text-8xl lg:text-9xl leading-[0.7] sm:leading-[0.65] font-black uppercase tracking-wide mb-3 sm:mb-5 reveal mix-blend-darken">
+        <h1 className="text-[13vw] sm:text-[11vw] md:text-[10vw] lg:text-[9vw] xl:text-[8rem] leading-[0.75] font-black uppercase tracking-wide mb-3 sm:mb-5 reveal mix-blend-darken">
           AKHIL
           <br />
-          <span className="text-white text-stroke-black text-2xl sm:text-3xl md:text-4xl lg:text-5xl tracking-wider font-normal">SOFTWARE ENGINEER</span>
+          <span className="text-white text-stroke-black text-[5.5vw] sm:text-[4.5vw] md:text-[4vw] lg:text-[3.5vw] xl:text-[2.8rem] tracking-wider font-normal">SOFTWARE ENGINEER</span>
         </h1>
 
         <div className="font-mono text-sm sm:text-base md:text-lg max-w-2xl mx-auto mb-5 sm:mb-8 bg-neo-yellow border-4 border-black p-4 sm:p-5 md:p-6 shadow-hard reveal">
