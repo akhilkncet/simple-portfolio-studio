@@ -1,11 +1,23 @@
-import { memo, useMemo } from 'react';
+import { memo } from 'react';
 import { projects } from '@/lib/data';
 import { OptimizedImage } from './OptimizedImage';
 import { hoverTextColor } from '@/lib/colorMap';
 
-const ProjectCard = memo(({ project }: { project: typeof projects[0] }) => (
+const cardHeights = [
+  'min-h-[240px] md:min-h-[450px]',
+  'min-h-[200px] md:min-h-[380px]',
+  'min-h-[220px] md:min-h-[420px]',
+  'min-h-[210px] md:min-h-[400px]',
+  'min-h-[250px] md:min-h-[460px]',
+  'min-h-[205px] md:min-h-[390px]',
+  'min-h-[230px] md:min-h-[440px]',
+  'min-h-[215px] md:min-h-[410px]',
+];
+
+const ProjectCard = memo(({ project, index }: { project: typeof projects[0]; index: number }) => (
   <article
-    className="reveal group bg-white border-4 border-black p-2 sm:p-3 md:p-4 shadow-hard flex flex-col"
+    className={`reveal break-inside-avoid mb-2.5 sm:mb-4 md:mb-6 group bg-white border-4 border-black p-2 sm:p-3 md:p-4 shadow-hard ${cardHeights[index % cardHeights.length]}`}
+    style={{ pageBreakInside: 'avoid' }}
   >
     <div className="bg-black border-2 border-black aspect-video relative overflow-hidden mb-2 sm:mb-3 md:mb-4 group-hover:shadow-none transition-all">
       <OptimizedImage
@@ -16,7 +28,7 @@ const ProjectCard = memo(({ project }: { project: typeof projects[0] }) => (
         className="w-full h-full object-cover opacity-80 group-hover:opacity-100 transition-opacity"
       />
     </div>
-    <div className="space-y-1.5 sm:space-y-2 md:space-y-3 flex-grow">
+    <div className="space-y-1.5 sm:space-y-2 md:space-y-3">
       <div className="flex justify-between items-start gap-1.5 sm:gap-2">
         <h3
           className={`text-xs sm:text-sm md:text-base lg:text-lg font-black uppercase ${hoverTextColor[project.color] || ''} transition-colors glitch-hover leading-tight`}
@@ -48,34 +60,18 @@ const ProjectCard = memo(({ project }: { project: typeof projects[0] }) => (
 ProjectCard.displayName = 'ProjectCard';
 
 export const Projects = memo(function Projects() {
-  // Group projects into pairs (columns of 2)
-  const columns = useMemo(() => {
-    const cols: (typeof projects)[] = [];
-    for (let i = 0; i < projects.length; i += 2) {
-      cols.push(projects.slice(i, i + 2));
-    }
-    return cols;
-  }, []);
-
   return (
-    <section id="projects" className="py-16 sm:py-24 bg-neo-yellow border-t-4 border-black overflow-hidden" aria-label="Selected Projects">
-      <div className="max-w-7xl mx-auto px-4">
+    <section id="projects" className="py-16 sm:py-24 bg-neo-yellow border-t-4 border-black px-4 overflow-hidden" aria-label="Selected Projects">
+      <div className="max-w-7xl mx-auto">
         <h2 className="text-3xl sm:text-5xl md:text-6xl lg:text-7xl font-black mb-6 sm:mb-12 uppercase tracking-tighter text-white drop-shadow-[4px_4px_0_rgba(0,0,0,1)] text-stroke-black">
           Selected Works
         </h2>
-      </div>
 
-      <div className="flex gap-4 sm:gap-6 overflow-x-auto px-4 sm:px-6 md:px-8 lg:px-12 pb-6 snap-x snap-mandatory scrollbar-hide" style={{ scrollbarWidth: 'none', msOverflowStyle: 'none' }}>
-        {columns.map((col, colIdx) => (
-          <div
-            key={colIdx}
-            className="flex-shrink-0 w-[80vw] sm:w-[60vw] md:w-[45vw] lg:w-[35vw] xl:w-[30vw] flex flex-col gap-4 sm:gap-6 snap-start"
-          >
-            {col.map((project) => (
-              <ProjectCard key={project.id} project={project} />
-            ))}
-          </div>
-        ))}
+        <div className="columns-2 lg:columns-3 gap-2.5 sm:gap-4 md:gap-6 space-y-2.5 sm:space-y-4 md:space-y-6">
+          {projects.map((project, index) => (
+            <ProjectCard key={project.id} project={project} index={index} />
+          ))}
+        </div>
       </div>
     </section>
   );
