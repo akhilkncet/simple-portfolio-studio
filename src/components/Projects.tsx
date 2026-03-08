@@ -61,7 +61,7 @@ const DesktopProjectCard = memo(({ project }: { project: typeof projects[0] }) =
         className="w-full h-full object-cover opacity-80 group-hover:opacity-100 transition-opacity"
       />
     </div>
-    <div className="space-y-3">
+    <div className="space-y-3 flex-1 flex flex-col">
       <div className="flex justify-between items-start gap-2">
         <h3
           className={`text-base lg:text-lg font-black uppercase ${hoverTextColor[project.color] || ''} transition-colors glitch-hover leading-tight`}
