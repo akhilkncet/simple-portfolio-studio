@@ -39,7 +39,7 @@ export const Skills = memo(function Skills() {
 
       <div className="max-w-7xl mx-auto px-4 sm:px-6 md:px-8 relative z-10">
         <div className="mb-6 sm:mb-10 md:mb-12 reveal">
-          <h2 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-black uppercase text-white mb-2 sm:mb-3 md:mb-4">
+          <h2 className="text-2xl sm:text-4xl md:text-5xl lg:text-6xl font-black uppercase text-white mb-2 sm:mb-3 md:mb-4">
             TECH<span className="text-neo-green">_STACK</span>
           </h2>
           <div className="flex items-center gap-2">
