@@ -175,6 +175,23 @@ export const Contact = memo(function Contact() {
               </a>
             </div>
             <div className="bg-white border-4 border-black p-4 shadow-hard">
+              <p className="font-mono text-xs font-bold uppercase bg-black text-white px-2 py-1 w-max mb-2">Phone</p>
+              <a href="tel:+918220002860" className="font-mono text-xs sm:text-sm font-medium uppercase text-black hover:text-neo-green hover:translate-x-2 transition-all inline-block">
+                +91 8220002860
+              </a>
+            </div>
+            <div className="bg-white border-4 border-black p-4 shadow-hard">
+              <p className="font-mono text-xs font-bold uppercase bg-black text-white px-2 py-1 w-max mb-2">GitHub</p>
+              <div className="flex flex-col gap-1.5">
+                <a href="https://github.com/Akhil-0911" target="_blank" rel="noopener noreferrer" className="font-mono text-xs sm:text-sm font-medium uppercase text-black hover:text-neo-blue hover:translate-x-2 transition-all inline-block">
+                  @Akhil-0911
+                </a>
+                <a href="https://github.com/akhilkncet" target="_blank" rel="noopener noreferrer" className="font-mono text-xs sm:text-sm font-medium uppercase text-black hover:text-neo-blue hover:translate-x-2 transition-all inline-block">
+                  @akhilkncet
+                </a>
+              </div>
+            </div>
+            <div className="bg-white border-4 border-black p-4 shadow-hard">
               <p className="font-mono text-xs font-bold uppercase bg-black text-white px-2 py-1 w-max mb-2">Quick Chat</p>
               <a href="https://www.linkedin.com/in/akhil0911" target="_blank" rel="noopener noreferrer" className="font-mono text-xs sm:text-sm font-medium uppercase text-black hover:text-neo-blue hover:translate-x-2 transition-all inline-block">
                 @akhil0911
