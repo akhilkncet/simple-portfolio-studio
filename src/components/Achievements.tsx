@@ -217,8 +217,8 @@ const CertificateModal = memo(({ certificate, onClose }: { certificate: typeof a
           <div className="border-b-2 border-cyan-400 pb-2 sm:pb-3 pr-12">
             <h3 className="text-lg sm:text-xl md:text-2xl font-black uppercase text-cyan-100 mb-1">{certificate.title}</h3>
             <div className="flex flex-wrap gap-2 sm:gap-3 font-mono text-[10px] sm:text-xs">
-              <span className="text-neo-green">📍 {certificate.organization}</span>
-              <span className="text-neo-yellow">📅 {certificate.date}</span>
+              <span className="text-neo-green">{certificate.organization}</span>
+              <span className="text-neo-yellow">{certificate.date}</span>
               <span className={`${textColor[certificate.color] || 'text-neo-green'} uppercase font-bold`}>
                 {certificate.category}
               </span>

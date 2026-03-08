@@ -33,7 +33,7 @@ export const experiences: Experience[] = [
     title: 'AI & ML Intern',
     company: 'Edunet Foundation (AICTE, Microsoft, SAP)',
     period: 'Feb 2025 – Mar 2025',
-    color: 'neo-yellow',
+    color: 'neo-orange',
     responsibilities: [
       'Developed classification models using PyTorch and Scikit-learn with 92% accuracy',
       'Processed and analyzed large datasets using pandas and NumPy',
