@@ -4,14 +4,14 @@ import { OptimizedImage } from './OptimizedImage';
 import { hoverTextColor } from '@/lib/colorMap';
 
 const cardHeights = [
-  'min-h-[240px] md:min-h-[450px]',
-  'min-h-[200px] md:min-h-[380px]',
-  'min-h-[220px] md:min-h-[420px]',
-  'min-h-[210px] md:min-h-[400px]',
-  'min-h-[250px] md:min-h-[460px]',
-  'min-h-[205px] md:min-h-[390px]',
-  'min-h-[230px] md:min-h-[440px]',
-  'min-h-[215px] md:min-h-[410px]',
+  'min-h-[180px] sm:min-h-[240px] md:min-h-[450px]',
+  'min-h-[160px] sm:min-h-[200px] md:min-h-[380px]',
+  'min-h-[170px] sm:min-h-[220px] md:min-h-[420px]',
+  'min-h-[165px] sm:min-h-[210px] md:min-h-[400px]',
+  'min-h-[185px] sm:min-h-[250px] md:min-h-[460px]',
+  'min-h-[162px] sm:min-h-[205px] md:min-h-[390px]',
+  'min-h-[175px] sm:min-h-[230px] md:min-h-[440px]',
+  'min-h-[168px] sm:min-h-[215px] md:min-h-[410px]',
 ];
 
 const ProjectCard = memo(({ project, index }: { project: typeof projects[0]; index: number }) => (
