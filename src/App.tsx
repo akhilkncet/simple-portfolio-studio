@@ -1,4 +1,4 @@
-import { useState } from 'react';
+import { useState, useCallback } from 'react';
 import { useCursor } from '@/hooks/useCursor';
 import { useScrollProgress } from '@/hooks/useScrollProgress';
 import { useScrollReveal } from '@/hooks/useScrollReveal';
