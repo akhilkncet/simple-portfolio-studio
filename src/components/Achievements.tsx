@@ -195,30 +195,28 @@ const CertificateModal = memo(({ certificate, onClose }: { certificate: typeof a
 
   return (
     <div
-      className="fixed inset-0 z-[100] bg-black/90 backdrop-blur-md"
+      className="fixed inset-0 z-[100] bg-black/90 backdrop-blur-md flex items-center justify-center p-2 sm:p-4"
       onClick={onClose}
       role="dialog"
       aria-modal="true"
       aria-label={certificate.title}
     >
-      <div className="absolute inset-0 overflow-y-auto">
-        <div className="min-h-full flex items-start justify-center px-2 sm:px-4 py-8">
-          <div
-            className="relative max-w-7xl w-full bg-[#1a1a1a] border-4 border-cyan-400 shadow-hard p-4 sm:p-6"
-            onClick={e => e.stopPropagation()}
-          >
+      <div
+        className="relative max-w-6xl w-full max-h-[95vh] bg-[#1a1a1a] border-4 border-cyan-400 shadow-hard p-3 sm:p-5 overflow-y-auto neo-scrollbar"
+        onClick={e => e.stopPropagation()}
+      >
         <button
           onClick={onClose}
-          className="absolute top-2 right-2 sm:top-4 sm:right-4 w-10 h-10 sm:w-12 sm:h-12 bg-neo-red text-white border-2 border-cyan-400 flex items-center justify-center hover:bg-white hover:text-neo-red transition-all shadow-hard font-black text-xl sm:text-2xl z-10"
+          className="absolute top-2 right-2 sm:top-3 sm:right-3 w-9 h-9 sm:w-11 sm:h-11 bg-neo-red text-white border-2 border-cyan-400 flex items-center justify-center hover:bg-white hover:text-neo-red transition-all shadow-hard font-black text-lg sm:text-xl z-10"
           aria-label="Close modal"
         >
           ×
         </button>
 
-        <div className="space-y-4 sm:space-y-6">
-          <div className="border-b-2 border-cyan-400 pb-3 sm:pb-4 pr-12">
-            <h3 className="text-xl sm:text-2xl md:text-3xl font-black uppercase text-cyan-100 mb-2">{certificate.title}</h3>
-            <div className="flex flex-wrap gap-2 sm:gap-4 font-mono text-xs sm:text-sm">
+        <div className="space-y-3 sm:space-y-4">
+          <div className="border-b-2 border-cyan-400 pb-2 sm:pb-3 pr-12">
+            <h3 className="text-lg sm:text-xl md:text-2xl font-black uppercase text-cyan-100 mb-1">{certificate.title}</h3>
+            <div className="flex flex-wrap gap-2 sm:gap-3 font-mono text-[10px] sm:text-xs">
               <span className="text-neo-green">📍 {certificate.organization}</span>
               <span className="text-neo-yellow">📅 {certificate.date}</span>
               <span className={`${textColor[certificate.color] || 'text-neo-green'} uppercase font-bold`}>
@@ -228,16 +226,16 @@ const CertificateModal = memo(({ certificate, onClose }: { certificate: typeof a
           </div>
 
           {hasDescription ? (
-            <div className="grid grid-cols-1 lg:grid-cols-2 gap-4 sm:gap-6">
-              <div className="bg-[#1a1a1a] border-2 border-gray-700 p-3 sm:p-4">
-                <OptimizedImage src={certificate.image} alt={certificate.title} width={800} height={600} className="w-full h-auto object-contain" />
+            <div className="grid grid-cols-1 lg:grid-cols-2 gap-3 sm:gap-4">
+              <div className="bg-[#1a1a1a] border-2 border-gray-700 p-2 sm:p-3 flex items-center">
+                <OptimizedImage src={certificate.image} alt={certificate.title} width={800} height={600} className="w-full max-h-[40vh] lg:max-h-[60vh] object-contain" />
               </div>
-              <div className="bg-[#0a0a0a] border-2 border-gray-700 p-4 sm:p-6">
-                <h4 className="text-lg sm:text-xl font-black uppercase text-neo-green mb-3 sm:mb-4">/// DETAILS</h4>
-                <ul className="font-mono text-sm sm:text-base text-gray-300 leading-relaxed space-y-2 sm:space-y-3 list-none">
+              <div className="bg-[#0a0a0a] border-2 border-gray-700 p-3 sm:p-4 max-h-[40vh] lg:max-h-[60vh] overflow-y-auto neo-scrollbar">
+                <h4 className="text-base sm:text-lg font-black uppercase text-neo-green mb-2 sm:mb-3">/// DETAILS</h4>
+                <ul className="font-mono text-xs sm:text-sm text-gray-300 leading-relaxed space-y-1.5 sm:space-y-2 list-none">
                   {(certificate.description ?? '').split(/(?<=\.)\s+/).filter(item => item.trim()).map((point, idx) => (
                     <li key={idx} className="flex items-start gap-2">
-                      <span className="text-neo-yellow mt-1 flex-shrink-0" aria-hidden="true">•</span>
+                      <span className="text-neo-yellow mt-0.5 flex-shrink-0" aria-hidden="true">•</span>
                       <span>{point.trim()}</span>
                     </li>
                   ))}
@@ -245,12 +243,10 @@ const CertificateModal = memo(({ certificate, onClose }: { certificate: typeof a
               </div>
             </div>
           ) : (
-            <div className="bg-[#1a1a1a] border-2 border-gray-700 p-3 sm:p-4">
-              <OptimizedImage src={certificate.image} alt={certificate.title} width={1200} height={900} className="w-full h-auto object-contain" />
+            <div className="bg-[#1a1a1a] border-2 border-gray-700 p-2 sm:p-3 flex items-center justify-center">
+              <OptimizedImage src={certificate.image} alt={certificate.title} width={1200} height={900} className="w-full max-h-[75vh] object-contain" />
             </div>
           )}
-        </div>
-          </div>
         </div>
       </div>
     </div>
