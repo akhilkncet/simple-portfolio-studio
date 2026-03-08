@@ -1,5 +1,3 @@
-'use client';
-
 import { ImgHTMLAttributes } from 'react';
 
 interface OptimizedImageProps extends Omit<ImgHTMLAttributes<HTMLImageElement>, 'src'> {
