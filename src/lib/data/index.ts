@@ -118,43 +118,8 @@ export const projects: Project[] = [
   },
 ];
 
-export const testimonials: Testimonial[] = [
-  {
-    id: 1,
-    content: 'Akhil demonstrated exceptional problem-solving skills and delivered secure, scalable solutions under tight deadlines.',
-    author: 'Senior Engineer',
-    role: 'VR Della Infotech',
-    color: 'neo-green',
-  },
-  {
-    id: 2,
-    content: 'His deep understanding of cybersecurity principles and hands-on approach to threat detection was impressive.',
-    author: 'Security Lead',
-    role: 'Cothon Solutions',
-    color: 'neo-red',
-  },
-  {
-    id: 3,
-    content: 'Excellent grasp of machine learning concepts with strong implementation skills in PyTorch and TensorFlow.',
-    author: 'ML Mentor',
-    role: 'Edunet Foundation',
-    color: 'neo-purple',
-  },
-  {
-    id: 4,
-    content: 'Akhil combines technical expertise with creativity, building solutions that are both secure and user-friendly.',
-    author: 'Project Manager',
-    role: 'Tech Startup',
-    color: 'neo-blue',
-  },
-  {
-    id: 5,
-    content: 'His passion for cybersecurity and continuous learning makes him stand out among his peers.',
-    author: 'Professor',
-    role: 'KNCET',
-    color: 'neo-pink',
-  },
-];
+
+
 
 export const achievements: Achievement[] = [
   {

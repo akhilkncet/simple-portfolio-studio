@@ -17,13 +17,6 @@ export interface Project {
   color: string;
 }
 
-export interface Testimonial {
-  id: number;
-  content: string;
-  author: string;
-  role: string;
-  color: string;
-}
 
 export interface Achievement {
   id: number;

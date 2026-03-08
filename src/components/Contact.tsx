@@ -27,9 +27,13 @@ interface Toast {
 
 const validateEmail = (email: string) => /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email);
 const validatePhone = (phone: string) => {
-  const re = /^(\+91[\s]?)?[6-9]\d{9}$/;
-  return phone === '' || re.test(phone.replace(/\s/g, ''));
+  // International: optional + followed by 7-15 digits (ITU-T E.164)
+  const re = /^\+?[1-9]\d{6,14}$/;
+  return phone === '' || re.test(phone.replace(/[\s\-()]/g, ''));
 };
+
+const RATE_LIMIT_MS = 60_000; // 1 minute between submissions
+let lastSubmitTime = 0;
 
 export const Contact = memo(function Contact() {
   const [formData, setFormData] = useState<FormData>({
