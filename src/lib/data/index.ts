@@ -1,31 +1,5 @@
-import { TechSkill, Experience, Project, Testimonial, Achievement } from '@/types';
+import { Experience, Project, Achievement } from '@/types';
 
-export const techSkills: TechSkill[] = [
-  { name: 'PYTHON', category: 'LANGUAGE', color: 'neo-blue' },
-  { name: 'DJANGO', category: 'FRAMEWORK', color: 'neo-green' },
-  { name: 'FLASK', category: 'FRAMEWORK', color: 'neo-yellow' },
-  { name: 'PYTORCH', category: 'ML', color: 'neo-orange' },
-  { name: 'REACT', category: 'FRAMEWORK', color: 'neo-pink' },
-  { name: 'C & C++', category: 'LANGUAGE', color: 'neo-purple' },
-  { name: 'JAVASCRIPT', category: 'LANGUAGE', color: 'neo-yellow' },
-  { name: 'HTML5', category: 'CORE', color: 'neo-orange' },
-  { name: 'CSS3', category: 'STYLING', color: 'neo-pink' },
-  { name: 'TENSORFLOW', category: 'ML', color: 'neo-purple' },
-  { name: 'DOCKER', category: 'DEVOPS', color: 'neo-blue' },
-  { name: 'AWS', category: 'CLOUD', color: 'neo-green' },
-  { name: 'SECURITY', category: 'CYBER', color: 'neo-red' },
-  { name: 'NODE.JS', category: 'BACKEND', color: 'neo-green' },
-  { name: 'GIT', category: 'VERSION', color: 'white' },
-  { name: 'FLUTTER', category: 'MOBILE', color: 'neo-blue' },
-  { name: 'PANDAS', category: 'ML', color: 'neo-blue' },
-  { name: 'NUMPY', category: 'ML', color: 'neo-purple' },
-  { name: 'SCIKIT-LEARN', category: 'ML', color: 'neo-orange' },
-  { name: 'DART', category: 'LANGUAGE', color: 'neo-blue' },
-  { name: 'ANDROID STUDIO', category: 'MOBILE', color: 'neo-green' },
-  { name: 'PENETRATION TESTING', category: 'CYBER', color: 'neo-red' },
-  { name: 'WEB EXPLOITATION', category: 'CYBER', color: 'neo-pink' },
-  { name: 'CRYPTOGRAPHY', category: 'CYBER', color: 'neo-yellow' },
-];
 
 export const experiences: Experience[] = [
   {
@@ -144,43 +118,8 @@ export const projects: Project[] = [
   },
 ];
 
-export const testimonials: Testimonial[] = [
-  {
-    id: 1,
-    content: 'Akhil demonstrated exceptional problem-solving skills and delivered secure, scalable solutions under tight deadlines.',
-    author: 'Senior Engineer',
-    role: 'VR Della Infotech',
-    color: 'neo-green',
-  },
-  {
-    id: 2,
-    content: 'His deep understanding of cybersecurity principles and hands-on approach to threat detection was impressive.',
-    author: 'Security Lead',
-    role: 'Cothon Solutions',
-    color: 'neo-red',
-  },
-  {
-    id: 3,
-    content: 'Excellent grasp of machine learning concepts with strong implementation skills in PyTorch and TensorFlow.',
-    author: 'ML Mentor',
-    role: 'Edunet Foundation',
-    color: 'neo-purple',
-  },
-  {
-    id: 4,
-    content: 'Akhil combines technical expertise with creativity, building solutions that are both secure and user-friendly.',
-    author: 'Project Manager',
-    role: 'Tech Startup',
-    color: 'neo-blue',
-  },
-  {
-    id: 5,
-    content: 'His passion for cybersecurity and continuous learning makes him stand out among his peers.',
-    author: 'Professor',
-    role: 'KNCET',
-    color: 'neo-pink',
-  },
-];
+
+
 
 export const achievements: Achievement[] = [
   {

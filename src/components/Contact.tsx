@@ -27,9 +27,13 @@ interface Toast {
 
 const validateEmail = (email: string) => /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email);
 const validatePhone = (phone: string) => {
-  const re = /^(\+91[\s]?)?[6-9]\d{9}$/;
-  return phone === '' || re.test(phone.replace(/\s/g, ''));
+  // International: optional + followed by 7-15 digits (ITU-T E.164)
+  const re = /^\+?[1-9]\d{6,14}$/;
+  return phone === '' || re.test(phone.replace(/[\s\-()]/g, ''));
 };
+
+const RATE_LIMIT_MS = 60_000; // 1 minute between submissions
+let lastSubmitTime = 0;
 
 export const Contact = memo(function Contact() {
   const [formData, setFormData] = useState<FormData>({
@@ -77,7 +81,7 @@ export const Contact = memo(function Contact() {
     else if (!validateEmail(formData.email)) errors.email = 'Please enter a valid email address';
     if (!formData.message.trim()) errors.message = 'Message is required';
     else if (formData.message.trim().length < 10) errors.message = 'Message must be at least 10 characters';
-    if (formData.phone && !validatePhone(formData.phone)) errors.phone = 'Please enter a valid Indian mobile number';
+    if (formData.phone && !validatePhone(formData.phone)) errors.phone = 'Please enter a valid phone number';
     setFormErrors(errors);
     return Object.keys(errors).length === 0;
   }, [formData]);
@@ -119,6 +123,12 @@ export const Contact = memo(function Contact() {
 
   const handleSubmit = useCallback(async (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
+    const now = Date.now();
+    if (now - lastSubmitTime < RATE_LIMIT_MS) {
+      const secsLeft = Math.ceil((RATE_LIMIT_MS - (now - lastSubmitTime)) / 1000);
+      addToast({ title: 'Please Wait', description: `You can send another message in ${secsLeft} seconds.`, type: 'info' });
+      return;
+    }
     if (!validateForm()) {
       addToast({ title: 'Validation Error', description: 'Please fix the errors before submitting.', type: 'error' });
       return;
@@ -131,6 +141,7 @@ export const Contact = memo(function Contact() {
     setIsSubmitting(true);
     // Snapshot form data to avoid stale references during retries
     const snapshot = { ...formData };
+    lastSubmitTime = Date.now();
     try {
       await sendEmail(snapshot, 0);
     } finally {
