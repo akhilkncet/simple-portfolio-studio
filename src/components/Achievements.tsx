@@ -268,43 +268,41 @@ const AllCertificatesModal = memo(({ items, tabs, activeTab, onClose, onCardClic
 
   return (
     <div
-      className="fixed inset-0 z-[100] bg-black/90 backdrop-blur-md"
+      className="fixed inset-0 z-[100] bg-black/90 backdrop-blur-md flex items-center justify-center p-2 sm:p-4"
       onClick={onClose}
       role="dialog"
       aria-modal="true"
       aria-label={`All ${activeTabInfo?.label}`}
     >
-      <div className="absolute inset-0 overflow-y-auto">
-        <div className="min-h-full flex items-start justify-center px-2 sm:px-4 py-8">
-          <div
-            className="relative max-w-7xl w-full bg-[#0a0a0a] border-4 border-neo-blue shadow-hard p-4 sm:p-6 md:p-8"
-            onClick={e => e.stopPropagation()}
-          >
-            <div className="sticky top-0 bg-[#0a0a0a] pb-4 mb-4 border-b-2 border-neo-blue z-10">
-              <div className="flex justify-between items-center">
-                <div>
-                  <h3 className="text-xl sm:text-2xl md:text-3xl font-black uppercase text-white mb-2">
-                    {activeTabInfo?.icon} ALL {activeTabInfo?.label}
-                  </h3>
-                  <p className="font-mono text-xs sm:text-sm text-gray-400">
-                    Total: {items.length} certificates
-                  </p>
-                </div>
-                <button
-                  onClick={onClose}
-                  className="w-10 h-10 sm:w-12 sm:h-12 bg-neo-red text-white border-2 border-white flex items-center justify-center hover:bg-white hover:text-neo-red transition-all shadow-hard font-black text-xl sm:text-2xl"
-                  aria-label="Close modal"
-                >
-                  ×
-                </button>
-              </div>
+      <div
+        className="relative max-w-7xl w-full max-h-[95vh] bg-[#0a0a0a] border-4 border-neo-blue shadow-hard flex flex-col"
+        onClick={e => e.stopPropagation()}
+      >
+        <div className="bg-[#0a0a0a] p-4 sm:p-6 pb-3 border-b-2 border-neo-blue flex-shrink-0">
+          <div className="flex justify-between items-center">
+            <div>
+              <h3 className="text-xl sm:text-2xl md:text-3xl font-black uppercase text-white mb-1">
+                {activeTabInfo?.icon} ALL {activeTabInfo?.label}
+              </h3>
+              <p className="font-mono text-xs sm:text-sm text-gray-400">
+                Total: {items.length} certificates
+              </p>
             </div>
+            <button
+              onClick={onClose}
+              className="w-10 h-10 sm:w-12 sm:h-12 bg-neo-red text-white border-2 border-white flex items-center justify-center hover:bg-white hover:text-neo-red transition-all shadow-hard font-black text-xl sm:text-2xl"
+              aria-label="Close modal"
+            >
+              ×
+            </button>
+          </div>
+        </div>
 
-            <div className="grid grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-3 sm:gap-4 md:gap-5">
-              {items.map((achievement) => (
-                <AchievementCard key={achievement.id} achievement={achievement} onClick={() => onCardClick(achievement)} />
-              ))}
-            </div>
+        <div className="overflow-y-auto p-4 sm:p-6 neo-scrollbar">
+          <div className="grid grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-3 sm:gap-4 md:gap-5">
+            {items.map((achievement) => (
+              <AchievementCard key={achievement.id} achievement={achievement} onClick={() => onCardClick(achievement)} />
+            ))}
           </div>
         </div>
       </div>

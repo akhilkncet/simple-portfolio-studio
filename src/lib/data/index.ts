@@ -124,6 +124,16 @@ export const projects: Project[] = [
 export const achievements: Achievement[] = [
   {
     id: 1,
+    title: 'Backend Developer Internship',
+    organization: 'VR Della Infotech',
+    date: 'June 2025 - July 2025',
+    image: '/certificates/vr-della-internship-certificate.webp',
+    category: 'internship',
+    color: 'neo-green',
+    description: 'Built scalable REST APIs using Django REST Framework with authentication and permissions.\n\nDesigned and implemented efficient database models with Django ORM.\n\nIntegrated third-party services and APIs into Django applications.\n\nOptimized database queries and improved application performance by 40%.\n\nImplemented user authentication, authorization, and role-based access control.',
+  },
+  {
+    id: 2,
     title: 'Cybersecurity Internship',
     organization: 'Cothon Solutions',
     date: 'June 2025',
@@ -133,7 +143,7 @@ export const achievements: Achievement[] = [
     description: 'Developed OSWAP Scanner, a Python-based tool to detect OWASP Top 10 vulnerabilities like XSS, SQLi, and CSRF in web applications.\n\nEngineered SecureVault, an AI-powered Data Leakage Prevention system with real-time file, clipboard, email, and USB monitoring.\n\nIntegrated ML models for insider threat detection, phishing email classification, and sensitive document categorization using NLP.\n\nImplemented features like risk scoring, anomaly detection, steganography scanning, and OCR-based image content analysis.\n\nBuilt a Flask-based admin dashboard for policy control, alert management, and remote monitoring.\n\nOptimized system performance and collaborated with cross-functional teams to deliver secure, enterprise-grade solutions.',
   },
   {
-    id: 2,
+    id: 3,
     title: 'AIML Internship',
     organization: 'Edunet Foundation',
     date: 'April 2025',
@@ -141,16 +151,6 @@ export const achievements: Achievement[] = [
     category: 'internship',
     color: 'neo-purple',
     description: 'Developed an AI-powered medical image analysis system to detect pneumonia in chest X-rays and brain tumors in MRI scans, assisting healthcare professionals with early detection.\n\nImplemented two deep learning models: an Improved Pneumonia Model for X-rays and ResNet-18 for MRI-based brain tumor detection.\n\nEnabled image upload functionality where users provide X-ray or MRI images, which are preprocessed and analyzed by the appropriate model.\n\nBuilt the backend using Python and Flask, and used TensorFlow/PyTorch for model inference; the frontend was developed using HTML/CSS for a clean user interface.\n\nAchieved high accuracy with the pneumonia model; the brain tumor model showed promising results but requires further improvement.\n\nDelivered a preliminary diagnostic tool with the potential to support healthcare professionals in real-world clinical settings.',
-  },
-  {
-    id: 3,
-    title: 'Backend Developer Internship',
-    organization: 'VR Della Infotech',
-    date: 'June 2025 - July 2025',
-    image: '/certificates/vr-della-internship-certificate.webp',
-    category: 'internship',
-    color: 'neo-green',
-    description: 'Built scalable REST APIs using Django REST Framework with authentication and permissions.\n\nDesigned and implemented efficient database models with Django ORM.\n\nIntegrated third-party services and APIs into Django applications.\n\nOptimized database queries and improved application performance by 40%.\n\nImplemented user authentication, authorization, and role-based access control.',
   },
   {
     id: 4,
