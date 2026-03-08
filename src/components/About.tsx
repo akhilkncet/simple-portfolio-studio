@@ -3,9 +3,9 @@ import { OptimizedImage } from './OptimizedImage';
 
 export const About = memo(function About() {
   return (
-    <section id="about" className="py-16 sm:py-24 px-4" aria-label="About Me">
+    <section id="about" className="py-10 sm:py-24 px-3 sm:px-4" aria-label="About Me">
       <div className="max-w-7xl mx-auto">
-        <div className="bg-white border-4 border-black p-4 sm:p-8 md:p-12 shadow-hard-lg">
+        <div className="bg-white border-3 sm:border-4 border-black p-3 sm:p-8 md:p-12 shadow-hard-lg">
           <div className="grid grid-cols-1 md:grid-cols-12 gap-6 sm:gap-12">
             <div className="md:col-span-4 reveal">
               <div className="aspect-square max-w-xs mx-auto md:max-w-none bg-gray-200 border-4 border-black relative shadow-hard overflow-hidden group">
