@@ -261,8 +261,8 @@ export const Contact = memo(function Contact() {
                 </div>
               </div>
               <div className="space-y-1.5 sm:space-y-2">
-                <label htmlFor="message" className="font-mono text-xs font-bold uppercase text-black">Project Details *</label>
-                <textarea id="message" name="message" value={formData.message} onChange={handleChange} rows={4} placeholder="Tell me about your project, goals, timeline, and budget..." className={`${inputClass('message')} resize-vertical`} />
+                <label htmlFor="message" className="font-mono text-xs font-bold uppercase text-black">Message *</label>
+                <textarea id="message" name="message" value={formData.message} onChange={handleChange} rows={4} placeholder="Hi Akhil, I'd like to discuss an opportunity..." className={`${inputClass('message')} resize-vertical`} />
                 {formErrors.message && <p className="text-neo-red text-xs font-mono font-bold" role="alert">{formErrors.message}</p>}
               </div>
               <button
