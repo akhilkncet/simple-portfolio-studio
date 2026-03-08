@@ -230,7 +230,7 @@ export const Contact = memo(function Contact() {
               <button
                 type="submit"
                 disabled={isSubmitting}
-                className="w-full bg-neo-green text-black border-4 border-black py-3 sm:py-4 px-6 font-mono text-sm sm:text-base font-black uppercase shadow-hard hover:translate-x-1 hover:translate-y-1 hover:shadow-none active:translate-x-2 active:translate-y-2 transition-all disabled:opacity-50 disabled:cursor-not-allowed"
+                className="w-full bg-neo-green text-black border-2 border-black/20 rounded-xl py-3 sm:py-4 px-6 font-mono text-sm sm:text-base font-black uppercase shadow-lg hover:translate-y-0.5 hover:shadow-md active:translate-y-1 transition-all disabled:opacity-50 disabled:cursor-not-allowed"
               >
                 {isSubmitting ? '⏳ SENDING...' : '🚀 SEND MESSAGE'}
               </button>
