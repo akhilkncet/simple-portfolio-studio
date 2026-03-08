@@ -3,16 +3,6 @@ import { projects } from '@/lib/data';
 import { OptimizedImage } from './OptimizedImage';
 import { hoverTextColor } from '@/lib/colorMap';
 
-const cardHeights = [
-  'md:min-h-[450px]',
-  'md:min-h-[380px]',
-  'md:min-h-[420px]',
-  'md:min-h-[400px]',
-  'md:min-h-[460px]',
-  'md:min-h-[390px]',
-  'md:min-h-[440px]',
-  'md:min-h-[410px]',
-];
 
 const MobileProjectCard = memo(({ project }: { project: typeof projects[0] }) => (
   <article className="flex-shrink-0 w-[75vw] max-w-[280px] bg-white border-4 border-black p-2 shadow-hard snap-center">
@@ -57,9 +47,9 @@ const MobileProjectCard = memo(({ project }: { project: typeof projects[0] }) =>
 
 MobileProjectCard.displayName = 'MobileProjectCard';
 
-const DesktopProjectCard = memo(({ project, index }: { project: typeof projects[0]; index: number }) => (
+const DesktopProjectCard = memo(({ project }: { project: typeof projects[0] }) => (
   <article
-    className={`reveal group bg-white border-4 border-black p-4 shadow-hard ${cardHeights[index % cardHeights.length]}`}
+    className="reveal group bg-white border-4 border-black p-4 shadow-hard h-full flex flex-col"
     style={{ pageBreakInside: 'avoid' }}
   >
     <div className="bg-black border-2 border-black aspect-video relative overflow-hidden mb-4 group-hover:shadow-none transition-all">
@@ -71,7 +61,7 @@ const DesktopProjectCard = memo(({ project, index }: { project: typeof projects[
         className="w-full h-full object-cover opacity-80 group-hover:opacity-100 transition-opacity"
       />
     </div>
-    <div className="space-y-3">
+    <div className="space-y-3 flex-1 flex flex-col">
       <div className="flex justify-between items-start gap-2">
         <h3
           className={`text-base lg:text-lg font-black uppercase ${hoverTextColor[project.color] || ''} transition-colors glitch-hover leading-tight`}
@@ -88,7 +78,7 @@ const DesktopProjectCard = memo(({ project, index }: { project: typeof projects[
           <i className="ri-arrow-right-up-line text-lg" aria-hidden="true"></i>
         </a>
       </div>
-      <p className="font-mono text-sm leading-relaxed">{project.description}</p>
+      <p className="font-mono text-sm leading-relaxed flex-1">{project.description}</p>
       <div className="flex gap-2 font-mono text-xs font-bold flex-wrap">
         {project.technologies.map((tech, idx) => (
           <span key={idx} className="bg-neo-black text-white px-2">
@@ -122,7 +112,7 @@ export const Projects = memo(function Projects() {
       <div className="hidden md:block max-w-7xl mx-auto px-4">
         <div className="grid grid-cols-2 lg:grid-cols-3 gap-6">
           {projects.map((project, index) => (
-            <DesktopProjectCard key={project.id} project={project} index={index} />
+            <DesktopProjectCard key={project.id} project={project} />
           ))}
         </div>
       </div>
