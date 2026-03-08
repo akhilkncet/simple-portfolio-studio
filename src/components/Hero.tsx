@@ -39,7 +39,7 @@ export const Hero = memo(function Hero() {
             href="#projects"
             className="bg-black text-white border-2 border-black px-6 py-3 sm:px-8 sm:py-4 text-sm sm:text-base md:text-lg font-bold shadow-hard hover:bg-neo-green hover:text-black hover:translate-x-1 hover:translate-y-1 hover:shadow-none transition-all cursor-hover"
           >
-            VIEW DATABASE
+            VIEW PROJECTS
           </a>
           <button
             onClick={openModal}

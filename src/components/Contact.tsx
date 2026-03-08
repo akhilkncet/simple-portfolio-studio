@@ -52,7 +52,6 @@ export const Contact = memo(function Contact() {
     setToasts(prev => prev.filter(t => t.id !== id));
   }, []);
 
-  // Lazy load EmailJS
   useEffect(() => {
     let mounted = true;
     const init = async () => {
@@ -130,10 +129,10 @@ export const Contact = memo(function Contact() {
   }, [validateForm, emailjsReady, formData, retryCount, addToast]);
 
   const inputClass = (field: string) =>
-    `w-full bg-white border-2 ${formErrors[field] ? 'border-neo-red' : 'border-black'} rounded-xl p-2.5 sm:p-3.5 font-mono text-xs sm:text-sm font-semibold text-black focus:outline-none focus:border-neo-green focus:-translate-y-0.5 focus:shadow-[3px_3px_0px_#33FF57] transition-all`;
+    `w-full bg-neo-white border-4 ${formErrors[field] ? 'border-neo-red' : 'border-black'} p-2.5 sm:p-3.5 font-mono text-xs sm:text-sm font-semibold text-black focus:outline-none focus:border-neo-green focus:-translate-y-0.5 focus:shadow-[3px_3px_0px_#33FF57] transition-all`;
 
   return (
-    <section id="contact" className="py-16 sm:py-24 px-4 sm:px-8 relative overflow-hidden" aria-label="Contact">
+    <section id="contact" className="py-16 sm:py-24 px-4 sm:px-8 relative overflow-hidden border-t-4 border-black" aria-label="Contact">
       {/* Toast Container */}
       <div className="fixed top-20 sm:top-24 right-2 sm:right-4 z-50 space-y-2 max-w-[calc(100vw-1rem)] sm:max-w-md" role="alert" aria-live="polite">
         {toasts.map(toast => (
@@ -154,33 +153,36 @@ export const Contact = memo(function Contact() {
         ))}
       </div>
 
-      <div className="max-w-7xl mx-auto grid grid-cols-1 lg:grid-cols-2 gap-8 sm:gap-12 items-center relative z-10">
+      <div className="max-w-7xl mx-auto grid grid-cols-1 lg:grid-cols-2 gap-8 sm:gap-12 items-start relative z-10">
         {/* Left Side */}
         <div className="flex flex-col gap-6 sm:gap-8">
           <div className="space-y-4 sm:space-y-6">
-            <h2 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-black uppercase leading-[0.95] italic text-black">
-              Let's<br />Connect
+            <div className="inline-block bg-neo-pink border-4 border-black px-3 py-1 shadow-hard rotate-[-2deg]">
+              <span className="font-mono font-bold text-xs sm:text-sm uppercase">/// GET IN TOUCH</span>
+            </div>
+            <h2 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-black uppercase leading-[0.95] text-black">
+              Let's<br />Connect<span className="text-neo-red">.</span>
             </h2>
             <p className="font-mono text-xs sm:text-sm md:text-base font-semibold max-w-md text-black/80">
               Got a project idea? Need a stunning website or a robust app? Drop me a line, and let's create something extraordinary together.
             </p>
           </div>
           <div className="space-y-4 sm:space-y-6 mt-4 sm:mt-8">
-            <div className="space-y-2">
-              <p className="font-mono text-xs font-bold uppercase bg-black text-white px-2 py-1 w-max">Project Inquiries</p>
+            <div className="bg-white border-4 border-black p-4 shadow-hard">
+              <p className="font-mono text-xs font-bold uppercase bg-black text-white px-2 py-1 w-max mb-2">Project Inquiries</p>
               <a href="mailto:akhil.kncet@gmail.com" className="font-mono text-xs sm:text-sm font-medium uppercase text-black hover:text-neo-green hover:translate-x-2 transition-all inline-block break-all">
                 akhil.kncet@gmail.com
               </a>
             </div>
-            <div className="space-y-2">
-              <p className="font-mono text-xs font-bold uppercase bg-black text-white px-2 py-1 w-max">Quick Chat</p>
+            <div className="bg-white border-4 border-black p-4 shadow-hard">
+              <p className="font-mono text-xs font-bold uppercase bg-black text-white px-2 py-1 w-max mb-2">Quick Chat</p>
               <a href="https://www.linkedin.com/in/akhil0911" target="_blank" rel="noopener noreferrer" className="font-mono text-xs sm:text-sm font-medium uppercase text-black hover:text-neo-blue hover:translate-x-2 transition-all inline-block">
                 @akhil0911
               </a>
             </div>
-            <div className="mt-3 sm:mt-4 flex items-center space-x-2">
-              <div className={`w-3 h-3 border-2 border-black ${emailjsReady ? 'bg-neo-green' : 'bg-neo-red'}`} aria-hidden="true" />
-              <span className="text-xs font-mono font-bold uppercase">
+            <div className="flex items-center gap-2 bg-neo-black border-4 border-black p-3 shadow-hard">
+              <div className={`w-3 h-3 border-2 border-white ${emailjsReady ? 'bg-neo-green' : 'bg-neo-red'}`} aria-hidden="true" />
+              <span className="text-xs font-mono font-bold uppercase text-white">
                 Email service: {emailjsReady ? 'Ready' : 'Connecting...'}
               </span>
             </div>
@@ -188,50 +190,49 @@ export const Contact = memo(function Contact() {
         </div>
 
         {/* Right Side - Form */}
-        <div className="bg-gray-100 border-4 border-black rounded-3xl p-4 sm:p-6 md:p-8 shadow-hard-lg relative overflow-hidden">
-          <div className="absolute inset-0 opacity-5" style={{ background: 'repeating-linear-gradient(45deg, transparent 0px, transparent 8px, rgba(20,20,20,0.1) 8px, rgba(20,20,20,0.1) 16px)' }} aria-hidden="true" />
+        <div className="bg-white border-4 border-black p-4 sm:p-6 md:p-8 shadow-hard-lg relative overflow-hidden">
           <div className="relative z-10">
-            <div className="text-center mb-3 sm:mb-5">
-              <h3 className="text-2xl sm:text-3xl md:text-4xl font-black uppercase leading-[0.95] italic mb-1.5 sm:mb-2.5 text-black">Start a Project</h3>
+            <div className="mb-4 sm:mb-6 border-b-4 border-black pb-3 sm:pb-4">
+              <h3 className="text-2xl sm:text-3xl md:text-4xl font-black uppercase leading-[0.95] mb-1.5 sm:mb-2.5 text-black">Start a Project</h3>
               <p className="font-mono text-[10px] sm:text-xs font-semibold text-black/70">Tell me about your vision and let's make it reality</p>
             </div>
 
-            <form ref={formRef} onSubmit={handleSubmit} className="space-y-4 sm:space-y-6" noValidate>
+            <form ref={formRef} onSubmit={handleSubmit} className="space-y-4 sm:space-y-5" noValidate>
               <div className="grid grid-cols-1 sm:grid-cols-2 gap-3 sm:gap-4">
                 <div className="space-y-1.5 sm:space-y-2">
-                  <label htmlFor="firstName" className="font-mono text-xs font-medium uppercase text-black">First Name *</label>
+                  <label htmlFor="firstName" className="font-mono text-xs font-bold uppercase text-black">First Name *</label>
                   <input id="firstName" type="text" name="firstName" value={formData.firstName} onChange={handleChange} placeholder="Your first name" className={inputClass('firstName')} />
                   {formErrors.firstName && <p className="text-neo-red text-xs font-mono font-bold" role="alert">{formErrors.firstName}</p>}
                 </div>
                 <div className="space-y-1.5 sm:space-y-2">
-                  <label htmlFor="lastName" className="font-mono text-xs font-medium uppercase text-black">Last Name *</label>
+                  <label htmlFor="lastName" className="font-mono text-xs font-bold uppercase text-black">Last Name *</label>
                   <input id="lastName" type="text" name="lastName" value={formData.lastName} onChange={handleChange} placeholder="Your last name" className={inputClass('lastName')} />
                   {formErrors.lastName && <p className="text-neo-red text-xs font-mono font-bold" role="alert">{formErrors.lastName}</p>}
                 </div>
               </div>
               <div className="grid grid-cols-1 sm:grid-cols-2 gap-3 sm:gap-4">
                 <div className="space-y-1.5 sm:space-y-2">
-                  <label htmlFor="email" className="font-mono text-xs font-medium uppercase text-black">Email Address *</label>
+                  <label htmlFor="email" className="font-mono text-xs font-bold uppercase text-black">Email Address *</label>
                   <input id="email" type="email" name="email" value={formData.email} onChange={handleChange} placeholder="your@email.com" className={inputClass('email')} />
                   {formErrors.email && <p className="text-neo-red text-xs font-mono font-bold" role="alert">{formErrors.email}</p>}
                 </div>
                 <div className="space-y-1.5 sm:space-y-2">
-                  <label htmlFor="phone" className="font-mono text-xs font-medium uppercase text-black">Phone Number</label>
+                  <label htmlFor="phone" className="font-mono text-xs font-bold uppercase text-black">Phone Number</label>
                   <input id="phone" type="tel" name="phone" value={formData.phone} onChange={handleChange} placeholder="+91 98765 43210" className={inputClass('phone')} />
                   {formErrors.phone && <p className="text-neo-red text-xs font-mono font-bold" role="alert">{formErrors.phone}</p>}
                 </div>
               </div>
               <div className="space-y-1.5 sm:space-y-2">
-                <label htmlFor="message" className="font-mono text-xs font-medium uppercase text-black">Project Details *</label>
+                <label htmlFor="message" className="font-mono text-xs font-bold uppercase text-black">Project Details *</label>
                 <textarea id="message" name="message" value={formData.message} onChange={handleChange} rows={4} placeholder="Tell me about your project, goals, timeline, and budget..." className={`${inputClass('message')} resize-vertical`} />
                 {formErrors.message && <p className="text-neo-red text-xs font-mono font-bold" role="alert">{formErrors.message}</p>}
               </div>
               <button
                 type="submit"
                 disabled={isSubmitting}
-                className="w-full bg-gradient-to-r from-neo-green via-neo-blue to-neo-purple bg-[length:400%_400%] animate-gradient text-black border-2 border-black rounded-3xl py-3 px-6 font-mono text-xs sm:text-sm font-bold uppercase shadow-[4px_4px_0px_#000] hover:-translate-y-0.5 hover:shadow-[6px_6px_0px_#000] active:translate-y-0 active:shadow-[2px_2px_0px_#000] transition-all relative overflow-hidden disabled:opacity-50 disabled:cursor-not-allowed"
+                className="w-full bg-neo-green text-black border-4 border-black py-3 sm:py-4 px-6 font-mono text-sm sm:text-base font-black uppercase shadow-hard hover:translate-x-1 hover:translate-y-1 hover:shadow-none active:translate-x-2 active:translate-y-2 transition-all disabled:opacity-50 disabled:cursor-not-allowed"
               >
-                <span className="relative z-10">{isSubmitting ? 'Sending...' : 'Send Message'}</span>
+                {isSubmitting ? '⏳ SENDING...' : '🚀 SEND MESSAGE'}
               </button>
             </form>
           </div>
