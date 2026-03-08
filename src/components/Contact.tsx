@@ -185,7 +185,7 @@ export const Contact = memo(function Contact() {
               Let's<br />Connect<span className="text-neo-red">.</span>
             </h2>
             <p className="font-mono text-xs sm:text-sm md:text-base font-semibold max-w-md text-black/80">
-              Got a project idea? Need a stunning website or a robust app? Drop me a line, and let's create something extraordinary together.
+              Got a project idea? Need a scalable backend or an ML-powered solution? Drop me a line, and let's build something extraordinary together.
             </p>
           </div>
           <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 mt-4 sm:mt-8">
