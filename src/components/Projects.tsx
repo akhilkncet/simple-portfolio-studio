@@ -3,16 +3,6 @@ import { projects } from '@/lib/data';
 import { OptimizedImage } from './OptimizedImage';
 import { hoverTextColor } from '@/lib/colorMap';
 
-const cardHeights = [
-  'md:min-h-[450px]',
-  'md:min-h-[380px]',
-  'md:min-h-[420px]',
-  'md:min-h-[400px]',
-  'md:min-h-[460px]',
-  'md:min-h-[390px]',
-  'md:min-h-[440px]',
-  'md:min-h-[410px]',
-];
 
 const MobileProjectCard = memo(({ project }: { project: typeof projects[0] }) => (
   <article className="flex-shrink-0 w-[75vw] max-w-[280px] bg-white border-4 border-black p-2 shadow-hard snap-center">
