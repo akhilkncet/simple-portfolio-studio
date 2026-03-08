@@ -153,7 +153,7 @@ export const Contact = memo(function Contact() {
     `w-full bg-neo-white border-2 ${formErrors[field] ? 'border-neo-red' : 'border-black/20'} rounded-lg p-2.5 sm:p-3.5 font-mono text-xs sm:text-sm font-semibold text-black focus:outline-none focus:border-neo-green focus:-translate-y-0.5 focus:shadow-[3px_3px_0px_#33FF57] transition-all`;
 
   return (
-    <section id="contact" className="py-16 sm:py-24 px-4 sm:px-8 relative overflow-hidden border-t-4 border-black" aria-label="Contact">
+    <section id="contact" className="py-10 sm:py-16 md:py-24 px-3 sm:px-8 relative overflow-hidden border-t-4 border-black" aria-label="Contact">
       {/* Toast Container */}
       <div className="fixed top-20 sm:top-24 right-2 sm:right-4 z-50 space-y-2 max-w-[calc(100vw-1rem)] sm:max-w-md" role="alert" aria-live="polite">
         {toasts.map(toast => (
