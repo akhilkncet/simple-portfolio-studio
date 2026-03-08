@@ -17,6 +17,7 @@ import { Footer } from '@/components/Footer';
 
 function App() {
   const [showSplash, setShowSplash] = useState(true);
+  const hideSplash = useCallback(() => setShowSplash(false), []);
 
   useCursor();
   useScrollReveal();
