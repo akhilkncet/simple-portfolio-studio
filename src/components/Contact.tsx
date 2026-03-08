@@ -129,10 +129,10 @@ export const Contact = memo(function Contact() {
   }, [validateForm, emailjsReady, formData, retryCount, addToast]);
 
   const inputClass = (field: string) =>
-    `w-full bg-neo-white border-2 ${formErrors[field] ? 'border-neo-red' : 'border-black/20'} rounded-lg p-2.5 sm:p-3.5 2xl:p-4 font-mono text-xs sm:text-sm 2xl:text-base font-semibold text-black focus:outline-none focus:border-neo-green focus:-translate-y-0.5 focus:shadow-[3px_3px_0px_#33FF57] transition-all`;
+    `w-full bg-neo-white border-2 ${formErrors[field] ? 'border-neo-red' : 'border-black/20'} rounded-lg p-2.5 sm:p-3.5 font-mono text-xs sm:text-sm font-semibold text-black focus:outline-none focus:border-neo-green focus:-translate-y-0.5 focus:shadow-[3px_3px_0px_#33FF57] transition-all`;
 
   return (
-    <section id="contact" className="py-16 sm:py-24 2xl:py-32 px-4 sm:px-8 2xl:px-12 relative overflow-hidden border-t-4 border-black" aria-label="Contact">
+    <section id="contact" className="py-16 sm:py-24 px-4 sm:px-8 relative overflow-hidden border-t-4 border-black" aria-label="Contact">
       {/* Toast Container */}
       <div className="fixed top-20 sm:top-24 right-2 sm:right-4 z-50 space-y-2 max-w-[calc(100vw-1rem)] sm:max-w-md" role="alert" aria-live="polite">
         {toasts.map(toast => (
@@ -153,101 +153,101 @@ export const Contact = memo(function Contact() {
         ))}
       </div>
 
-      <div className="max-w-7xl 2xl:max-w-8xl 3xl:max-w-9xl mx-auto grid grid-cols-1 lg:grid-cols-2 gap-8 sm:gap-12 2xl:gap-16 items-start relative z-10">
+      <div className="max-w-7xl mx-auto grid grid-cols-1 lg:grid-cols-2 gap-8 sm:gap-12 items-start relative z-10">
         {/* Left Side */}
-        <div className="flex flex-col gap-6 sm:gap-8 2xl:gap-10">
+        <div className="flex flex-col gap-6 sm:gap-8">
           <div className="space-y-4 sm:space-y-6">
             <div className="inline-block bg-neo-pink border-4 border-black px-3 py-1 shadow-hard rotate-[-2deg]">
-              <span className="font-mono font-bold text-xs sm:text-sm 2xl:text-base uppercase">/// GET IN TOUCH</span>
+              <span className="font-mono font-bold text-xs sm:text-sm uppercase">/// GET IN TOUCH</span>
             </div>
-            <h2 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl 2xl:text-7xl font-black uppercase leading-[0.95] text-black">
+            <h2 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-black uppercase leading-[0.95] text-black">
               Let's<br />Connect<span className="text-neo-red">.</span>
             </h2>
-            <p className="font-mono text-xs sm:text-sm md:text-base 2xl:text-lg font-semibold max-w-md 2xl:max-w-lg text-black/80">
+            <p className="font-mono text-xs sm:text-sm md:text-base font-semibold max-w-md text-black/80">
               Got a project idea? Need a stunning website or a robust app? Drop me a line, and let's create something extraordinary together.
             </p>
           </div>
-          <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 2xl:gap-5 mt-4 sm:mt-8">
-            <div className="bg-white border-4 border-black p-4 2xl:p-5 shadow-hard">
-              <p className="font-mono text-xs 2xl:text-sm font-bold uppercase bg-black text-white px-2 py-1 w-max mb-2">Project Inquiries</p>
-              <a href="mailto:akhil.kncet@gmail.com" className="font-mono text-xs sm:text-sm 2xl:text-base font-medium uppercase text-black hover:text-neo-green hover:translate-x-2 transition-all inline-block break-all">
+          <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 mt-4 sm:mt-8">
+            <div className="bg-white border-4 border-black p-4 shadow-hard">
+              <p className="font-mono text-xs font-bold uppercase bg-black text-white px-2 py-1 w-max mb-2">Project Inquiries</p>
+              <a href="mailto:akhil.kncet@gmail.com" className="font-mono text-xs sm:text-sm font-medium uppercase text-black hover:text-neo-green hover:translate-x-2 transition-all inline-block break-all">
                 akhil.kncet@gmail.com
               </a>
             </div>
-            <div className="bg-white border-4 border-black p-4 2xl:p-5 shadow-hard">
-              <p className="font-mono text-xs 2xl:text-sm font-bold uppercase bg-black text-white px-2 py-1 w-max mb-2">Phone</p>
-              <a href="tel:+918220002860" className="font-mono text-xs sm:text-sm 2xl:text-base font-medium uppercase text-black hover:text-neo-green hover:translate-x-2 transition-all inline-block">
+            <div className="bg-white border-4 border-black p-4 shadow-hard">
+              <p className="font-mono text-xs font-bold uppercase bg-black text-white px-2 py-1 w-max mb-2">Phone</p>
+              <a href="tel:+918220002860" className="font-mono text-xs sm:text-sm font-medium uppercase text-black hover:text-neo-green hover:translate-x-2 transition-all inline-block">
                 +91 8220002860
               </a>
             </div>
-            <div className="bg-white border-4 border-black p-4 2xl:p-5 shadow-hard">
-              <p className="font-mono text-xs 2xl:text-sm font-bold uppercase bg-black text-white px-2 py-1 w-max mb-2">GitHub</p>
+            <div className="bg-white border-4 border-black p-4 shadow-hard">
+              <p className="font-mono text-xs font-bold uppercase bg-black text-white px-2 py-1 w-max mb-2">GitHub</p>
               <div className="flex flex-col gap-1.5">
-                <a href="https://github.com/Akhil-0911" target="_blank" rel="noopener noreferrer" className="font-mono text-xs sm:text-sm 2xl:text-base font-medium uppercase text-black hover:text-neo-blue hover:translate-x-2 transition-all inline-block">
+                <a href="https://github.com/Akhil-0911" target="_blank" rel="noopener noreferrer" className="font-mono text-xs sm:text-sm font-medium uppercase text-black hover:text-neo-blue hover:translate-x-2 transition-all inline-block">
                   @Akhil-0911
                 </a>
-                <a href="https://github.com/akhilkncet" target="_blank" rel="noopener noreferrer" className="font-mono text-xs sm:text-sm 2xl:text-base font-medium uppercase text-black hover:text-neo-blue hover:translate-x-2 transition-all inline-block">
+                <a href="https://github.com/akhilkncet" target="_blank" rel="noopener noreferrer" className="font-mono text-xs sm:text-sm font-medium uppercase text-black hover:text-neo-blue hover:translate-x-2 transition-all inline-block">
                   @akhilkncet
                 </a>
               </div>
             </div>
-            <div className="bg-white border-4 border-black p-4 2xl:p-5 shadow-hard">
-              <p className="font-mono text-xs 2xl:text-sm font-bold uppercase bg-black text-white px-2 py-1 w-max mb-2">Quick Chat</p>
-              <a href="https://www.linkedin.com/in/akhil0911" target="_blank" rel="noopener noreferrer" className="font-mono text-xs sm:text-sm 2xl:text-base font-medium uppercase text-black hover:text-neo-blue hover:translate-x-2 transition-all inline-block">
+            <div className="bg-white border-4 border-black p-4 shadow-hard">
+              <p className="font-mono text-xs font-bold uppercase bg-black text-white px-2 py-1 w-max mb-2">Quick Chat</p>
+              <a href="https://www.linkedin.com/in/akhil0911" target="_blank" rel="noopener noreferrer" className="font-mono text-xs sm:text-sm font-medium uppercase text-black hover:text-neo-blue hover:translate-x-2 transition-all inline-block">
                 @akhil0911
               </a>
             </div>
           </div>
-          <div className="flex items-center gap-2 bg-neo-black border-4 border-black p-3 2xl:p-4 shadow-hard mt-4">
+          <div className="flex items-center gap-2 bg-neo-black border-4 border-black p-3 shadow-hard mt-4">
             <div className={`w-3 h-3 border-2 border-white ${emailjsReady ? 'bg-neo-green' : 'bg-neo-red'}`} aria-hidden="true" />
-            <span className="text-xs 2xl:text-sm font-mono font-bold uppercase text-white">
+            <span className="text-xs font-mono font-bold uppercase text-white">
               Email service: {emailjsReady ? 'Ready' : 'Connecting...'}
             </span>
           </div>
         </div>
 
         {/* Right Side - Form */}
-        <div className="bg-white border-2 border-black/20 rounded-2xl p-4 sm:p-6 md:p-8 2xl:p-10 shadow-xl relative overflow-hidden">
+        <div className="bg-white border-2 border-black/20 rounded-2xl p-4 sm:p-6 md:p-8 shadow-xl relative overflow-hidden">
           <div className="relative z-10">
-            <div className="mb-4 sm:mb-6 2xl:mb-8 border-b-2 border-black/10 pb-3 sm:pb-4">
-              <h3 className="text-2xl sm:text-3xl md:text-4xl 2xl:text-5xl font-black uppercase leading-[0.95] mb-1.5 sm:mb-2.5 text-black">Start a Project</h3>
-              <p className="font-mono text-[10px] sm:text-xs 2xl:text-sm font-semibold text-black/70">Tell me about your vision and let's make it reality</p>
+            <div className="mb-4 sm:mb-6 border-b-2 border-black/10 pb-3 sm:pb-4">
+              <h3 className="text-2xl sm:text-3xl md:text-4xl font-black uppercase leading-[0.95] mb-1.5 sm:mb-2.5 text-black">Start a Project</h3>
+              <p className="font-mono text-[10px] sm:text-xs font-semibold text-black/70">Tell me about your vision and let's make it reality</p>
             </div>
 
-            <form ref={formRef} onSubmit={handleSubmit} className="space-y-4 sm:space-y-5 2xl:space-y-6" noValidate>
-              <div className="grid grid-cols-1 sm:grid-cols-2 gap-3 sm:gap-4 2xl:gap-5">
+            <form ref={formRef} onSubmit={handleSubmit} className="space-y-4 sm:space-y-5" noValidate>
+              <div className="grid grid-cols-1 sm:grid-cols-2 gap-3 sm:gap-4">
                 <div className="space-y-1.5 sm:space-y-2">
-                  <label htmlFor="firstName" className="font-mono text-xs 2xl:text-sm font-bold uppercase text-black">First Name *</label>
+                  <label htmlFor="firstName" className="font-mono text-xs font-bold uppercase text-black">First Name *</label>
                   <input id="firstName" type="text" name="firstName" value={formData.firstName} onChange={handleChange} placeholder="Your first name" className={inputClass('firstName')} />
                   {formErrors.firstName && <p className="text-neo-red text-xs font-mono font-bold" role="alert">{formErrors.firstName}</p>}
                 </div>
                 <div className="space-y-1.5 sm:space-y-2">
-                  <label htmlFor="lastName" className="font-mono text-xs 2xl:text-sm font-bold uppercase text-black">Last Name *</label>
+                  <label htmlFor="lastName" className="font-mono text-xs font-bold uppercase text-black">Last Name *</label>
                   <input id="lastName" type="text" name="lastName" value={formData.lastName} onChange={handleChange} placeholder="Your last name" className={inputClass('lastName')} />
                   {formErrors.lastName && <p className="text-neo-red text-xs font-mono font-bold" role="alert">{formErrors.lastName}</p>}
                 </div>
               </div>
-              <div className="grid grid-cols-1 sm:grid-cols-2 gap-3 sm:gap-4 2xl:gap-5">
+              <div className="grid grid-cols-1 sm:grid-cols-2 gap-3 sm:gap-4">
                 <div className="space-y-1.5 sm:space-y-2">
-                  <label htmlFor="email" className="font-mono text-xs 2xl:text-sm font-bold uppercase text-black">Email Address *</label>
+                  <label htmlFor="email" className="font-mono text-xs font-bold uppercase text-black">Email Address *</label>
                   <input id="email" type="email" name="email" value={formData.email} onChange={handleChange} placeholder="your@email.com" className={inputClass('email')} />
                   {formErrors.email && <p className="text-neo-red text-xs font-mono font-bold" role="alert">{formErrors.email}</p>}
                 </div>
                 <div className="space-y-1.5 sm:space-y-2">
-                  <label htmlFor="phone" className="font-mono text-xs 2xl:text-sm font-bold uppercase text-black">Phone Number</label>
+                  <label htmlFor="phone" className="font-mono text-xs font-bold uppercase text-black">Phone Number</label>
                   <input id="phone" type="tel" name="phone" value={formData.phone} onChange={handleChange} placeholder="+91 98765 43210" className={inputClass('phone')} />
                   {formErrors.phone && <p className="text-neo-red text-xs font-mono font-bold" role="alert">{formErrors.phone}</p>}
                 </div>
               </div>
               <div className="space-y-1.5 sm:space-y-2">
-                <label htmlFor="message" className="font-mono text-xs 2xl:text-sm font-bold uppercase text-black">Project Details *</label>
+                <label htmlFor="message" className="font-mono text-xs font-bold uppercase text-black">Project Details *</label>
                 <textarea id="message" name="message" value={formData.message} onChange={handleChange} rows={4} placeholder="Tell me about your project, goals, timeline, and budget..." className={`${inputClass('message')} resize-vertical`} />
                 {formErrors.message && <p className="text-neo-red text-xs font-mono font-bold" role="alert">{formErrors.message}</p>}
               </div>
               <button
                 type="submit"
                 disabled={isSubmitting}
-                className="w-full bg-neo-green text-black border-2 border-black/20 rounded-xl py-3 sm:py-4 2xl:py-5 px-6 font-mono text-sm sm:text-base 2xl:text-lg font-black uppercase shadow-lg hover:translate-y-0.5 hover:shadow-md active:translate-y-1 transition-all disabled:opacity-50 disabled:cursor-not-allowed"
+                className="w-full bg-neo-green text-black border-2 border-black/20 rounded-xl py-3 sm:py-4 px-6 font-mono text-sm sm:text-base font-black uppercase shadow-lg hover:translate-y-0.5 hover:shadow-md active:translate-y-1 transition-all disabled:opacity-50 disabled:cursor-not-allowed"
               >
                 {isSubmitting ? '⏳ SENDING...' : '🚀 SEND MESSAGE'}
               </button>
