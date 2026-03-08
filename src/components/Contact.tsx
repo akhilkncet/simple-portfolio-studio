@@ -236,7 +236,7 @@ export const Contact = memo(function Contact() {
             </div>
 
             <form ref={formRef} onSubmit={handleSubmit} className="space-y-4 sm:space-y-5" noValidate>
-              <div className="grid grid-cols-1 sm:grid-cols-2 gap-3 sm:gap-4">
+               <div className="grid grid-cols-2 gap-3 sm:gap-4">
                 <div className="space-y-1.5 sm:space-y-2">
                   <label htmlFor="firstName" className="font-mono text-xs font-bold uppercase text-black">First Name *</label>
                   <input id="firstName" type="text" name="firstName" value={formData.firstName} onChange={handleChange} placeholder="Your first name" className={inputClass('firstName')} />
