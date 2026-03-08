@@ -34,10 +34,10 @@ export const Hero = memo(function Hero() {
           </p>
         </div>
 
-        <div className="flex flex-col sm:flex-row justify-center gap-3 sm:gap-5 reveal">
+        <div className="flex flex-col sm:flex-row justify-center gap-2.5 sm:gap-5 reveal">
           <a
             href="#projects"
-            className="bg-black text-white border-2 border-black px-6 py-3 sm:px-8 sm:py-4 text-sm sm:text-base md:text-lg font-bold shadow-hard hover:bg-neo-green hover:text-black hover:translate-x-1 hover:translate-y-1 hover:shadow-none transition-all cursor-hover"
+            className="bg-black text-white border-2 border-black px-5 py-2.5 sm:px-8 sm:py-4 text-xs sm:text-base md:text-lg font-bold shadow-hard hover:bg-neo-green hover:text-black hover:translate-x-1 hover:translate-y-1 hover:shadow-none transition-all cursor-hover"
           >
             VIEW DATABASE
           </a>
