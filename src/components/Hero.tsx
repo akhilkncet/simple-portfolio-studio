@@ -14,9 +14,9 @@ export const Hero = memo(function Hero() {
       </div>
 
       <div className="relative z-10 text-center max-w-5xl">
-        <div className="inline-block bg-neo-white border-2 border-black px-3 py-1 sm:px-4 mb-4 sm:mb-6 shadow-hard rotate-[-2deg] reveal">
-          <span className="font-mono font-bold text-neo-green bg-black px-1 sm:px-2 mr-1 sm:mr-2 text-xs sm:text-base" aria-hidden="true">●</span>
-          <span className="font-mono font-bold text-xs sm:text-base">SYSTEM STATUS: ONLINE</span>
+        <div className="inline-block bg-neo-white border-2 border-black px-2 py-0.5 sm:px-4 sm:py-1 mb-3 sm:mb-6 shadow-hard rotate-[-2deg] reveal">
+          <span className="font-mono font-bold text-neo-green bg-black px-1 sm:px-2 mr-1 sm:mr-2 text-[10px] sm:text-base" aria-hidden="true">●</span>
+          <span className="font-mono font-bold text-[10px] sm:text-base">SYSTEM STATUS: ONLINE</span>
         </div>
 
         <h1 className="text-[13vw] sm:text-[11vw] md:text-[10vw] lg:text-[9vw] xl:text-[8rem] leading-[0.75] font-black uppercase tracking-wide mb-3 sm:mb-5 reveal mix-blend-darken">
