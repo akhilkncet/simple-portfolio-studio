@@ -129,7 +129,7 @@ export const Contact = memo(function Contact() {
   }, [validateForm, emailjsReady, formData, retryCount, addToast]);
 
   const inputClass = (field: string) =>
-    `w-full bg-neo-white border-4 ${formErrors[field] ? 'border-neo-red' : 'border-black'} p-2.5 sm:p-3.5 font-mono text-xs sm:text-sm font-semibold text-black focus:outline-none focus:border-neo-green focus:-translate-y-0.5 focus:shadow-[3px_3px_0px_#33FF57] transition-all`;
+    `w-full bg-neo-white border-2 ${formErrors[field] ? 'border-neo-red' : 'border-black/20'} rounded-lg p-2.5 sm:p-3.5 font-mono text-xs sm:text-sm font-semibold text-black focus:outline-none focus:border-neo-green focus:-translate-y-0.5 focus:shadow-[3px_3px_0px_#33FF57] transition-all`;
 
   return (
     <section id="contact" className="py-16 sm:py-24 px-4 sm:px-8 relative overflow-hidden border-t-4 border-black" aria-label="Contact">
