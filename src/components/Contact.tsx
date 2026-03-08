@@ -133,7 +133,7 @@ export const Contact = memo(function Contact() {
     `w-full bg-white border-2 ${formErrors[field] ? 'border-neo-red' : 'border-black'} rounded-xl p-2.5 sm:p-3.5 font-mono text-xs sm:text-sm font-semibold text-black focus:outline-none focus:border-neo-green focus:-translate-y-0.5 focus:shadow-[3px_3px_0px_#33FF57] transition-all`;
 
   return (
-    <section id="contact" className="py-16 sm:py-24 px-4 sm:px-8 relative overflow-hidden" aria-label="Contact">
+    <section id="contact" className="py-10 sm:py-24 px-3 sm:px-8 relative overflow-hidden" aria-label="Contact">
       {/* Toast Container */}
       <div className="fixed top-20 sm:top-24 right-2 sm:right-4 z-50 space-y-2 max-w-[calc(100vw-1rem)] sm:max-w-md" role="alert" aria-live="polite">
         {toasts.map(toast => (
@@ -188,7 +188,7 @@ export const Contact = memo(function Contact() {
         </div>
 
         {/* Right Side - Form */}
-        <div className="bg-gray-100 border-4 border-black rounded-3xl p-4 sm:p-6 md:p-8 shadow-hard-lg relative overflow-hidden">
+        <div className="bg-gray-100 border-3 sm:border-4 border-black rounded-2xl sm:rounded-3xl p-3 sm:p-6 md:p-8 shadow-hard-lg relative overflow-hidden">
           <div className="absolute inset-0 opacity-5" style={{ background: 'repeating-linear-gradient(45deg, transparent 0px, transparent 8px, rgba(20,20,20,0.1) 8px, rgba(20,20,20,0.1) 16px)' }} aria-hidden="true" />
           <div className="relative z-10">
             <div className="text-center mb-3 sm:mb-5">

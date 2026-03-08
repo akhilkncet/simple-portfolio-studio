@@ -2,8 +2,8 @@ import { memo } from 'react';
 
 export const Footer = memo(function Footer() {
   return (
-    <footer className="relative w-full p-4 sm:p-8 flex items-center justify-center overflow-hidden" role="contentinfo">
-      <div className="relative w-full h-full bg-black rounded-3xl p-6 sm:p-8 md:p-12 flex flex-col justify-between overflow-hidden">
+    <footer className="relative w-full p-3 sm:p-8 flex items-center justify-center overflow-hidden" role="contentinfo">
+      <div className="relative w-full h-full bg-black rounded-2xl sm:rounded-3xl p-4 sm:p-8 md:p-12 flex flex-col justify-between overflow-hidden">
         {/* Corner Symbols */}
         <div className="absolute top-4 left-4 right-4 sm:top-8 sm:left-8 sm:right-8 flex justify-between pointer-events-none opacity-50" aria-hidden="true">
           <span className="text-white text-xl sm:text-2xl">✦</span>
@@ -22,7 +22,7 @@ export const Footer = memo(function Footer() {
         </div>
 
         {/* Footer Columns */}
-        <nav className="grid grid-cols-2 md:grid-cols-4 gap-6 sm:gap-8 md:gap-12 mb-12 sm:mb-16 md:mb-32" aria-label="Footer navigation">
+        <nav className="grid grid-cols-2 md:grid-cols-4 gap-4 sm:gap-8 md:gap-12 mb-8 sm:mb-16 md:mb-32" aria-label="Footer navigation">
           <div className="flex flex-col items-center gap-2 sm:gap-4">
             <p className="font-mono text-white font-bold uppercase text-xs sm:text-sm">Explore</p>
             <a href="#home" className="font-mono text-white/35 hover:text-white text-xs sm:text-sm transition-colors">Home</a>
