@@ -146,7 +146,7 @@ export const Achievements = memo(function Achievements() {
               onClick={() => setShowAllModal(true)}
               className="px-6 py-3 sm:px-8 sm:py-4 bg-neo-blue border-4 border-white shadow-hard font-black uppercase text-sm sm:text-base hover:translate-x-2 hover:translate-y-2 hover:shadow-none transition-all"
             >
-              📜 VIEW ALL {activeItems.length} CERTIFICATES
+              VIEW ALL {activeItems.length} CERTIFICATES
             </button>
           </div>
         )}
