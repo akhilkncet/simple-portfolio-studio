@@ -112,7 +112,7 @@ export const Projects = memo(function Projects() {
       <div className="hidden md:block max-w-7xl mx-auto px-4">
         <div className="grid grid-cols-2 lg:grid-cols-3 gap-6">
           {projects.map((project, index) => (
-            <DesktopProjectCard key={project.id} project={project} index={index} />
+            <DesktopProjectCard key={project.id} project={project} />
           ))}
         </div>
       </div>
