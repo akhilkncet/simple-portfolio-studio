@@ -12,7 +12,7 @@ export default defineConfig({
     dedupe: ["react", "react-dom", "react/jsx-runtime"],
   },
   optimizeDeps: {
-    include: ["react", "react-dom", "react/jsx-runtime"],
+    include: ["react", "react-dom", "react/jsx-runtime", "react-dom/client"],
     force: true,
   },
 });
