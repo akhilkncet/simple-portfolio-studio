@@ -98,7 +98,7 @@ export const Contact = memo(function Contact() {
       await emailjsModule.default.send(EMAILJS_CONFIG.serviceId, EMAILJS_CONFIG.templateId, {
         from_name: `${data.firstName} ${data.lastName}`,
         from_email: data.email,
-        subject: 'New Project Inquiry',
+        subject: 'New Message from Portfolio',
         message: data.message,
         phone: data.phone || 'Not provided',
         timestamp: new Date().toLocaleString(),
@@ -181,12 +181,12 @@ export const Contact = memo(function Contact() {
             <div className="inline-block bg-neo-pink border-4 border-black px-3 py-1 shadow-hard rotate-[-2deg]">
               <span className="font-mono font-bold text-xs sm:text-sm uppercase">/// GET IN TOUCH</span>
             </div>
-            <h2 className="text-2xl sm:text-4xl md:text-5xl lg:text-6xl font-black uppercase leading-[0.95] text-black">
+             <h2 className="text-2xl sm:text-4xl md:text-5xl lg:text-6xl font-black uppercase leading-[0.95] text-black">
               Let's<br />Connect<span className="text-neo-red">.</span>
             </h2>
-            <p className="font-mono text-xs sm:text-sm md:text-base font-semibold max-w-md text-black/80">
-              Got a project idea? Need a scalable backend or an ML-powered solution? Drop me a line, and let's build something extraordinary together.
-            </p>
+             <p className="font-mono text-xs sm:text-sm md:text-base font-semibold max-w-md text-black/80">
+               Looking for internship opportunities, collaborations, or freelance work. Feel free to reach out — I'd love to connect and discuss how I can contribute to your team or project.
+             </p>
           </div>
           <div className="grid grid-cols-2 gap-2.5 sm:gap-4 mt-4 sm:mt-8">
             <div className="bg-white border-3 sm:border-4 border-black p-2.5 sm:p-4 shadow-hard">
@@ -231,12 +231,12 @@ export const Contact = memo(function Contact() {
         <div className="bg-white border-2 border-black/20 rounded-2xl p-4 sm:p-6 md:p-8 shadow-xl relative overflow-hidden">
           <div className="relative z-10">
             <div className="mb-4 sm:mb-6 border-b-2 border-black/10 pb-3 sm:pb-4">
-              <h3 className="text-2xl sm:text-3xl md:text-4xl font-black uppercase leading-[0.95] mb-1.5 sm:mb-2.5 text-black">Start a Project</h3>
-              <p className="font-mono text-[10px] sm:text-xs font-semibold text-black/70">Tell me about your vision and let's make it reality</p>
+              <h3 className="text-2xl sm:text-3xl md:text-4xl font-black uppercase leading-[0.95] mb-1.5 sm:mb-2.5 text-black">Get in Touch</h3>
+              <p className="font-mono text-[10px] sm:text-xs font-semibold text-black/70">Drop a message — I'm open to opportunities & collaborations</p>
             </div>
 
             <form ref={formRef} onSubmit={handleSubmit} className="space-y-4 sm:space-y-5" noValidate>
-              <div className="grid grid-cols-1 sm:grid-cols-2 gap-3 sm:gap-4">
+               <div className="grid grid-cols-2 gap-3 sm:gap-4">
                 <div className="space-y-1.5 sm:space-y-2">
                   <label htmlFor="firstName" className="font-mono text-xs font-bold uppercase text-black">First Name *</label>
                   <input id="firstName" type="text" name="firstName" value={formData.firstName} onChange={handleChange} placeholder="Your first name" className={inputClass('firstName')} />
@@ -261,8 +261,8 @@ export const Contact = memo(function Contact() {
                 </div>
               </div>
               <div className="space-y-1.5 sm:space-y-2">
-                <label htmlFor="message" className="font-mono text-xs font-bold uppercase text-black">Project Details *</label>
-                <textarea id="message" name="message" value={formData.message} onChange={handleChange} rows={4} placeholder="Tell me about your project, goals, timeline, and budget..." className={`${inputClass('message')} resize-vertical`} />
+                <label htmlFor="message" className="font-mono text-xs font-bold uppercase text-black">Message *</label>
+                <textarea id="message" name="message" value={formData.message} onChange={handleChange} rows={4} placeholder="Hi Akhil, I'd like to discuss an opportunity..." className={`${inputClass('message')} resize-vertical`} />
                 {formErrors.message && <p className="text-neo-red text-xs font-mono font-bold" role="alert">{formErrors.message}</p>}
               </div>
               <button
