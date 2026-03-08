@@ -2,34 +2,59 @@ import { useEffect } from 'react';
 
 export function usePWA() {
   useEffect(() => {
-    if (typeof window !== 'undefined' && 'serviceWorker' in navigator) {
-      // Register service worker
-      navigator.serviceWorker
-        .register('/sw.js')
-        .then((registration) => {
-          console.log('[PWA] Service Worker registered:', registration.scope);
+    if (typeof window === 'undefined' || !('serviceWorker' in navigator)) return;
 
-          // Check for updates periodically
-          setInterval(() => {
-            registration.update();
-          }, 60000); // Check every minute
+    // In preview/dev, avoid stale module caching that can load multiple React chunks.
+    if (!import.meta.env.PROD) {
+      const clearDevServiceWorkers = async () => {
+        const registrations = await navigator.serviceWorker.getRegistrations();
+        await Promise.all(registrations.map((registration) => registration.unregister()));
 
-          // Handle updates
-          registration.addEventListener('updatefound', () => {
-            const newWorker = registration.installing;
-            if (newWorker) {
-              newWorker.addEventListener('statechange', () => {
-                if (newWorker.state === 'installed' && navigator.serviceWorker.controller) {
-                  // New version available
-                  console.log('[PWA] New content available, please refresh.');
-                }
-              });
+        if ('caches' in window) {
+          const cacheNames = await caches.keys();
+          await Promise.all(
+            cacheNames
+              .filter((name) => name.includes('akhil-portfolio') || name.includes('static-') || name.includes('dynamic-'))
+              .map((name) => caches.delete(name))
+          );
+        }
+      };
+
+      clearDevServiceWorkers().catch((error) => {
+        console.warn('[PWA] Dev cleanup failed:', error);
+      });
+      return;
+    }
+
+    let updateInterval: number | undefined;
+
+    navigator.serviceWorker
+      .register('/sw.js')
+      .then((registration) => {
+        console.log('[PWA] Service Worker registered:', registration.scope);
+
+        updateInterval = window.setInterval(() => {
+          registration.update();
+        }, 60000);
+
+        registration.addEventListener('updatefound', () => {
+          const newWorker = registration.installing;
+          if (!newWorker) return;
+
+          newWorker.addEventListener('statechange', () => {
+            if (newWorker.state === 'installed' && navigator.serviceWorker.controller) {
+              console.log('[PWA] New content available, please refresh.');
             }
           });
-        })
-        .catch((error) => {
-          console.error('[PWA] Service Worker registration failed:', error);
         });
-    }
+      })
+      .catch((error) => {
+        console.error('[PWA] Service Worker registration failed:', error);
+      });
+
+    return () => {
+      if (updateInterval) window.clearInterval(updateInterval);
+    };
   }, []);
 }
+
