@@ -30,7 +30,7 @@ const MobileProjectCard = memo(({ project }: { project: typeof projects[0] }) =>
           <i className="ri-arrow-right-up-line text-sm" aria-hidden="true"></i>
         </a>
       </div>
-      <p className="font-mono text-[10px] leading-relaxed line-clamp-2">{project.description}</p>
+      <p className="font-mono text-[10px] leading-relaxed line-clamp-3">{project.description}</p>
       <div className="flex gap-1 font-mono text-[8px] font-bold flex-wrap">
         {project.technologies.slice(0, 4).map((tech, idx) => (
           <span key={idx} className="bg-neo-black text-white px-1 py-0.5">
@@ -78,7 +78,7 @@ const DesktopProjectCard = memo(({ project }: { project: typeof projects[0] }) =
           <i className="ri-arrow-right-up-line text-lg" aria-hidden="true"></i>
         </a>
       </div>
-      <p className="font-mono text-sm leading-relaxed flex-1">{project.description}</p>
+      <p className="font-mono text-sm leading-relaxed line-clamp-3">{project.description}</p>
       <div className="flex gap-2 font-mono text-xs font-bold flex-wrap">
         {project.technologies.map((tech, idx) => (
           <span key={idx} className="bg-neo-black text-white px-2">

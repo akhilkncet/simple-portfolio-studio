@@ -1,25 +1,56 @@
 import { memo, useMemo } from 'react';
 
+interface TechItem {
+  name: string;
+  icon: string;
+}
+
 const skillCategories = [
   {
     title: 'Machine Learning & Computer Vision',
-    skills: ['Python', 'PyTorch', 'Scikit-learn', 'TensorFlow', 'YOLO', 'NumPy', 'Pandas'],
+    skills: [
+      { name: 'Python', icon: 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/python/python-original.svg' },
+      { name: 'PyTorch', icon: 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/pytorch/pytorch-original.svg' },
+      { name: 'Scikit-learn', icon: 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/scikitlearn/scikitlearn-original.svg' },
+      { name: 'TensorFlow', icon: 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/tensorflow/tensorflow-original.svg' },
+      { name: 'YOLO', icon: 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/opencv/opencv-original.svg' },
+      { name: 'NumPy', icon: 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/numpy/numpy-original.svg' },
+      { name: 'Pandas', icon: 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/pandas/pandas-original.svg' },
+    ] as TechItem[],
   },
   {
     title: 'Backend & API Development',
-    skills: ['Django', 'Flask', 'REST APIs'],
+    skills: [
+      { name: 'Django', icon: 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/django/django-plain.svg' },
+      { name: 'Flask', icon: 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/flask/flask-original.svg' },
+      { name: 'REST APIs', icon: 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/fastapi/fastapi-original.svg' },
+    ] as TechItem[],
   },
   {
     title: 'DevOps & Tooling',
-    skills: ['Docker', 'Git', 'GitHub'],
+    skills: [
+      { name: 'Docker', icon: 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/docker/docker-original.svg' },
+      { name: 'Git', icon: 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/git/git-original.svg' },
+      { name: 'GitHub', icon: 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/github/github-original.svg' },
+    ] as TechItem[],
   },
   {
     title: 'Frontend (Working Knowledge)',
-    skills: ['React', 'JavaScript', 'HTML', 'CSS'],
+    skills: [
+      { name: 'React', icon: 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/react/react-original.svg' },
+      { name: 'JavaScript', icon: 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/javascript/javascript-original.svg' },
+      { name: 'HTML', icon: 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/html5/html5-original.svg' },
+      { name: 'CSS', icon: 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/css3/css3-original.svg' },
+    ] as TechItem[],
   },
   {
     title: 'Additional Exposure',
-    skills: ['Flutter', 'Dart', 'Android Studio', 'C (Basics)'],
+    skills: [
+      { name: 'Flutter', icon: 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/flutter/flutter-original.svg' },
+      { name: 'Dart', icon: 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/dart/dart-original.svg' },
+      { name: 'Android Studio', icon: 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/androidstudio/androidstudio-original.svg' },
+      { name: 'C (Basics)', icon: 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/c/c-original.svg' },
+    ] as TechItem[],
   },
 ];
 
@@ -54,15 +85,24 @@ export const Skills = memo(function Skills() {
               <h3 className="text-lg sm:text-xl md:text-2xl font-bold mb-3 sm:mb-4 md:mb-5 text-white border-l-4 border-neo-green pl-3 sm:pl-4">
                 {category.title}
               </h3>
-              <div className="flex flex-wrap gap-1.5 sm:gap-2.5 md:gap-3" role="list">
+              <div className="flex flex-wrap gap-2 sm:gap-2.5 md:gap-3" role="list">
                 {category.skills.map((skill, skillIdx) => (
-                  <span
+                  <div
                     key={skillIdx}
                     role="listitem"
-                    className="bg-white/5 border border-white/20 text-white px-2 sm:px-3 md:px-4 py-1 sm:py-1.5 md:py-2 font-mono text-[11px] sm:text-xs md:text-sm hover:bg-neo-green hover:text-black hover:border-neo-green transition-all duration-300"
+                    className="w-[72px] sm:w-[80px] md:w-[88px] min-h-[76px] sm:min-h-[84px] md:min-h-[92px] bg-white/5 border border-white/20 text-white px-1.5 py-1.5 font-mono hover:bg-neo-green/20 hover:border-neo-green transition-all duration-300 flex flex-col items-center justify-center text-center gap-1"
                   >
-                    {skill}
-                  </span>
+                    <div className="w-8 h-8 sm:w-9 sm:h-9 md:w-10 md:h-10 bg-white rounded-md p-1 flex items-center justify-center border border-black/10">
+                      <img
+                        src={skill.icon}
+                        alt={`${skill.name} logo`}
+                        className="w-full h-full object-contain"
+                        loading="lazy"
+                        decoding="async"
+                      />
+                    </div>
+                    <span className="text-[9px] sm:text-[10px] md:text-[11px] leading-tight">{skill.name}</span>
+                  </div>
                 ))}
               </div>
             </div>
